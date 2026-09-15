@@ -69,43 +69,21 @@ class VoyAgentChat {
     this.scrollToBottom();
   }
 
-  appendAgentMessageWithTools({ content, tools = [] }) {
+  appendAgentMessage(content) {
     const row = document.createElement("div");
     row.className = "message-row agent";
-
-    let toolsHtml = "";
-    if (tools.length > 0) {
-      toolsHtml = `
-        <div class="tool-execution-box">
-          <div class="tool-header-toggle">
-            <span>✨ Trip Preparation & Planning Steps</span>
-            <span class="tool-badge-counter">${tools.length} Checks Completed</span>
-          </div>
-          <div class="tool-steps-list">
-            ${tools.map(t => `
-              <div class="tool-step-item">
-                <div class="step-left">
-                  <span class="step-icon">${t.icon || '✓'}</span>
-                  <span>${t.step}</span>
-                </div>
-                <span class="step-status-ok">✔ ${t.detail}</span>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      `;
-    }
-
     row.innerHTML = `
       <div class="message-avatar agent-avatar">VA</div>
       <div class="message-content">
-        ${toolsHtml}
         <div class="message-bubble">${this.formatMarkdown(content)}</div>
       </div>
     `;
-
     this.messagesContainer.appendChild(row);
     this.scrollToBottom();
+  }
+
+  appendAgentMessageWithTools({ content }) {
+    this.appendAgentMessage(content);
   }
 
   simulateAgentResponse(promptText) {
