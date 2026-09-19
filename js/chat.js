@@ -111,8 +111,16 @@ class VoyAgentChat {
     this.scrollToBottom();
 
     // Determine context
-    const isMelbourne = promptText.toLowerCase().includes("melbourne");
-    const tripKey = isMelbourne ? "melbourne" : "kyoto";
+    const lowerPrompt = promptText.toLowerCase();
+    const isMelbourne = lowerPrompt.includes("melbourne");
+    const isKL = lowerPrompt.includes("kuala lumpur") || lowerPrompt.includes("kl") || promptText.includes("吉隆坡") || lowerPrompt.includes("malaysia") || promptText.includes("马来西亚");
+    
+    let tripKey = "kyoto";
+    if (isKL) {
+      tripKey = "kl";
+    } else if (isMelbourne) {
+      tripKey = "melbourne";
+    }
     const targetTrip = window.VOYAGENT_DATA.trips[tripKey];
 
     setTimeout(() => {
@@ -121,11 +129,15 @@ class VoyAgentChat {
         typingRow.parentNode.removeChild(typingRow);
       }
 
+      const weatherHighlight = tripKey === "kl" 
+        ? "Tropical climate (31-33°C), with live monsoon rain tracking and sheltered underground rerouting enabled."
+        : "Clear and mild, with live weather tracking activated.";
+
       this.appendAgentMessageWithTools({
         content: `I have synthesized your preferences and created a comprehensive travel blueprint for **${targetTrip.destination}**!\n\n` +
                  `- **Duration**: ${targetTrip.duration}\n` +
                  `- **Estimated Budget**: ${targetTrip.budget.total} (Optimal allocation: ${targetTrip.budget.allocated})\n` +
-                 `- **Weather Outlook**: Clear and mild, with live weather tracking activated.\n\n` +
+                 `- **Weather Outlook**: ${weatherHighlight}\n\n` +
                  `You can explore the day-by-day interactive timeline below or interact directly with the route map in the right workspace.`
       });
 

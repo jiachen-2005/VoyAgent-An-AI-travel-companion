@@ -65,24 +65,28 @@ class VoyAgentItinerary {
         </div>
 
         <!-- Dynamic Replanning Simulation Banner (Highlighting FYP Core Feature) -->
-        ${this.activeDay === 2 && trip.id === 'kyoto' ? `
+        ${this.activeDay === 2 && (trip.id === 'kyoto' || trip.id === 'kl') ? `
           <div class="replanning-simulation-banner">
             <div class="replanning-text">
               <span class="replanning-title" style="display: flex; align-items: center; gap: 6px;">
                 ${window.VoyAgentIcons.get('cloud-rain', { size: 15 })}
-                <span>Adaptive Trip Assistant · Weather Simulation</span>
+                <span>Adaptive Trip Assistant · ${trip.id === 'kl' ? 'Monsoon Weather Simulation' : 'Weather Simulation'}</span>
               </span>
               <span class="replanning-desc">
                 ${this.isReplannedDay2 
-                  ? 'Active: Heavy rain detected. Outdoor mountain paths have been swapped with sheltered cultural highlights.'
-                  : 'Test how VoyAgent automatically adapts your itinerary when sudden afternoon rain is detected.'}
+                  ? (trip.id === 'kl'
+                      ? 'Active: Tropical monsoon detected. Outdoor KLCC park walk swapped with Aquaria oceanarium tunnel & sheltered Suria KLCC dining.'
+                      : 'Active: Heavy rain detected. Outdoor mountain paths have been swapped with sheltered cultural highlights.')
+                  : (trip.id === 'kl'
+                      ? 'Test how VoyAgent automatically adapts your itinerary when a tropical afternoon monsoon shower is detected.'
+                      : 'Test how VoyAgent automatically adapts your itinerary when sudden afternoon rain is detected.')}
               </span>
             </div>
             <div class="replanning-actions">
               ${!this.isReplannedDay2 ? `
                 <button class="btn-simulate-event" onclick="voyAgentApp.itinerary.triggerRainReplanning()">
                   ${window.VoyAgentIcons.get('cloud-rain', { size: 14 })}
-                  <span>Simulate Afternoon Rain (14:00)</span>
+                  <span>${trip.id === 'kl' ? 'Simulate Tropical Monsoon (15:30)' : 'Simulate Afternoon Rain (14:00)'}</span>
                 </button>
               ` : `
                 <button class="btn-simulate-event" onclick="voyAgentApp.itinerary.revertDay2()">
@@ -200,20 +204,31 @@ class VoyAgentItinerary {
   triggerRainReplanning() {
     this.app.showToast("Weather alert detected! Adapting afternoon schedule...", "info");
 
-    const replanData = window.VOYAGENT_DATA.replannedKyotoDay2;
+    const isKL = this.currentTrip && this.currentTrip.id === "kl";
+    const replanData = isKL ? window.VOYAGENT_DATA.replannedKlDay2 : window.VOYAGENT_DATA.replannedKyotoDay2;
     
     if (this.app.chat) {
-      this.app.chat.appendAgentMessageWithTools({
-        content: `**Weather Advisory for Day 2!** An afternoon rainstorm is forecast for Kyoto starting around **14:00**.\n\n` +
-                 `To keep your journey enjoyable and safe, I've adjusted your afternoon schedule:\n` +
-                 `- Replaced the outdoor hike up **Iwatayama Monkey Park** and open grounds of **Kinkaku-ji** with the dry, climate-controlled **Kyoto National Museum** and the 400m covered **Nishiki Market** arcade.\n` +
-                 `- Updated transit paths to use sheltered tram and subway connections.`
-      });
+      if (isKL) {
+        this.app.chat.appendAgentMessageWithTools({
+          content: `**Monsoon Downpour Advisory for Day 2!** An intense afternoon tropical thunderstorm is forecast for Kuala Lumpur starting around **15:30**.\n\n` +
+                   `To keep you dry and comfortable, I've dynamically adapted your afternoon schedule:\n` +
+                   `- Replaced open **KLCC Park** walking trails with **Aquaria KLCC** (90m transparent underwater oceanarium tunnel).\n` +
+                   `- Swapped exposed rooftop lounge dining with air-conditioned **Suria KLCC** fine dining overlooking the Symphony Lake fountains.\n` +
+                   `- Connected all points via the direct sheltered underground air-conditioned tunnel.`
+        });
+      } else {
+        this.app.chat.appendAgentMessageWithTools({
+          content: `**Weather Advisory for Day 2!** An afternoon rainstorm is forecast for Kyoto starting around **14:00**.\n\n` +
+                   `To keep your journey enjoyable and safe, I've adjusted your afternoon schedule:\n` +
+                   `- Replaced the outdoor hike up **Iwatayama Monkey Park** and open grounds of **Kinkaku-ji** with the dry, climate-controlled **Kyoto National Museum** and the 400m covered **Nishiki Market** arcade.\n` +
+                   `- Updated transit paths to use sheltered tram and subway connections.`
+        });
+      }
     }
 
     // Apply replanned slots
     const day2 = this.currentTrip.days.find(d => d.dayNumber === 2);
-    if (day2) {
+    if (day2 && replanData) {
       day2.slots = replanData.newSlots;
       this.isReplannedDay2 = true;
       this.render();
@@ -221,9 +236,9 @@ class VoyAgentItinerary {
   }
 
   revertDay2() {
-    const originalTrip = window.VOYAGENT_DATA.trips.kyoto;
+    const originalTrip = window.VOYAGENT_DATA.trips[this.currentTrip.id];
     const day2 = this.currentTrip.days.find(d => d.dayNumber === 2);
-    if (day2) {
+    if (day2 && originalTrip && originalTrip.days[1]) {
       day2.slots = JSON.parse(JSON.stringify(originalTrip.days[1].slots));
       this.isReplannedDay2 = false;
       this.render();

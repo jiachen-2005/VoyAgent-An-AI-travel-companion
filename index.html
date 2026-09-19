@@ -127,7 +127,7 @@
           <div>
             <div class="sidebar-section-title">
               <span>Saved Journeys</span>
-              <span style="font-size: 0.65rem;">2 Sessions</span>
+              <span style="font-size: 0.65rem;">3 Sessions</span>
             </div>
             <div class="trip-history-list">
               <div class="trip-item active" data-trip="kyoto" onclick="voyAgentApp.loadTrip('kyoto')">
@@ -149,6 +149,17 @@
                   <span>A$1,200</span>
                   <span>·</span>
                   <span>Scenic Route</span>
+                </div>
+              </div>
+
+              <div class="trip-item" data-trip="kl" onclick="voyAgentApp.loadTrip('kl')">
+                <div class="trip-item-title"><span class="country-badge">MYS</span> Kuala Lumpur & Skyline</div>
+                <div class="trip-item-meta">
+                  <span>3 Days</span>
+                  <span>·</span>
+                  <span>RM 2,500</span>
+                  <span>·</span>
+                  <span>Heritage & Food</span>
                 </div>
               </div>
             </div>
@@ -199,6 +210,14 @@
                   </div>
                   <div class="prompt-headline">3-Day Melbourne & Coastal Drive</div>
                   <div class="prompt-desc">CBD laneway coffee crawl, Queen Vic market, and Twelve Apostles coastal tour.</div>
+                </div>
+
+                <div class="prompt-card" onclick="voyAgentApp.chat.sendPresetPrompt('Plan a 3-day Kuala Lumpur cultural and foodie journey under RM 2,500, exploring Batu Caves, Petronas Twin Towers, and Jalan Alor street dining.')">
+                  <div class="prompt-icon">
+                    <svg class="svg-icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path><line x1="9" y1="9" x2="9" y2="9.01"></line><line x1="9" y1="13" x2="9" y2="13.01"></line><line x1="9" y1="17" x2="9" y2="17.01"></line></svg>
+                  </div>
+                  <div class="prompt-headline">3-Day Kuala Lumpur Culture & Skyline</div>
+                  <div class="prompt-desc">Petronas Twin Towers, Batu Caves rainbow stairs, and Jalan Alor night street food.</div>
                 </div>
 
                 <div class="prompt-card" onclick="voyAgentApp.chat.sendPresetPrompt('Show me how VoyAgent adapts when sudden afternoon rain hits an outdoor mountain itinerary.')">
