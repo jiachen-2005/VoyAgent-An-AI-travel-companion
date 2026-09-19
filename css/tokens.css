@@ -121,3 +121,40 @@
   --danger-bg: rgba(239, 68, 68, 0.15);
   --info-bg: rgba(59, 130, 246, 0.15);
 }
+
+/* ==========================================================================
+   Icon System Utilities (Lucide-style Unified SVGs)
+   ========================================================================== */
+.svg-icon {
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+  stroke: currentColor;
+  fill: none;
+}
+
+.icon-xs { width: 13px; height: 13px; }
+.icon-sm { width: 16px; height: 16px; }
+.icon-md { width: 19px; height: 19px; }
+.icon-lg { width: 24px; height: 24px; }
+.icon-xl { width: 32px; height: 32px; }
+
+/* Country tag badge */
+.country-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: var(--bg-surface-alt);
+  border: 1px solid var(--border-subtle);
+  color: var(--primary-600);
+  margin-right: 4px;
+}
+
+[data-theme="dark"] .country-badge {
+  color: var(--primary-400);
+}
+

@@ -71,8 +71,14 @@ class VoyAgentMap {
         <div class="map-popup-inner">
           <div class="popup-tag">${slot.category}</div>
           <div class="popup-title">${slot.title}</div>
-          <div class="popup-time" style="font-size: 0.75rem; color: #64748b; font-family: monospace;">⏰ ${slot.time}</div>
-          <div class="popup-cost">💰 ${slot.cost}</div>
+          <div class="popup-time" style="font-size: 0.75rem; color: #64748b; display: flex; align-items: center; gap: 4px;">
+            ${window.VoyAgentIcons ? window.VoyAgentIcons.get('clock', { size: 12 }) : ''}
+            <span>${slot.time}</span>
+          </div>
+          <div class="popup-cost" style="font-size: 0.76rem; font-weight: 600; color: #0284c7; display: flex; align-items: center; gap: 4px; margin-top: 2px;">
+            ${window.VoyAgentIcons ? window.VoyAgentIcons.get('tag', { size: 12 }) : ''}
+            <span>${slot.cost}</span>
+          </div>
         </div>
       `;
 

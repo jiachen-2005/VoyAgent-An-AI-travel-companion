@@ -117,21 +117,12 @@ class VoyAgentChat {
         typingRow.parentNode.removeChild(typingRow);
       }
 
-      // Friendly travel planning steps (No developer code syntax)
-      const defaultTools = [
-        { icon: "📍", step: `Curated top-rated cultural highlights & dining for ${targetTrip.destination}`, detail: "16 places selected" },
-        { icon: "🌤️", step: "Checked seasonal weather forecast & rain probability", detail: "Outlook analyzed" },
-        { icon: "🗺️", step: "Mapped scenic walking routes and transit connections", detail: "Routes optimized" },
-        { icon: "💰", step: "Balanced estimated costs with your target budget", detail: `Within ${targetTrip.budget.total}` }
-      ];
-
       this.appendAgentMessageWithTools({
         content: `I have synthesized your preferences and created a comprehensive travel blueprint for **${targetTrip.destination}**!\n\n` +
                  `- **Duration**: ${targetTrip.duration}\n` +
                  `- **Estimated Budget**: ${targetTrip.budget.total} (Optimal allocation: ${targetTrip.budget.allocated})\n` +
                  `- **Weather Outlook**: Clear and mild, with live weather tracking activated.\n\n` +
-                 `You can explore the day-by-day interactive timeline below or interact directly with the route map in the right workspace.`,
-        tools: defaultTools
+                 `You can explore the day-by-day interactive timeline below or interact directly with the route map in the right workspace.`
       });
 
       // Load itinerary card into DOM
