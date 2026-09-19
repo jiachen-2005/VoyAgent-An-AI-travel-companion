@@ -23,8 +23,8 @@ class VoyAgentApp {
   init() {
     // 1. Initialize Leaflet Map
     if (window.VoyAgentMap) {
-      this.map = new VoyAgentMap(this);
-      this.map.init("leaflet-map");
+      this.map = new VoyAgentMap("leaflet-map");
+      this.map.init();
     }
 
     // 2. Initialize Itinerary Engine
@@ -35,7 +35,9 @@ class VoyAgentApp {
     // 3. Initialize Chat & Agent Stream
     if (window.VoyAgentChat) {
       this.chat = new VoyAgentChat(this);
-      this.chat.init();
+      if (typeof this.chat.init === "function") {
+        this.chat.init();
+      }
     }
 
     // 4. Setup Theme Toggle

@@ -14,6 +14,10 @@ class VoyAgentChat {
     this.initEvents();
   }
 
+  init() {
+    // Lifecycle hook
+  }
+
   initEvents() {
     if (this.textarea) {
       this.textarea.addEventListener("keydown", (e) => {
