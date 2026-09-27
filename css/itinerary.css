@@ -378,6 +378,7 @@
   padding: var(--space-1) 0;
   font-size: 0.78rem;
   color: var(--text-muted);
+  cursor: pointer;
 }
 
 .transit-icon {
@@ -392,6 +393,34 @@
   border: 1px solid var(--border-subtle);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   color: var(--text-secondary);
+  transition: all var(--transition-fast);
+}
+
+.transit-step:hover .transit-info {
+  background: var(--primary-50);
+  border-color: var(--primary-300);
+  color: var(--primary-700);
+  transform: translateX(4px);
+  box-shadow: var(--shadow-xs);
+}
+
+[data-theme="dark"] .transit-step:hover .transit-info {
+  background: var(--bg-surface-alt);
+  color: var(--primary-300);
+}
+
+.transit-nav-hint {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--primary-600);
+  background: var(--primary-100);
+  padding: 1px 7px;
+  border-radius: var(--radius-full);
+}
+
+[data-theme="dark"] .transit-nav-hint {
+  background: rgba(14, 165, 233, 0.2);
+  color: var(--primary-300);
 }

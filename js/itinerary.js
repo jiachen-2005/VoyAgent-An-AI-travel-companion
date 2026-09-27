@@ -168,13 +168,18 @@ class VoyAgentItinerary {
               </div>
             </div>
 
-            ${slot.transitNext ? `
-              <div class="transit-step">
+            ${slot.transitNext && currentDayData.slots[index + 1] ? `
+              <div class="transit-step" 
+                   onclick="voyAgentApp.itinerary.highlightTransit('${slot.id}', '${currentDayData.slots[index + 1].id}')"
+                   title="Click to view road navigation on map">
                 <span class="transit-icon">↳</span>
                 <span class="transit-mode-icon" style="display: inline-flex; align-items: center; color: var(--primary-600); margin-right: 4px;">
                   ${window.VoyAgentIcons.get(slot.transitNext.mode || 'footprints', { size: 13 })}
                 </span>
-                <span class="transit-info">${slot.transitNext.info}</span>
+                <span class="transit-info">
+                  <span>${slot.transitNext.info}</span>
+                  <span class="transit-nav-hint">Map Route ↗</span>
+                </span>
               </div>
             ` : ''}
           `).join('')}
@@ -182,15 +187,24 @@ class VoyAgentItinerary {
       </div>
     `;
 
-    // Sync map route
+    // Sync map route with trip key and replanned status
     if (this.app.map) {
-      this.app.map.renderDayRoute(currentDayData.slots, this.activeDay);
+      const tripKey = this.currentTrip ? this.currentTrip.id : (this.app.currentTripKey || 'kyoto');
+      this.app.map.renderDayRoute(currentDayData.slots, this.activeDay, tripKey, this.isReplannedDay2);
     }
   }
 
   switchDay(dayNumber) {
     this.activeDay = dayNumber;
     this.render();
+  }
+
+  highlightTransit(fromId, toId) {
+    if (this.app.map) {
+      this.app.switchWorkspaceTab("map");
+      this.app.map.highlightSegment(fromId, toId, true);
+      this.app.showToast("Road route highlighted on map!");
+    }
   }
 
   locateOnMap(slotId, coords) {

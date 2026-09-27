@@ -29,57 +29,342 @@
 
 .map-floating-overlay {
   position: absolute;
-  top: 18px;
-  left: 18px;
-  right: 18px;
+  top: 14px;
+  left: 14px;
+  right: 14px;
   z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
   pointer-events: none;
+  gap: 10px;
 }
 
-.map-filter-chip {
+.map-nav-status-badge {
   pointer-events: auto;
   background: var(--bg-glass);
   backdrop-filter: blur(12px);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-full);
-  padding: 8px 18px;
-  font-size: 0.82rem;
+  padding: 6px 14px;
+  font-size: 0.8rem;
   font-weight: 700;
   color: var(--text-primary);
   box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10B981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-green 1.8s infinite;
+}
+
+@keyframes pulse-green {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 7px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.map-route-summary-pill {
+  pointer-events: auto;
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Leaflet Zoom Control Placement - Kept safely above bottom navigation bar */
+.leaflet-bottom.leaflet-right {
+  bottom: 60px !important;
+  right: 12px !important;
+}
+
+/* Bottom Legs Selector Bar */
+.map-bottom-legs-bar {
+  position: absolute;
+  bottom: 12px;
+  left: 8px;
+  right: 8px;
+  z-index: 10;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+}
+
+.legs-nav-container {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px;
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12), var(--shadow-sm);
+  max-width: 100%;
+}
+
+.legs-nav-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--border-subtle);
+  margin: 0 2px;
+  flex-shrink: 0;
+}
+
+.legs-scroll-track {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  max-width: 100%;
+}
+
+.legs-scroll-track::-webkit-scrollbar {
+  display: none;
+}
+
+.leg-pill-btn {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 4px 9px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all var(--transition-fast);
+}
+
+.leg-pill-btn:hover {
+  background: var(--primary-50);
+  border-color: var(--primary-400);
+  color: var(--primary-700);
+  transform: translateY(-1px);
+}
+
+[data-theme="dark"] .leg-pill-btn:hover {
+  background: var(--bg-surface-alt);
+  color: var(--primary-300);
+}
+
+.leg-pill-btn.active {
+  background: var(--primary-600);
+  border-color: var(--primary-600);
+  color: white;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35);
+}
+
+.leg-pill-btn.reset-btn {
+  background: var(--bg-surface);
+  border-color: var(--border-subtle);
+  color: var(--text-secondary);
+  font-weight: 700;
+}
+
+.leg-pill-btn.reset-btn:hover {
+  background: var(--primary-50);
+  border-color: var(--primary-300);
+  color: var(--primary-700);
+}
+
+[data-theme="dark"] .leg-pill-btn.reset-btn {
+  background: var(--bg-surface-alt);
+  color: var(--text-secondary);
+}
+
+[data-theme="dark"] .leg-pill-btn.reset-btn:hover {
+  color: var(--primary-300);
+}
+
+.leg-pill-btn.reset-btn.active {
+  background: var(--primary-600);
+  border-color: var(--primary-600);
+  color: white;
+}
+
+.route-hit-corridor {
+  cursor: pointer;
+}
+
+.leg-metric {
+  font-size: 0.68rem;
+  opacity: 0.8;
+  font-family: var(--font-mono);
 }
 
 /* Custom Leaflet Map Pin Styles */
+.custom-pin-wrapper {
+  position: relative;
+}
+
 .custom-map-marker {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50% 50% 50% 0;
-  background: linear-gradient(135deg, var(--accent-500), var(--accent-600));
   transform: rotate(-45deg);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
   border: 2px solid white;
   cursor: pointer;
-  transition: transform var(--transition-bounce);
+  transition: transform var(--transition-bounce), filter var(--transition-fast);
 }
 
 .custom-map-marker:hover {
-  transform: rotate(-45deg) scale(1.15);
+  transform: rotate(-45deg) scale(1.18);
+  filter: brightness(1.08);
+  z-index: 1000 !important;
+}
+
+/* Start Pin */
+.start-marker {
+  background: linear-gradient(135deg, #10B981, #059669);
+}
+
+.start-marker .marker-number {
+  font-size: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.start-marker .marker-pulse-ring {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid #10B981;
+  animation: marker-pulse 2s infinite;
+  pointer-events: none;
+}
+
+@keyframes marker-pulse {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* Waypoints */
+.waypoint-marker {
+  background: linear-gradient(135deg, #0284C7, #0369A1);
+}
+
+/* End Pin */
+.end-marker {
+  background: linear-gradient(135deg, #F59E0B, #DC2626);
+}
+
+.end-marker .marker-number {
+  font-size: 0.6rem;
+}
+
+/* Replanned Marker */
+.replanned-marker {
+  background: linear-gradient(135deg, #F59E0B, #D97706);
 }
 
 .marker-number {
   transform: rotate(45deg);
   color: white;
   font-weight: 800;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
+  font-family: var(--font-heading);
 }
 
-/* Custom Popup */
+/* Route Segment Tooltip */
+.leaflet-nav-tooltip {
+  background: var(--bg-surface) !important;
+  color: var(--text-primary) !important;
+  border-radius: var(--radius-md) !important;
+  border: 1px solid var(--border-subtle) !important;
+  box-shadow: var(--shadow-lg) !important;
+  padding: 8px 12px !important;
+  font-family: var(--font-sans) !important;
+}
+
+.leaflet-nav-tooltip:before {
+  border-top-color: var(--bg-surface) !important;
+}
+
+.map-route-tooltip {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.tooltip-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tooltip-badge {
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.04em;
+}
+
+.tooltip-badge.walking {
+  background: #E0F2FE;
+  color: #0284C7;
+}
+
+.tooltip-badge.transit {
+  background: #ECFDF5;
+  color: #059669;
+}
+
+.tooltip-badge.driving {
+  background: #EFF6FF;
+  color: #1D4ED8;
+}
+
+.tooltip-leg-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.tooltip-info-row {
+  font-size: 0.74rem;
+  color: var(--text-secondary);
+}
+
+.tooltip-meta-row {
+  font-size: 0.72rem;
+  color: var(--primary-600);
+  font-weight: 600;
+  display: flex;
+  gap: 4px;
+}
+
+/* Custom Popup Styles */
 .leaflet-popup-content-wrapper {
   background: var(--bg-surface) !important;
   color: var(--text-primary) !important;
@@ -96,11 +381,21 @@
   line-height: 1.5 !important;
 }
 
-.popup-title {
+.popup-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.popup-role-pill {
+  font-size: 0.68rem;
   font-weight: 700;
-  font-size: 0.98rem;
-  color: var(--text-primary);
-  margin-bottom: 3px;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface-alt);
+  color: var(--text-secondary);
 }
 
 .popup-tag {
@@ -109,11 +404,37 @@
   font-weight: 600;
 }
 
-.popup-cost {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-top: 6px;
+.popup-title {
+  font-weight: 700;
+  font-size: 0.98rem;
+  color: var(--text-primary);
+  margin-bottom: 3px;
+}
+
+.btn-popup-nav {
+  width: 100%;
+  background: var(--primary-50);
+  border: 1px solid var(--primary-200);
+  border-radius: var(--radius-md);
+  padding: 6px 10px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--primary-700);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.btn-popup-nav:hover {
+  background: var(--primary-600);
+  color: white;
+  border-color: var(--primary-600);
+}
+
+[data-theme="dark"] .btn-popup-nav {
+  background: var(--bg-surface-alt);
+  border-color: var(--border-medium);
+  color: var(--primary-400);
 }
 
 /* 2. Budget Guard View - Generous Spacing */
