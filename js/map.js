@@ -8,6 +8,7 @@ class VoyAgentMap {
   constructor(containerId) {
     this.containerId = containerId;
     this.map = null;
+    this.tileLayer = null;
     this.markersGroup = null;
     this.routesGroup = null;
     this.segmentLayers = new Map();
@@ -26,18 +27,23 @@ class VoyAgentMap {
       zoomControl: false
     }).setView([35.0116, 135.7681], 13);
 
-    // Clean OpenStreetMap tiles
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    // High-performance clean daytime street map tiles (Unified daylight view across all themes)
+    const daylightTileUrl = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}";
+    this.tileLayer = L.tileLayer(daylightTileUrl, {
+      attribution: '&copy; <a href="https://www.esri.com/">Esri</a> &middot; OpenStreetMap contributors',
       maxZoom: 19
     }).addTo(this.map);
 
-    // Zoom control at bottom right
+    // Zoom control at bottom right (adjusted above navigation bar via CSS)
     L.control.zoom({ position: 'bottomright' }).addTo(this.map);
 
     // Layer groups for routes (bottom) and markers (top)
     this.routesGroup = L.featureGroup().addTo(this.map);
     this.markersGroup = L.featureGroup().addTo(this.map);
+  }
+
+  updateTheme(theme) {
+    // Keep daylight street map style consistently active across all themes
   }
 
   renderDayRoute(slots, dayNumber = 1, tripKey = "kyoto", isReplanned = false) {

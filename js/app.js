@@ -120,6 +120,9 @@ class VoyAgentApp {
     const savedTheme = localStorage.getItem("voyagent-theme") || "light";
     document.documentElement.setAttribute("data-theme", savedTheme);
     this.updateThemeButton(savedTheme);
+    if (this.map && typeof this.map.updateTheme === "function") {
+      this.map.updateTheme(savedTheme);
+    }
   }
 
   toggleTheme() {
@@ -128,6 +131,9 @@ class VoyAgentApp {
     document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("voyagent-theme", next);
     this.updateThemeButton(next);
+    if (this.map && typeof this.map.updateTheme === "function") {
+      this.map.updateTheme(next);
+    }
   }
 
   updateThemeButton(theme) {
