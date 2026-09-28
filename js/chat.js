@@ -77,7 +77,7 @@ class VoyAgentChat {
     const row = document.createElement("div");
     row.className = "message-row agent";
     row.innerHTML = `
-      <div class="message-avatar agent-avatar">VA</div>
+      <div class="message-avatar agent-avatar">V</div>
       <div class="message-content">
         <div class="message-bubble">${this.formatMarkdown(content)}</div>
       </div>
@@ -98,7 +98,7 @@ class VoyAgentChat {
     const typingRow = document.createElement("div");
     typingRow.className = "message-row agent typing-row";
     typingRow.innerHTML = `
-      <div class="message-avatar agent-avatar">VA</div>
+      <div class="message-avatar agent-avatar">V</div>
       <div class="message-content">
         <div class="message-bubble typing-dots">
           <span class="dot"></span>
