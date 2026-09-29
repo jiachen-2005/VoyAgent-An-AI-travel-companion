@@ -14,6 +14,10 @@ class VoyAgentChat {
     this.initEvents();
   }
 
+  init() {
+    // Lifecycle hook
+  }
+
   initEvents() {
     if (this.textarea) {
       this.textarea.addEventListener("keydown", (e) => {
@@ -69,43 +73,21 @@ class VoyAgentChat {
     this.scrollToBottom();
   }
 
-  appendAgentMessageWithTools({ content, tools = [] }) {
+  appendAgentMessage(content) {
     const row = document.createElement("div");
     row.className = "message-row agent";
-
-    let toolsHtml = "";
-    if (tools.length > 0) {
-      toolsHtml = `
-        <div class="tool-execution-box">
-          <div class="tool-header-toggle">
-            <span>✨ Trip Preparation & Planning Steps</span>
-            <span class="tool-badge-counter">${tools.length} Checks Completed</span>
-          </div>
-          <div class="tool-steps-list">
-            ${tools.map(t => `
-              <div class="tool-step-item">
-                <div class="step-left">
-                  <span class="step-icon">${t.icon || '✓'}</span>
-                  <span>${t.step}</span>
-                </div>
-                <span class="step-status-ok">✔ ${t.detail}</span>
-              </div>
-            `).join('')}
-          </div>
-        </div>
-      `;
-    }
-
     row.innerHTML = `
-      <div class="message-avatar agent-avatar">VA</div>
+      <div class="message-avatar agent-avatar">V</div>
       <div class="message-content">
-        ${toolsHtml}
         <div class="message-bubble">${this.formatMarkdown(content)}</div>
       </div>
     `;
-
     this.messagesContainer.appendChild(row);
     this.scrollToBottom();
+  }
+
+  appendAgentMessageWithTools({ content }) {
+    this.appendAgentMessage(content);
   }
 
   simulateAgentResponse(promptText) {
@@ -116,7 +98,7 @@ class VoyAgentChat {
     const typingRow = document.createElement("div");
     typingRow.className = "message-row agent typing-row";
     typingRow.innerHTML = `
-      <div class="message-avatar agent-avatar">VA</div>
+      <div class="message-avatar agent-avatar">V</div>
       <div class="message-content">
         <div class="message-bubble typing-dots">
           <span class="dot"></span>
@@ -129,8 +111,16 @@ class VoyAgentChat {
     this.scrollToBottom();
 
     // Determine context
-    const isMelbourne = promptText.toLowerCase().includes("melbourne");
-    const tripKey = isMelbourne ? "melbourne" : "kyoto";
+    const lowerPrompt = promptText.toLowerCase();
+    const isMelbourne = lowerPrompt.includes("melbourne");
+    const isKL = lowerPrompt.includes("kuala lumpur") || lowerPrompt.includes("kl") || promptText.includes("吉隆坡") || lowerPrompt.includes("malaysia") || promptText.includes("马来西亚");
+    
+    let tripKey = "kyoto";
+    if (isKL) {
+      tripKey = "kl";
+    } else if (isMelbourne) {
+      tripKey = "melbourne";
+    }
     const targetTrip = window.VOYAGENT_DATA.trips[tripKey];
 
     setTimeout(() => {
@@ -139,21 +129,16 @@ class VoyAgentChat {
         typingRow.parentNode.removeChild(typingRow);
       }
 
-      // Friendly travel planning steps (No developer code syntax)
-      const defaultTools = [
-        { icon: "📍", step: `Curated top-rated cultural highlights & dining for ${targetTrip.destination}`, detail: "16 places selected" },
-        { icon: "🌤️", step: "Checked seasonal weather forecast & rain probability", detail: "Outlook analyzed" },
-        { icon: "🗺️", step: "Mapped scenic walking routes and transit connections", detail: "Routes optimized" },
-        { icon: "💰", step: "Balanced estimated costs with your target budget", detail: `Within ${targetTrip.budget.total}` }
-      ];
+      const weatherHighlight = tripKey === "kl" 
+        ? "Tropical climate (31-33°C), with live monsoon rain tracking and sheltered underground rerouting enabled."
+        : "Clear and mild, with live weather tracking activated.";
 
       this.appendAgentMessageWithTools({
         content: `I have synthesized your preferences and created a comprehensive travel blueprint for **${targetTrip.destination}**!\n\n` +
                  `- **Duration**: ${targetTrip.duration}\n` +
                  `- **Estimated Budget**: ${targetTrip.budget.total} (Optimal allocation: ${targetTrip.budget.allocated})\n` +
-                 `- **Weather Outlook**: Clear and mild, with live weather tracking activated.\n\n` +
-                 `You can explore the day-by-day interactive timeline below or interact directly with the route map in the right workspace.`,
-        tools: defaultTools
+                 `- **Weather Outlook**: ${weatherHighlight}\n\n` +
+                 `You can explore the day-by-day interactive timeline below or interact directly with the route map in the right workspace.`
       });
 
       // Load itinerary card into DOM

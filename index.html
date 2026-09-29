@@ -16,11 +16,12 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
   <!-- Modular CSS Design System -->
-  <link rel="stylesheet" href="css/tokens.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/chat.css">
-  <link rel="stylesheet" href="css/itinerary.css">
-  <link rel="stylesheet" href="css/workspace.css">
+  <link rel="stylesheet" href="css/tokens.css?v=1.1">
+  <link rel="stylesheet" href="css/layout.css?v=1.1">
+  <link rel="stylesheet" href="css/chat.css?v=1.1">
+  <link rel="stylesheet" href="css/itinerary.css?v=1.1">
+  <link rel="stylesheet" href="css/workspace.css?v=1.1">
+  <link rel="stylesheet" href="css/reviews.css?v=1.1">
 </head>
 <body>
 
@@ -43,7 +44,7 @@
 
       <div class="header-center">
         <div class="trip-title-chip">
-          <span style="font-size: 1rem;">✈️</span>
+          <svg class="svg-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
           <span id="header-trip-title">Kyoto Autumn Cultural Odyssey</span>
         </div>
 
@@ -55,7 +56,9 @@
 
       <div class="header-right">
         <button class="btn-pill" id="btn-theme-toggle" title="Toggle Dark/Light Mode">
-          <span id="theme-icon">☀️</span>
+          <span id="theme-icon" style="display: inline-flex; align-items: center;">
+            <svg class="svg-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="4.22" x2="19.78" y2="5.64"></line></svg>
+          </span>
           <span style="font-size: 0.78rem;">Theme</span>
         </button>
 
@@ -90,19 +93,31 @@
             </div>
             <div class="persona-grid">
               <div class="persona-chip active" data-persona="Solo Backpacker">
-                <span style="font-weight: 700;">🎒 Solo/Couple</span>
+                <span style="font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                  <svg class="svg-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                  Solo / Couple
+                </span>
                 <span style="font-size: 0.68rem; opacity: 0.8;">Cultural & Flexible</span>
               </div>
               <div class="persona-chip" data-persona="Foodie Explorer">
-                <span style="font-weight: 700;">🍜 Foodie</span>
+                <span style="font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                  <svg class="svg-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3v7"></path></svg>
+                  Foodie Focus
+                </span>
                 <span style="font-size: 0.68rem; opacity: 0.8;">Local Dining Focus</span>
               </div>
               <div class="persona-chip" data-persona="Family Leisure">
-                <span style="font-weight: 700;">👨‍👩‍👧 Family Relaxed</span>
+                <span style="font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                  <svg class="svg-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                  Family Leisure
+                </span>
                 <span style="font-size: 0.68rem; opacity: 0.8;">Low Pace & Comfort</span>
               </div>
               <div class="persona-chip" data-persona="Fast-Paced Business">
-                <span style="font-weight: 700;">💼 Business Ext</span>
+                <span style="font-weight: 700; display: flex; align-items: center; gap: 6px;">
+                  <svg class="svg-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+                  Business Travel
+                </span>
                 <span style="font-size: 0.68rem; opacity: 0.8;">Time-Sensitive</span>
               </div>
             </div>
@@ -112,11 +127,11 @@
           <div>
             <div class="sidebar-section-title">
               <span>Saved Journeys</span>
-              <span style="font-size: 0.65rem;">2 Sessions</span>
+              <span style="font-size: 0.65rem;">3 Sessions</span>
             </div>
             <div class="trip-history-list">
               <div class="trip-item active" data-trip="kyoto" onclick="voyAgentApp.loadTrip('kyoto')">
-                <div class="trip-item-title">🇯🇵 Kyoto Autumn Odyssey</div>
+                <div class="trip-item-title"><span class="country-badge">JPN</span> Kyoto Autumn Odyssey</div>
                 <div class="trip-item-meta">
                   <span>4 Days</span>
                   <span>·</span>
@@ -127,13 +142,24 @@
               </div>
 
               <div class="trip-item" data-trip="melbourne" onclick="voyAgentApp.loadTrip('melbourne')">
-                <div class="trip-item-title">🇦🇺 Melbourne & Ocean Road</div>
+                <div class="trip-item-title"><span class="country-badge">AUS</span> Melbourne & Ocean Road</div>
                 <div class="trip-item-meta">
                   <span>3 Days</span>
                   <span>·</span>
                   <span>A$1,200</span>
                   <span>·</span>
                   <span>Scenic Route</span>
+                </div>
+              </div>
+
+              <div class="trip-item" data-trip="kl" onclick="voyAgentApp.loadTrip('kl')">
+                <div class="trip-item-title"><span class="country-badge">MYS</span> Kuala Lumpur & Skyline</div>
+                <div class="trip-item-meta">
+                  <span>3 Days</span>
+                  <span>·</span>
+                  <span>RM 2,500</span>
+                  <span>·</span>
+                  <span>Heritage & Food</span>
                 </div>
               </div>
             </div>
@@ -156,7 +182,8 @@
             <!-- Welcome Hero (Shown on blank or new trip) -->
             <div class="welcome-hero" id="welcome-hero-state" style="display: none;">
               <div class="hero-badge-pill">
-                <span>✨ Group PCS-19</span>
+                <svg class="svg-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 5.6L20 10l-5.6 2.4L12 18l-2.4-5.6L4 10l5.6-2.4L12 2z"></path></svg>
+                <span>Group PCS-19</span>
                 <span>·</span>
                 <span>Personal AI Travel Companion</span>
               </div>
@@ -170,19 +197,33 @@
               <!-- Prompt suggestion cards -->
               <div class="suggested-prompts-grid">
                 <div class="prompt-card" onclick="voyAgentApp.chat.sendPresetPrompt('Plan a 4-day autumn cultural journey to Kyoto under ¥180,000 for a couple, focusing on temples and local food.')">
-                  <div class="prompt-icon">⛩️</div>
+                  <div class="prompt-icon">
+                    <svg class="svg-icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="22" x2="22" y2="22"></line><line x1="12" y1="2" x2="20" y2="7"></line><line x1="12" y1="2" x2="4" y2="7"></line><polyline points="4 7 20 7 20 10 4 10"></polyline><line x1="6" y1="10" x2="6" y2="22"></line><line x1="10" y1="10" x2="10" y2="22"></line><line x1="14" y1="10" x2="14" y2="22"></line><line x1="18" y1="10" x2="18" y2="22"></line></svg>
+                  </div>
                   <div class="prompt-headline">4-Day Kyoto Culture & Gastronomy</div>
                   <div class="prompt-desc">Higashiyama temples, Gion dining, and Arashiyama bamboo path with weather guard.</div>
                 </div>
 
                 <div class="prompt-card" onclick="voyAgentApp.chat.sendPresetPrompt('Plan a 3-day Melbourne weekend road trip including specialty coffee and the Great Ocean Road sunset.')">
-                  <div class="prompt-icon">☕</div>
+                  <div class="prompt-icon">
+                    <svg class="svg-icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                  </div>
                   <div class="prompt-headline">3-Day Melbourne & Coastal Drive</div>
                   <div class="prompt-desc">CBD laneway coffee crawl, Queen Vic market, and Twelve Apostles coastal tour.</div>
                 </div>
 
+                <div class="prompt-card" onclick="voyAgentApp.chat.sendPresetPrompt('Plan a 3-day Kuala Lumpur cultural and foodie journey under RM 2,500, exploring Batu Caves, Petronas Twin Towers, and Jalan Alor street dining.')">
+                  <div class="prompt-icon">
+                    <svg class="svg-icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path><line x1="9" y1="9" x2="9" y2="9.01"></line><line x1="9" y1="13" x2="9" y2="13.01"></line><line x1="9" y1="17" x2="9" y2="17.01"></line></svg>
+                  </div>
+                  <div class="prompt-headline">3-Day Kuala Lumpur Culture & Skyline</div>
+                  <div class="prompt-desc">Petronas Twin Towers, Batu Caves rainbow stairs, and Jalan Alor night street food.</div>
+                </div>
+
                 <div class="prompt-card" onclick="voyAgentApp.chat.sendPresetPrompt('Show me how VoyAgent adapts when sudden afternoon rain hits an outdoor mountain itinerary.')">
-                  <div class="prompt-icon">⚡</div>
+                  <div class="prompt-icon">
+                    <svg class="svg-icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="16" y1="13" x2="16" y2="21"></line><line x1="8" y1="13" x2="8" y2="21"></line><line x1="12" y1="15" x2="12" y2="23"></line><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path></svg>
+                  </div>
                   <div class="prompt-headline">Dynamic Weather Replanning Demo</div>
                   <div class="prompt-desc">Simulate heavy rain and observe how AI swaps outdoor climbs with sheltered museums.</div>
                 </div>
@@ -191,49 +232,11 @@
 
             <!-- Agent Initial Welcome Message -->
             <div class="message-row agent">
-              <div class="message-avatar agent-avatar">VA</div>
+              <div class="message-avatar agent-avatar">V</div>
               <div class="message-content">
-                <!-- Thought & Planning Steps -->
-                <div class="tool-execution-box">
-                  <div class="tool-header-toggle">
-                    <span>✨ Trip Preparation & Planning Steps</span>
-                    <span class="tool-badge-counter">4 Checks Completed</span>
-                  </div>
-                  <div class="tool-steps-list">
-                    <div class="tool-step-item">
-                      <div class="step-left">
-                        <span class="step-icon">🌤️</span>
-                        <span>Local weather forecast & seasonal climate verified</span>
-                      </div>
-                      <span class="step-status-ok">✔ Day 2 rain alert noted</span>
-                    </div>
-                    <div class="tool-step-item">
-                      <div class="step-left">
-                        <span class="step-icon">📍</span>
-                        <span>Curated top-rated cultural highlights & local dining</span>
-                      </div>
-                      <span class="step-status-ok">✔ 13 places selected</span>
-                    </div>
-                    <div class="tool-step-item">
-                      <div class="step-left">
-                        <span class="step-icon">🗺️</span>
-                        <span>Scenic walking paths and transit connections mapped</span>
-                      </div>
-                      <span class="step-status-ok">✔ Routes optimized</span>
-                    </div>
-                    <div class="tool-step-item">
-                      <div class="step-left">
-                        <span class="step-icon">💰</span>
-                        <span>Accommodation & activity expenses balanced</span>
-                      </div>
-                      <span class="step-status-ok">✔ Within planned budget</span>
-                    </div>
-                  </div>
-                </div>
-
                 <div class="message-bubble">
                   Hello! I'm <strong>VoyAgent</strong>, your personal AI travel companion. I've curated a thoughtful <strong>4-Day Kyoto Cultural Odyssey</strong> below, complete with live route mapping and budget breakdown.<br><br>
-                  💡 <em>Tip: Try clicking <strong>"Simulate Heavy Rain (14:00)"</strong> on Day 2 to see how I automatically adjust outdoor activities to sheltered alternatives!</em>
+                  <span style="color: var(--primary-600); font-weight: 700;">Tip:</span> <em>Try clicking <strong>"Simulate Afternoon Rain (14:00)"</strong> on Day 2 to see how I automatically adjust outdoor activities to sheltered alternatives!</em>
                 </div>
               </div>
             </div>
@@ -260,16 +263,20 @@
               <div class="input-actions-row">
                 <div class="tool-toggles">
                   <span class="tool-chip-toggle active" title="Automatically track weather disruptions">
-                    <span>⛅</span> Weather Guard
+                    <svg class="svg-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="M20 12h2"></path><path d="m19.07 4.93-1.41 1.41"></path><path d="M15.947 12.65a4 4 0 0 0-5.925-4.128"></path><path d="M13 22H7a5 5 0 1 1 4.9-6H13a3 3 0 0 1 0 6Z"></path></svg>
+                    Weather Guard
                   </span>
                   <span class="tool-chip-toggle active" title="Calculate transit times & routes">
-                    <span>🗺️</span> Live Routing
+                    <svg class="svg-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="19" r="3"></circle><path d="M9 19h8.5a4.5 4.5 0 0 0 0-9H6"></path><path d="M18 10V5a2 2 0 0 0-2-2H9"></path><circle cx="6" cy="5" r="3"></circle></svg>
+                    Live Routing
                   </span>
                   <span class="tool-chip-toggle active" title="Keep spending within budget limits">
-                    <span>💰</span> Budget Engine
+                    <svg class="svg-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line><circle cx="16" cy="15" r="1.5"></circle></svg>
+                    Budget Engine
                   </span>
                   <span class="tool-chip-toggle active" title="Instant adjustment to in-trip changes">
-                    <span>⚡</span> Dynamic Replanning
+                    <svg class="svg-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"></polyline><polyline points="1 20 1 14 7 14"></polyline><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                    Dynamic Replanning
                   </span>
                 </div>
                 <div style="font-size: 0.72rem; color: var(--text-muted);">
@@ -286,13 +293,16 @@
         <div class="workspace-header">
           <div class="workspace-nav-tabs">
             <button class="tab-btn active" data-tab="map">
-              <span>🗺️ Route Map</span>
+              <svg class="svg-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon><line x1="8" y1="2" x2="8" y2="18"></line><line x1="16" y1="6" x2="16" y2="22"></line></svg>
+              <span>Route Map</span>
             </button>
             <button class="tab-btn" data-tab="budget">
-              <span>💰 Budget Guard</span>
+              <svg class="svg-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line><circle cx="16" cy="15" r="1.5"></circle></svg>
+              <span>Budget Guard</span>
             </button>
             <button class="tab-btn" data-tab="weather">
-              <span>⛅ Weather Radar</span>
+              <svg class="svg-icon icon-xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="16" y1="13" x2="16" y2="21"></line><line x1="8" y1="13" x2="8" y2="21"></line><line x1="12" y1="15" x2="12" y2="23"></line><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path></svg>
+              <span>Weather Radar</span>
             </button>
           </div>
         </div>
@@ -301,9 +311,17 @@
           <!-- Tab 1: Interactive Map -->
           <div class="workspace-view active" id="map-view-container">
             <div id="leaflet-map"></div>
-            <div class="map-floating-overlay">
-              <span class="map-filter-chip">📍 Synchronized with Itinerary</span>
+            <div class="map-floating-overlay" id="map-floating-overlay">
+              <div class="map-nav-status-badge">
+                <span class="nav-pulse-dot"></span>
+                <span id="map-nav-title">Road-Snapped Navigation</span>
+              </div>
+              <div class="map-route-summary-pill" id="map-route-summary">
+                <span id="map-route-stats">Synchronizing route...</span>
+              </div>
             </div>
+            <!-- Bottom Legs Preview Bar -->
+            <div class="map-bottom-legs-bar" id="map-bottom-legs-bar"></div>
           </div>
 
           <!-- Tab 2: Budget Guard -->
@@ -321,14 +339,19 @@
     </div>
   </div>
 
+  <!-- Review & Rating Modal Container -->
+  <div id="review-modal-root"></div>
+
   <!-- Toast Notification Container -->
   <div class="toast-container" id="toast-container"></div>
 
   <!-- Application Logic Scripts -->
-  <script src="js/mock-data.js"></script>
-  <script src="js/map.js"></script>
-  <script src="js/itinerary.js"></script>
-  <script src="js/chat.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/icons.js?v=1.1"></script>
+  <script src="js/mock-data.js?v=1.1"></script>
+  <script src="js/routes-data.js?v=1.1"></script>
+  <script src="js/map.js?v=1.2"></script>
+  <script src="js/itinerary.js?v=1.1"></script>
+  <script src="js/chat.js?v=1.1"></script>
+  <script src="js/app.js?v=1.1"></script>
 </body>
 </html>
