@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VoyAgent · Plan Your Trip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/public.css">
+</head>
+<body class="public-page">
+  <div class="public-shell">
+    <header class="public-header">
+      <a class="brand-link" href="planner.html">
+        <div class="brand-logo">V</div>
+        <span class="brand-name">VoyAgent</span>
+        <span class="brand-sub">AI Travel Companion</span>
+      </a>
+      <nav class="public-nav">
+        <a class="active" href="planner.html">Plan a Trip</a>
+        <a href="planner.html">My Trips</a>
+      </nav>
+      <div class="header-user">
+        <span id="user-greeting" style="font-size:.85rem;color:var(--text-secondary);"></span>
+        <button class="pill-button" id="logout-btn">Logout</button>
+      </div>
+    </header>
+
+    <main class="planner-page">
+      <section class="planner-form-side">
+        <div class="planner-box">
+          <div class="planner-heading">
+            <div class="eyebrow">Your AI Travel Companion</div>
+            <h1 class="planner-title">Plan <span>smarter.</span><br>Travel <span>better.</span></h1>
+            <p class="lead">
+              Tell us your Malaysia travel preferences and VoyAgent will prepare a personalised itinerary for you.
+            </p>
+          </div>
+
+          <div class="planner-card">
+            <form id="trip-planner-form" class="form-grid">
+              <div class="field full">
+                <label for="destination">Where do you want to go?</label>
+                <select id="destination" class="control" required>
+                    <option value="" disabled selected>Select a destination</option>
+
+                    <option value="Kuala Lumpur">Kuala Lumpur</option>
+                    <option value="Penang">Penang</option>
+                    <option value="Langkawi">Langkawi</option>
+                    <option value="Malacca">Malacca</option>
+                    <option value="Johor Bahru">Johor Bahru</option>
+                    <option value="Kota Kinabalu">Kota Kinabalu</option>
+                    <option value="Kuching">Kuching</option>
+                    <option value="Cameron Highlands">Cameron Highlands</option>
+                    <option value="Genting Highlands">Genting Highlands</option>
+                    <option value="Ipoh">Ipoh</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="start-date">Start Date</label>
+                <input id="start-date" class="control" type="date">
+              </div>
+
+              <div class="field">
+                <label for="end-date">End Date</label>
+                <input id="end-date" class="control" type="date">
+              </div>
+
+              <div class="field">
+                <label for="travel-style">Travel Style</label>
+                <select id="travel-style" class="control">
+                  <option>Balanced</option>
+                  <option>Relaxed</option>
+                  <option>Fast-paced</option>
+                  <option>Food-focused</option>
+                  <option>Culture-focused</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="travellers">Number of Travellers</label>
+                <select id="travellers" class="control">
+                  <option value="1">1 traveller</option>
+                  <option value="2" selected>2 travellers</option>
+                  <option value="3">3 travellers</option>
+                  <option value="4">4 travellers</option>
+                  <option value="5">5+ travellers</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="budget">Budget (MYR)</label>
+                <div class="budget-control">
+                  <span class="budget-prefix">RM</span>
+                  <input id="budget" class="control" type="number" min="0"
+                         placeholder="e.g. 3000">
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="interest">Main Interest</label>
+                <select id="interest" class="control">
+                  <option>Food</option>
+                  <option>Nature</option>
+                  <option>Shopping</option>
+                  <option>Culture</option>
+                  <option>Adventure</option>
+                  <option>Nightlife</option>
+                  <option>Family Activities</option>
+                </select>
+              </div>
+
+              <button class="main-action full planner-submit" type="submit">
+                <span>Plan My Trip with AI</span>
+                <span aria-hidden="true">→</span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="planner-visual">
+        <div class="travel-orbit">
+          <div class="orbit-plane">✈️</div>
+          <div class="orbit-card one">🇲🇾 Kuala Lumpur<br><small>City & culture</small></div>
+          <div class="orbit-card two">🏝️ Langkawi<br><small>Island escape</small></div>
+          <div class="orbit-card three">🍜 Penang<br><small>Food & heritage</small></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="js/planner.js"></script>
+</body>
+</html>
