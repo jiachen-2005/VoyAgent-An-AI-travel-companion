@@ -1,23 +1,132 @@
+const destinationGroups = [
+  [
+    {
+      name: "Kuala Lumpur",
+      type: "City & Culture",
+      image: "assets/klcc.png"
+    },
+    {
+      name: "Penang",
+      type: "Food & Heritage",
+      image: "assets/penang.png"
+    },
+    {
+      name: "Langkawi",
+      type: "Island Escape",
+      image: "assets/Langkawi.png"
+    }
+  ],
 
-(() => {
-  if(localStorage.getItem("voyagent-demo-authenticated")!=="true"){location.replace("index.html");return;}
-  const user=JSON.parse(localStorage.getItem("voyagent-demo-user")||"{}");
-  const g=document.getElementById("user-greeting"); if(g) g.textContent=user.name?`Hi, ${user.name}`:"";
-  document.getElementById("logout-btn").addEventListener("click",()=>{localStorage.removeItem("voyagent-demo-authenticated");localStorage.removeItem("voyagent-demo-user");location.href="index.html";});
-  document.getElementById("trip-planner-form").addEventListener("submit",e=>{
-    e.preventDefault();
-    const d={
-      destination:document.getElementById("destination").value.trim(),
-      startDate:document.getElementById("start-date").value,
-      endDate:document.getElementById("end-date").value,
-      travelStyle:document.getElementById("travel-style").value,
-      travellers:document.getElementById("travellers").value,
-      budget:document.getElementById("budget").value,
-      currency:"MYR",
-      interests:[document.getElementById("interest").value]
-    };
-    d.travelDates=[d.startDate,d.endDate].filter(Boolean).join(" to ");
-    localStorage.setItem("voyagent-pending-trip",JSON.stringify(d));
-    location.href="app.html?newTrip=1";
+  [
+    {
+      name: "Malacca",
+      type: "History & Heritage",
+      image: "assets/Malacca.png"
+    },
+    {
+      name: "Kota Kinabalu",
+      type: "Nature & Adventure",
+      image: "assets/KotaKinabalu.png"
+    },
+    {
+      name: "Kuching",
+      type: "Culture & Nature",
+      image: "assets/Kuching.png"
+    }
+  ]
+];
+
+const grid = document.getElementById("destinations-grid");
+const prevButton = document.getElementById("destination-prev");
+const nextButton = document.getElementById("destination-next");
+const dotsContainer = document.getElementById("destination-dots");
+
+let currentGroup = 0;
+let slideTimer;
+
+function renderDestinations() {
+  grid.innerHTML = destinationGroups[currentGroup]
+    .map(destination => `
+      <article class="destination-photo-card">
+
+        <img
+          src="${destination.image}"
+          alt="${destination.name}"
+          class="destination-photo"
+        >
+
+        <div class="destination-overlay">
+          <div class="destination-card-text">
+
+            <span>${destination.type}</span>
+            <h3>${destination.name}</h3>
+
+            <button
+              class="destination-explore"
+              type="button">
+              Explore →
+            </button>
+
+          </div>
+        </div>
+
+      </article>
+    `)
+    .join("");
+
+  renderDots();
+}
+
+function renderDots() {
+  dotsContainer.innerHTML = destinationGroups
+    .map((_, index) => `
+      <button
+        class="destination-dot ${index === currentGroup ? "active" : ""}"
+        data-index="${index}"
+        type="button"
+        aria-label="Show destination group ${index + 1}">
+      </button>
+    `)
+    .join("");
+
+  document.querySelectorAll(".destination-dot").forEach(dot => {
+    dot.addEventListener("click", () => {
+      currentGroup = Number(dot.dataset.index);
+      renderDestinations();
+      restartTimer();
+    });
   });
-})();
+}
+
+function nextGroup() {
+  currentGroup =
+    (currentGroup + 1) % destinationGroups.length;
+
+  renderDestinations();
+}
+
+function previousGroup() {
+  currentGroup =
+    (currentGroup - 1 + destinationGroups.length)
+    % destinationGroups.length;
+
+  renderDestinations();
+}
+
+function restartTimer() {
+  clearInterval(slideTimer);
+  slideTimer = setInterval(nextGroup, 8000);
+}
+
+nextButton.addEventListener("click", () => {
+  nextGroup();
+  restartTimer();
+});
+
+prevButton.addEventListener("click", () => {
+  previousGroup();
+  restartTimer();
+});
+
+renderDestinations();
+restartTimer();
