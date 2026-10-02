@@ -214,6 +214,35 @@
             </div>
 
 
+            <!-- CONFIRM PASSWORD -->
+            <div class="field">
+              <label for="register-confirm-password">Confirm password</label>
+
+              <div class="password-wrap">
+
+                <input
+                  id="register-confirm-password"
+                  class="control"
+                  type="password"
+                  placeholder="Re-enter your password"
+                  required>
+
+                <button
+                  class="eye-button"
+                  type="button"
+                  data-toggle-password="register-confirm-password">
+                  Show
+                </button>
+
+              </div>
+            
+              <p
+                id="password-error"
+                class="field-error">
+              </p>
+            </div>
+
+
             <button
               class="main-action"
               type="submit">
@@ -261,6 +290,59 @@
         </section>
 
     </main>
+
+        <!-- PASSWORD ERROR POPUP -->
+    <div id="password-modal" class="password-modal">
+
+      <div class="password-modal-backdrop"></div>
+
+      <div class="password-modal-box">
+
+        <div class="password-modal-icon">!</div>
+
+        <h2>Passwords do not match</h2>
+
+        <p>
+          Please make sure your Create password and
+          Confirm password are the same.
+        </p>
+
+        <button
+          id="password-modal-ok"
+          type="button">
+          OK
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- ADD SUCCESS POPUP HERE -->
+    <div id="success-modal" class="success-modal">
+
+      <div class="success-modal-backdrop"></div>
+
+      <div class="success-modal-box">
+
+        <div class="success-modal-icon">✓</div>
+
+        <h2>Account created successfully!</h2>
+
+        <p>
+          Welcome to VoyAgent. Your account is ready.
+        </p>
+
+        <button
+          id="success-modal-continue"
+          type="button">
+          Start Planning →
+        </button>
+
+      </div>
+
+    </div>
+
 
   </div>
 
