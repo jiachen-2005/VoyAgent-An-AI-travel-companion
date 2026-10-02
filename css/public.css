@@ -610,7 +610,7 @@ body.auth-page {
 
 /* Final planner layout fixes */
 .planner-box {
-  width: min(100%, 680px);
+  width: min(100%,50px);
 }
 
 .form-grid {
@@ -1040,7 +1040,7 @@ body.auth-page {
 /* Tighter form */
 .form-grid {
   column-gap: 16px;
-  row-gap: 12px;
+  row-gap: 25px;
 }
 
 /* Labels closer to boxes */
@@ -1269,4 +1269,20 @@ body.auth-page {
 
   font-size: 1.05rem;
   line-height: 1.6;
+}
+
+
+/* Same width for all 6 small planner boxes */
+.form-grid .field:not(.full) > .control,
+.form-grid .field:not(.full) > .budget-control {
+  width: 80%;
+}
+
+/* Make destination box narrower */
+.form-grid .field.full .control {
+  width: 90%;
+}
+
+.form-grid .field:not(.full) .budget-control .control {
+  width: 100%;
 }

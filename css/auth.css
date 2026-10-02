@@ -625,7 +625,7 @@ body.auth-page {
 }
 
 .auth-panel {
-  gap: 10px;
+  gap: 20px;
 }
 
 .auth-panel .field {
@@ -1200,4 +1200,186 @@ body.modal-open {
   .destination-modal-info h2 {
     font-size: 2.3rem;
   }
+}
+
+
+
+
+/* Password error */
+.field-error {
+  margin: 8px 0 0;
+  color: #dc2626 !important;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.control.input-error {
+  border-color: #dc2626 !important;
+}
+
+
+/* Password error popup */
+.password-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.password-modal.active {
+  display: flex;
+}
+
+.password-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.password-modal-box {
+  position: relative;
+  z-index: 1;
+
+  width: min(430px, 90%);
+  padding: 38px;
+
+  background: white;
+  border-radius: 22px;
+  text-align: center;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.password-modal-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #fee2e2;
+  color: #dc2626;
+
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.password-modal-box h2 {
+  margin: 0 0 12px;
+  color: #0f172a;
+}
+
+.password-modal-box p {
+  margin: 0 0 26px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+#password-modal-ok {
+  width: 100%;
+  padding: 13px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #0ea5e9;
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#password-modal-ok:hover {
+  background: #0284c7;
+}
+
+
+
+/* Registration success popup */
+.success-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-modal.active {
+  display: flex;
+}
+
+.success-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.success-modal-box {
+  position: relative;
+  z-index: 1;
+
+  width: min(430px, 90%);
+  padding: 38px;
+
+  background: white;
+  border-radius: 22px;
+  text-align: center;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.success-modal-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #16a34a;
+
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.success-modal-box h2 {
+  margin: 0 0 12px;
+  color: #0f172a;
+}
+
+.success-modal-box p {
+  margin: 0 0 26px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+#success-modal-continue {
+  width: 100%;
+  padding: 13px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #0ea5e9;
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#success-modal-continue:hover {
+  background: #0284c7;
 }
