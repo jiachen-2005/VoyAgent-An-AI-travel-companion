@@ -1383,3 +1383,189 @@ body.modal-open {
 #success-modal-continue:hover {
   background: #0284c7;
 }
+
+
+/* =========================
+   ACCOUNT NOT FOUND POPUP
+========================= */
+
+.account-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.account-modal.active {
+  display: flex;
+}
+
+.account-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.account-modal-box {
+  position: relative;
+  z-index: 1;
+
+  width: min(90%, 420px);
+  padding: 32px;
+
+  background: white;
+  border-radius: 24px;
+
+  text-align: center;
+}
+
+.account-modal-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e0f2fe;
+  color: #0284c7;
+
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.account-modal-box h2 {
+  margin: 0 0 12px;
+}
+
+.account-modal-box p {
+  margin: 0 0 24px;
+  line-height: 1.6;
+}
+
+#account-modal-register {
+  width: 100%;
+  min-height: 48px;
+
+  border: 0;
+  border-radius: 14px;
+
+  background: #0ea5e9;
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   LOGIN RESULT POPUPS
+========================= */
+
+.login-password-modal,
+.login-success-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-password-modal.active,
+.login-success-modal.active {
+  display: flex;
+}
+
+.login-password-modal-backdrop,
+.login-success-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.login-password-modal-box,
+.login-success-modal-box {
+  position: relative;
+  z-index: 1;
+
+  width: min(430px, 90%);
+  padding: 38px;
+
+  background: white;
+  border-radius: 22px;
+  text-align: center;
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.login-password-modal-icon,
+.login-success-modal-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+/* Wrong password = red */
+.login-password-modal-icon {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Successful login = green */
+.login-success-modal-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.login-password-modal-box h2,
+.login-success-modal-box h2 {
+  margin: 0 0 12px;
+  color: #0f172a;
+}
+
+.login-password-modal-box p,
+.login-success-modal-box p {
+  margin: 0 0 26px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+#login-password-modal-try,
+#login-success-continue {
+  width: 100%;
+  padding: 13px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: #0ea5e9;
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#login-password-modal-try:hover,
+#login-success-continue:hover {
+  background: #0284c7;
+}
