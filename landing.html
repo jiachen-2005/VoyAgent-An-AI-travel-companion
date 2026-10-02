@@ -122,6 +122,11 @@
                 </button>
 
               </div>
+
+              <p
+                id="login-password-error"
+                class="field-error">
+              </p>
             </div>
 
 
@@ -343,8 +348,86 @@
 
     </div>
 
+    <!-- ACCOUNT NOT FOUND POPUP -->
+    <div id="account-modal" class="account-modal">
 
-  </div>
+      <div class="account-modal-backdrop"></div>
+
+      <div class="account-modal-box">
+
+        <div class="account-modal-icon">!</div>
+
+        <h2>Account not found</h2>
+
+        <p>
+          You don't have an account yet.
+          Please create one to continue.
+        </p>
+
+        <button
+          id="account-modal-register"
+          type="button">
+          Create Account →
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- INCORRECT PASSWORD POPUP -->
+    <div id="login-password-modal" class="login-password-modal">
+
+      <div class="login-password-modal-backdrop"></div>
+
+      <div class="login-password-modal-box">
+
+        <div class="login-password-modal-icon">!</div>
+
+        <h2>Incorrect password</h2>
+
+        <p>
+          The password you entered is incorrect.
+          Please try again.
+        </p>
+
+        <button
+          id="login-password-modal-try"
+          type="button">
+          Try Again
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- LOGIN SUCCESS POPUP -->
+    <div id="login-success-modal" class="login-success-modal">
+
+      <div class="login-success-modal-backdrop"></div>
+
+      <div class="login-success-modal-box">
+
+        <div class="login-success-modal-icon">✓</div>
+
+        <h2>Login successful!</h2>
+
+        <p>
+          Welcome back to VoyAgent.
+          You're ready to continue planning your journey.
+        </p>
+
+        <button
+          id="login-success-continue"
+          type="button">
+          Proceed to Planner →
+        </button>
+
+      </div>
+
+    </div>
+
+      </div>
 
   <script src="js/auth.js"></script>
 
