@@ -1114,3 +1114,159 @@ body.auth-page {
 }
 
 
+
+/* PLANNER TEXT READABILITY */
+
+.planner-heading .lead {
+  font-size: 1.25rem;
+  line-height: 1.65;
+}
+
+.form-grid .field label {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.form-grid .control {
+  font-size: 1.05rem;
+}
+
+.form-grid select.control {
+  font-size: 1.05rem;
+}
+
+.form-grid input[type="date"] {
+  font-size: 1.05rem;
+}
+
+.budget-control .budget-prefix {
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.planner-submit {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+
+
+
+/* LOGIN / REGISTER TEXT READABILITY */
+
+.auth-side .lead {
+  font-size: 1.25rem;
+  line-height: 1.65;
+}
+
+.auth-panel .field label {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.auth-panel .control {
+  font-size: 1.05rem;
+}
+
+.auth-row {
+  font-size: 1rem;
+}
+
+.auth-tab {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.main-action {
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+.secondary-action {
+  font-size: 1.05rem;
+}
+
+.divider {
+  font-size: 0.95rem;
+}
+
+.small-note {
+  font-size: 0.95rem;
+}
+
+.public-nav {
+  transform: translateX(-80px);
+}
+
+
+.planner-nav {
+  transform: translateX(-120px);
+}
+
+/* PLANNER RIGHT-SIDE PHOTO */
+
+.planner-photo-side {
+  position: relative;
+  overflow: hidden;
+  min-height: calc(100vh - 72px);
+  background: #081426;
+}
+
+.planner-hero-photo {
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - 72px);
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+.planner-photo-overlay {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 60px;
+
+  background: linear-gradient(
+    to top,
+    rgba(4, 15, 35, 0.82) 0%,
+    rgba(4, 15, 35, 0.30) 45%,
+    rgba(4, 15, 35, 0.05) 75%
+  );
+}
+
+.planner-photo-content {
+  max-width: 600px;
+  color: white;
+}
+
+.planner-photo-content span {
+  display: block;
+  margin-bottom: 14px;
+
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.planner-photo-content h2 {
+  margin: 0 0 16px;
+
+  color: white;
+
+  font-size: clamp(2.8rem, 4vw, 4.5rem);
+  line-height: 1;
+}
+
+.planner-photo-content p {
+  max-width: 520px;
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  font-size: 1.05rem;
+  line-height: 1.6;
+}

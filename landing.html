@@ -157,12 +157,7 @@
               id="google-login"
               type="button">
               Continue with Google
-            </button>
-
-
-            <div class="small-note">
-              Demo authentication only for the current prototype.
-            </div>
+          </button>
 
           </form>
 
@@ -245,25 +240,78 @@
       </section>
 
 
-      <!-- MALAYSIA SIDE -->
-      <section class="malaysia-side" id="malaysia">
-
-        <div class="malaysia-image-wrap">
-
+      <section class="malaysia-side malaysia-photo-side">
           <img
-            src="assets/malaysia-map.png"
-            alt="Malaysia travel destinations"
-            class="malaysia-map-image">
+            src="assets/kuala-lumpur.png"
+            alt="Aerial view of Kuala Lumpur"
+            class="malaysia-hero-photo"
+          >
 
-        </div>
+          <div class="malaysia-photo-overlay">
+            <div class="photo-content">
+              <span class="photo-eyebrow">DISCOVER MALAYSIA</span>
 
-      </section>
+              <h2>Explore More.<br>Experience More.</h2>
+
+              <p>
+                From vibrant cities to unforgettable destinations,
+                discover Malaysia with VoyAgent.
+              </p>
+            </div>
+          </div>
+        </section>
 
     </main>
+
+    
+
+    <!-- POPULAR DESTINATIONS -->
+    <section class="destinations-section" id="malaysia">
+
+      <div class="destinations-header">
+        <div>
+          <div class="eyebrow">Explore Malaysia</div>
+          <h2>Popular Destinations</h2>
+        </div>
+
+        <p>
+          Discover some of Malaysia's most popular places, from vibrant
+          cities and cultural destinations to tropical island escapes.
+        </p>
+      </div>
+
+      <div class="destinations-slider">
+
+        <button
+          class="destination-arrow"
+          id="destination-prev"
+          type="button"
+          aria-label="Previous destinations">
+          ‹
+        </button>
+
+        <div class="destinations-grid" id="destinations-grid">
+          <!-- JavaScript adds the destination cards here -->
+        </div>
+
+        <button
+          class="destination-arrow"
+          id="destination-next"
+          type="button"
+          aria-label="Next destinations">
+          ›
+        </button>
+
+      </div>
+
+      <div class="destination-dots" id="destination-dots"></div>
+
+    </section>
 
   </div>
 
   <script src="js/auth.js"></script>
+  <script src="js/landing.js"></script>
 
 </body>
 </html>
