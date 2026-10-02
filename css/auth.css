@@ -908,3 +908,296 @@ body.auth-page {
 }
 
 
+
+/* =========================================================
+   DESTINATION POPUP MODAL
+   ========================================================= */
+
+.destination-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 30px;
+}
+
+
+/* SHOW MODAL */
+
+.destination-modal.active {
+  display: flex;
+}
+
+
+/* DARK BACKGROUND */
+
+.destination-modal-backdrop {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(5, 15, 30, 0.72);
+
+  backdrop-filter: blur(3px);
+}
+
+
+/* WHITE POPUP */
+
+.destination-modal-box {
+  position: relative;
+  z-index: 1;
+
+  width: min(950px, 92vw);
+  max-height: 85vh;
+
+  display: grid;
+  grid-template-columns: 45% 55%;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================
+   CLOSE BUTTON
+   ========================= */
+
+.destination-modal-close {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  z-index: 10;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  color: #0f172a;
+
+  font-size: 1.7rem;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+
+  transition: 0.2s ease;
+}
+
+
+.destination-modal-close:hover {
+  transform: scale(1.06);
+
+  background: #ffffff;
+}
+
+
+/* =========================
+   LEFT IMAGE
+   ========================= */
+
+.destination-modal-image-side {
+  min-height: 520px;
+
+  background: #e2e8f0;
+}
+
+
+.destination-modal-image-side img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================
+   RIGHT CONTENT
+   ========================= */
+
+.destination-modal-info {
+  padding: 65px 55px 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* DESTINATION CATEGORY */
+
+.destination-modal-type {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--primary-600);
+
+  font-size: 0.78rem;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+/* DESTINATION NAME */
+
+.destination-modal-info h2 {
+  margin: 0 0 20px;
+
+  color: var(--text-primary);
+
+  font-size: 3rem;
+  line-height: 1.05;
+
+  font-weight: 800;
+}
+
+
+/* DESCRIPTION */
+
+.destination-modal-description {
+  margin: 0 0 30px;
+
+  color: var(--text-secondary);
+
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   POPULAR ATTRACTIONS
+   ========================= */
+
+.destination-modal-attractions {
+  margin-bottom: 32px;
+}
+
+
+.destination-modal-attractions h3 {
+  margin: 0 0 14px;
+
+  color: var(--text-primary);
+
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+
+.destination-modal-attractions ul {
+  margin: 0;
+
+  padding-left: 20px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+
+
+/* =========================
+   PLAN TRIP BUTTON
+   ========================= */
+
+.modal-plan-button {
+  align-self: flex-start;
+
+  padding: 13px 24px;
+
+  border: none;
+  border-radius: 999px;
+
+  background: var(--primary-500);
+
+  color: #ffffff;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.modal-plan-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(14, 165, 233, 0.25);
+}
+
+
+/* STOP PAGE FROM SCROLLING BEHIND POPUP */
+
+body.modal-open {
+  overflow: hidden;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 750px) {
+
+  .destination-modal {
+    padding: 18px;
+  }
+
+
+  .destination-modal-box {
+    width: 100%;
+
+    grid-template-columns: 1fr;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+  }
+
+
+  .destination-modal-image-side {
+    min-height: 250px;
+    height: 250px;
+  }
+
+
+  .destination-modal-info {
+    padding: 35px 28px;
+  }
+
+
+  .destination-modal-info h2 {
+    font-size: 2.3rem;
+  }
+}
