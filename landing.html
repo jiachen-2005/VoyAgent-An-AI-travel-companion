@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>VoyAgent · Login</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/public.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+
+<body class="public-page">
+
+  <div class="public-shell">
+
+    <header class="public-header">
+      <a class="brand-link" href="landing.html">
+        <div class="brand-logo">V</div>
+        <span class="brand-name">VoyAgent</span>
+        <span class="brand-sub">AI Travel Companion</span>
+      </a>
+
+      <nav class="public-nav">
+        <a class="active" href="landing.html">Home</a>
+        <a href="#malaysia">Explore Malaysia</a>
+      </nav>
+
+      <div class="header-user">
+        <button class="pill-button" type="button" data-switch="login">
+          Login
+        </button>
+
+        <button class="pill-button primary" type="button" data-switch="register">
+          Register
+        </button>
+      </div>
+    </header>
+
+
+    <main class="split-page">
+
+      <!-- LOGIN SIDE -->
+      <section class="auth-side">
+
+        <div class="auth-card">
+
+          <div class="eyebrow">
+            Welcome to VoyAgent
+          </div>
+
+          <h1>
+            Your Journey<br>
+            <span>Starts Here.</span>
+          </h1>
+
+          <p class="lead">
+            Sign in to plan smarter, get personalised itineraries,
+            and explore Malaysia with your AI travel companion.
+          </p>
+
+
+          <!-- TABS -->
+          <div class="auth-tabs">
+
+            <button
+              class="auth-tab active"
+              type="button"
+              data-tab="login">
+              Login
+            </button>
+
+            <button
+              class="auth-tab"
+              type="button"
+              data-tab="register">
+              Register
+            </button>
+
+          </div>
+
+
+          <!-- LOGIN FORM -->
+          <form
+            id="login-panel"
+            class="auth-panel active"
+            data-panel="login">
+
+            <div class="field">
+              <label for="login-email">Email address</label>
+
+              <input
+                id="login-email"
+                class="control"
+                type="email"
+                placeholder="you@example.com"
+                required>
+            </div>
+
+
+            <div class="field">
+              <label for="login-password">Password</label>
+
+              <div class="password-wrap">
+
+                <input
+                  id="login-password"
+                  class="control"
+                  type="password"
+                  placeholder="Enter your password"
+                  required>
+
+                <button
+                  class="eye-button"
+                  type="button"
+                  data-toggle-password="login-password">
+                  Show
+                </button>
+
+              </div>
+            </div>
+
+
+            <div class="auth-row">
+
+              <label>
+                <input type="checkbox">
+                Remember me
+              </label>
+
+              <a href="#" onclick="return false;">
+                Forgot password?
+              </a>
+
+            </div>
+
+
+            <button
+              class="main-action"
+              type="submit">
+              Login to VoyAgent →
+            </button>
+
+
+            <div class="divider">
+              or continue with
+            </div>
+
+
+            <button
+              class="secondary-action"
+              id="google-login"
+              type="button">
+              Continue with Google
+            </button>
+
+
+            <div class="small-note">
+              Demo authentication only for the current prototype.
+            </div>
+
+          </form>
+
+
+          <!-- REGISTER FORM -->
+          <form
+            id="register-panel"
+            class="auth-panel"
+            data-panel="register">
+
+            <div class="field">
+              <label for="register-name">Full name</label>
+
+              <input
+                id="register-name"
+                class="control"
+                type="text"
+                placeholder="Your name"
+                required>
+            </div>
+
+
+            <div class="field">
+              <label for="register-email">Email address</label>
+
+              <input
+                id="register-email"
+                class="control"
+                type="email"
+                placeholder="you@example.com"
+                required>
+            </div>
+
+
+            <div class="field">
+              <label for="register-password">Create password</label>
+
+              <div class="password-wrap">
+
+                <input
+                  id="register-password"
+                  class="control"
+                  type="password"
+                  placeholder="Create a password"
+                  required>
+
+                <button
+                  class="eye-button"
+                  type="button"
+                  data-toggle-password="register-password">
+                  Show
+                </button>
+
+              </div>
+            </div>
+
+
+            <button
+              class="main-action"
+              type="submit">
+              Create Account →
+            </button>
+
+
+            <div class="divider">
+              or
+            </div>
+
+
+            <button
+              class="secondary-action"
+              id="google-register"
+              type="button">
+              Continue with Google
+            </button>
+
+          </form>
+
+        </div>
+      </section>
+
+
+      <!-- MALAYSIA SIDE -->
+      <section class="malaysia-side" id="malaysia">
+
+        <div class="malaysia-image-wrap">
+
+          <img
+            src="assets/malaysia-map.png"
+            alt="Malaysia travel destinations"
+            class="malaysia-map-image">
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="js/auth.js"></script>
+
+</body>
+</html>
