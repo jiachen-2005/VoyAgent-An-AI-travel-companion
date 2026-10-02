@@ -9,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/public.css">
+  <link rel="stylesheet" href="css/auth.css">
 </head>
 <body class="public-page">
   <div class="public-shell">
@@ -59,6 +60,9 @@
                     <option value="Sarawak">Sarawak</option>
                     <option value="Selangor">Selangor</option>
                     <option value="Terengganu">Terengganu</option>
+                    <option value="Kuala Lumpur">Kuala Lumpur</option>
+                    <option value="Labuan">Labuan</option>
+                    <option value="Putrajaya">Putrajaya</option>
                 </select>
               </div>
 
@@ -149,7 +153,142 @@
         </div>
       </section>
     </main>
+  
+    <!-- POPULAR DESTINATIONS -->
+    <section class="destinations-section" id="malaysia">
+
+      <div class="destinations-header">
+
+        <div>
+          <div class="eyebrow">Explore Malaysia</div>
+          <h2>Popular Destinations</h2>
+        </div>
+
+        <p>
+          Discover some of Malaysia's most popular places, from vibrant
+          cities and cultural destinations to tropical island escapes.
+        </p>
+
+      </div>
+
+
+      <div class="destinations-slider">
+
+        <button
+          class="destination-arrow"
+          id="destination-prev"
+          type="button"
+          aria-label="Previous destinations">
+          ‹
+        </button>
+
+
+        <div
+          class="destinations-grid"
+          id="destinations-grid">
+          <!-- JavaScript adds destination cards here -->
+        </div>
+
+
+        <button
+          class="destination-arrow"
+          id="destination-next"
+          type="button"
+          aria-label="Next destinations">
+          ›
+        </button>
+
+      </div>
+
+
+      <div
+        class="destination-dots"
+        id="destination-dots">
+      </div>
+
+    </section>
+
+
+
+    <!-- DESTINATION DETAILS POPUP -->
+    <div
+      class="destination-modal"
+      id="destination-modal">
+
+      <!-- DARK BACKGROUND -->
+      <div
+        class="destination-modal-backdrop"
+        id="destination-modal-backdrop">
+      </div>
+
+
+      <!-- POPUP -->
+      <div class="destination-modal-box">
+
+        <button
+          class="destination-modal-close"
+          id="destination-modal-close"
+          type="button"
+          aria-label="Close destination details">
+          ×
+        </button>
+
+
+        <!-- LEFT IMAGE -->
+        <div class="destination-modal-image-side">
+
+          <img
+            id="modal-destination-image"
+            src=""
+            alt="">
+
+        </div>
+
+
+        <!-- RIGHT INFORMATION -->
+        <div class="destination-modal-info">
+
+          <span
+            class="destination-modal-type"
+            id="modal-destination-type">
+          </span>
+
+
+          <h2 id="modal-destination-name"></h2>
+
+
+          <p
+            class="destination-modal-description"
+            id="modal-destination-description">
+          </p>
+
+
+          <div class="destination-modal-attractions">
+
+            <h3>Popular Attractions</h3>
+
+            <ul id="modal-destination-attractions">
+            </ul>
+
+          </div>
+
+
+          <button
+            class="modal-plan-button"
+            id="modal-plan-button"
+            type="button">
+            Plan This Destination →
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
   </div>
+
   <script src="js/planner.js"></script>
 </body>
 </html>
