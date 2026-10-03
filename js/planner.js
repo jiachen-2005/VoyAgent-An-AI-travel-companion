@@ -117,7 +117,7 @@
       );
 
 
-      location.href = "app.html?newTrip=1";
+      location.href = "index.html?newTrip=1";
 
     });
 
