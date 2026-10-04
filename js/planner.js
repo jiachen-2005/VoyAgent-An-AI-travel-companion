@@ -51,8 +51,45 @@
 
 
   /* ========================================
-     TRIP PLANNER FORM
-     ======================================== */
+    DATE VALIDATION
+  ======================================== */
+
+  const startDateInput =
+    document.getElementById("start-date");
+
+  const endDateInput =
+    document.getElementById("end-date");
+
+
+  // Do not allow start date before today
+  const today = new Date()
+    .toISOString()
+    .split("T")[0];
+
+  startDateInput.min = today;
+  endDateInput.min = today;
+
+
+  // End date cannot be earlier than start date
+  startDateInput.addEventListener("change", () => {
+
+    endDateInput.min = startDateInput.value;
+
+    // If the existing end date becomes invalid,
+    // clear it automatically
+    if (
+      endDateInput.value &&
+      endDateInput.value < startDateInput.value
+    ) {
+      endDateInput.value = "";
+    }
+
+  });
+
+
+  /* ========================================
+    TRIP PLANNER FORM
+  ======================================== */
 
   document
     .getElementById("trip-planner-form")

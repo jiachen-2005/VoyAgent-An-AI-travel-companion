@@ -1286,3 +1286,27 @@ body.auth-page {
 .form-grid .field:not(.full) .budget-control .control {
   width: 100%;
 }
+
+/* Planner select placeholder colour */
+.form-grid select.control:invalid {
+  color: #94a3b8;
+}
+
+/* Normal colour after user selects an option */
+.form-grid select.control:valid {
+  color: var(--text-primary);
+}
+
+/* Date placeholder colour */
+.form-grid input[type="date"]:not(:valid) {
+  color: #94a3b8;
+}
+
+.form-grid input[type="date"]::-webkit-datetime-edit {
+  color: #94a3b8;
+}
+
+/* Date colour after a date is selected */
+.form-grid input[type="date"]:valid::-webkit-datetime-edit {
+  color: var(--text-primary);
+}

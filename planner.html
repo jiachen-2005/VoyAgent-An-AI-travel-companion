@@ -68,17 +68,18 @@
 
               <div class="field">
                 <label for="start-date">Start Date</label>
-                <input id="start-date" class="control" type="date">
+                <input id="start-date" class="control" type="date" required>
               </div>
 
               <div class="field">
                 <label for="end-date">End Date</label>
-                <input id="end-date" class="control" type="date">
+                <input id="end-date" class="control" type="date" required>
               </div>
 
               <div class="field">
                 <label for="travel-style">Travel Style</label>
-                <select id="travel-style" class="control">
+                <select id="travel-style" class="control" required>
+                  <option value="" disabled selected>Select a style</option>
                   <option>Balanced</option>
                   <option>Relaxed</option>
                   <option>Fast-paced</option>
@@ -89,9 +90,10 @@
 
               <div class="field">
                 <label for="travellers">Number of Travellers</label>
-                <select id="travellers" class="control">
+                <select id="travellers" class="control" required>
+                  <option value="" disabled selected>Select travellers</option>
                   <option value="1">1 traveller</option>
-                  <option value="2" selected>2 travellers</option>
+                  <option value="2">2 travellers</option>
                   <option value="3">3 travellers</option>
                   <option value="4">4 travellers</option>
                   <option value="5">5+ travellers</option>
@@ -103,13 +105,14 @@
                 <div class="budget-control">
                   <span class="budget-prefix">RM</span>
                   <input id="budget" class="control" type="number" min="0"
-                         placeholder="e.g. 3000">
+                         placeholder="e.g. 3000" required>
                 </div>
               </div>
 
               <div class="field">
                 <label for="interest">Main Interest</label>
-                <select id="interest" class="control">
+                <select id="interest" class="control" required>
+                  <option value="" disabled selected>Select an interest</option>
                   <option>Food</option>
                   <option>Nature</option>
                   <option>Shopping</option>
