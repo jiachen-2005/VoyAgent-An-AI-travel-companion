@@ -6,7 +6,7 @@
 
 class VoyAgentApp {
   constructor() {
-    this.currentTripKey = "kyoto";
+    this.currentTripKey = "kl";
     this.activeWorkspaceTab = "map";
     this.currentModalSlotId = null;
     this.selectedFeedbackRating = 5;
@@ -46,7 +46,7 @@ class VoyAgentApp {
     // 5. Setup UI Event Listeners
     this.setupEventListeners();
 
-    // 6. Load Initial Trip (Kyoto Autumn Odyssey)
+    // 6. Load Initial Trip (Kuala Lumpur Cultural Tapestry)
     this.loadTrip(this.currentTripKey);
 
     // 7. Global Keyboard Listeners

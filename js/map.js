@@ -22,10 +22,10 @@ class VoyAgentMap {
     const container = document.getElementById(this.containerId);
     if (!container) return;
 
-    // Center on Kyoto by default
+    // Center on Kuala Lumpur by default
     this.map = L.map(this.containerId, {
       zoomControl: false
-    }).setView([35.0116, 135.7681], 13);
+    }).setView([3.1486, 101.6944], 13);
 
     // High-performance clean daytime street map tiles (Unified daylight view across all themes)
     const daylightTileUrl = "https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}";
@@ -46,7 +46,7 @@ class VoyAgentMap {
     // Keep daylight street map style consistently active across all themes
   }
 
-  renderDayRoute(slots, dayNumber = 1, tripKey = "kyoto", isReplanned = false) {
+  renderDayRoute(slots, dayNumber = 1, tripKey = "kl", isReplanned = false) {
     if (!this.map) this.init();
     if (!slots || slots.length === 0) return;
 
@@ -59,7 +59,7 @@ class VoyAgentMap {
 
     // Resolve pre-computed road navigation data
     let routeKey = tripKey;
-    if (isReplanned && (tripKey === "kyoto" || tripKey === "kl") && dayNumber === 2) {
+    if (isReplanned && tripKey === "kl" && dayNumber === 2) {
       routeKey = `${tripKey}_replanned_2`;
     }
 
@@ -70,6 +70,52 @@ class VoyAgentMap {
         dayRouteData = allRoutes[routeKey][dayNumber];
       } else if (allRoutes[routeKey].segments) {
         dayRouteData = allRoutes[routeKey];
+      }
+    }
+
+    // Dynamic segment synthesis for Malaysian destinations without hardcoded road traces
+    if (!dayRouteData || !dayRouteData.segments || dayRouteData.segments.length === 0) {
+      const synSegments = [];
+      let totalDist = 0;
+      let totalDur = 0;
+      for (let i = 0; i < slots.length - 1; i++) {
+        const fromSlot = slots[i];
+        const toSlot = slots[i + 1];
+        if (fromSlot.coords && toSlot.coords) {
+          const dLat = (toSlot.coords[0] - fromSlot.coords[0]) * 111;
+          const dLng = (toSlot.coords[1] - fromSlot.coords[1]) * 111 * Math.cos(fromSlot.coords[0] * Math.PI / 180);
+          const rawDist = Math.sqrt(dLat * dLat + dLng * dLng) * 1.35;
+          const distKm = Math.max(0.6, Math.round(rawDist * 10) / 10);
+          const transit = fromSlot.transitNext || {};
+          const isWalk = transit.mode === 'footprints' || distKm <= 1.2;
+          const mode = transit.mode === 'train' || transit.mode === 'subway' ? 'transit' : (isWalk ? 'walking' : 'driving');
+          const durMin = Math.max(4, Math.round(distKm * (mode === 'walking' ? 12 : (mode === 'transit' ? 4 : 2.5))));
+          
+          totalDist += distKm;
+          totalDur += durMin;
+
+          synSegments.push({
+            fromId: fromSlot.id,
+            toId: toSlot.id,
+            fromTitle: fromSlot.title,
+            toTitle: toSlot.title,
+            mode: mode,
+            transitInfo: transit.info || `${mode === 'walking' ? 'Walk' : 'Transit'} to ${toSlot.title.split('&')[0].trim()} (${distKm} km)`,
+            distanceKm: distKm,
+            durationMin: durMin,
+            coordinates: [fromSlot.coords, toSlot.coords]
+          });
+        }
+      }
+      if (synSegments.length > 0) {
+        dayRouteData = {
+          summary: {
+            totalDistance: `${Math.round(totalDist * 10) / 10} km`,
+            totalDuration: `${totalDur} min`,
+            segmentsCount: synSegments.length
+          },
+          segments: synSegments
+        };
       }
     }
 

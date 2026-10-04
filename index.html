@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>VoyAgent · Personal AI Travel Companion</title>
-  <meta name="description" content="VoyAgent - Intelligent multi-day travel planner with tool-calling AI agent, weather-adaptive itineraries and dynamic replanning. FIT3161 FYP PCS-19.">
+  <meta name="description" content="VoyAgent - Intelligent multi-day travel planner with tool-calling AI agent, weather-adaptive itineraries and dynamic replanning for Malaysia. FIT3161 FYP PCS-19.">
 
   <!-- Google Fonts: Outfit (Brand & Headings), Plus Jakarta Sans (UI Body), JetBrains Mono (Tool Calls & Data) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,7 +45,7 @@
       <div class="header-center">
         <div class="trip-title-chip">
           <svg class="svg-icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
-          <span id="header-trip-title">Kyoto Autumn Cultural Odyssey</span>
+          <span id="header-trip-title">Kuala Lumpur Cultural Tapestry & Modern Skyline</span>
         </div>
 
         <div class="agent-live-pulse" title="VoyAgent AI Travel Companion Online">
@@ -127,39 +127,50 @@
           <div>
             <div class="sidebar-section-title">
               <span>Saved Journeys</span>
-              <span style="font-size: 0.65rem;">3 Sessions</span>
+              <span style="font-size: 0.65rem;">4 Sessions</span>
             </div>
             <div class="trip-history-list">
-              <div class="trip-item active" data-trip="kyoto" onclick="voyAgentApp.loadTrip('kyoto')">
-                <div class="trip-item-title"><span class="country-badge">JPN</span> Kyoto Autumn Odyssey</div>
-                <div class="trip-item-meta">
-                  <span>4 Days</span>
-                  <span>·</span>
-                  <span>¥180,000</span>
-                  <span>·</span>
-                  <span>Weather-tracked</span>
-                </div>
-              </div>
-
-              <div class="trip-item" data-trip="melbourne" onclick="voyAgentApp.loadTrip('melbourne')">
-                <div class="trip-item-title"><span class="country-badge">AUS</span> Melbourne & Ocean Road</div>
-                <div class="trip-item-meta">
-                  <span>3 Days</span>
-                  <span>·</span>
-                  <span>A$1,200</span>
-                  <span>·</span>
-                  <span>Scenic Route</span>
-                </div>
-              </div>
-
-              <div class="trip-item" data-trip="kl" onclick="voyAgentApp.loadTrip('kl')">
+              <div class="trip-item active" data-trip="kl" onclick="voyAgentApp.loadTrip('kl')">
                 <div class="trip-item-title"><span class="country-badge">MYS</span> Kuala Lumpur & Skyline</div>
                 <div class="trip-item-meta">
                   <span>3 Days</span>
                   <span>·</span>
                   <span>RM 2,500</span>
                   <span>·</span>
-                  <span>Heritage & Food</span>
+                  <span>Modern Skyline</span>
+                </div>
+              </div>
+
+              <div class="trip-item" data-trip="penang" onclick="voyAgentApp.loadTrip('penang')">
+                <div class="trip-item-title"><span class="country-badge">MYS</span> Penang UNESCO Heritage</div>
+                <div class="trip-item-meta">
+                  <span>4 Days</span>
+                  <span>·</span>
+                  <span>RM 2,200</span>
+                  <span>·</span>
+                  <span>Foodie & Culture</span>
+                </div>
+              </div>
+
+              <div class="trip-item" data-trip="melaka" onclick="voyAgentApp.loadTrip('melaka')">
+                <div class="trip-item-title"><span class="country-badge">MYS</span> Melaka Historic Port</div>
+                <div class="trip-item-meta">
+                  <span>3 Days</span>
+                  <span>·</span>
+                  <span>RM 1,200</span>
+                  <span>·</span>
+                  <span>Straits Riverwalk</span>
+                </div>
+              </div>
+
+              <div class="trip-item" data-trip="kotakinabalu" onclick="voyAgentApp.loadTrip('kotakinabalu')">
+                <div class="trip-item-title"><span class="country-badge">MYS</span> Kota Kinabalu Borneo</div>
+                <div class="trip-item-meta">
+                  <span>3 Days</span>
+                  <span>·</span>
+                  <span>RM 2,200</span>
+                  <span>·</span>
+                  <span>Nature & Islands</span>
                 </div>
               </div>
             </div>
@@ -196,22 +207,6 @@
 
               <!-- Prompt suggestion cards -->
               <div class="suggested-prompts-grid">
-                <div class="prompt-card" onclick="voyAgentApp.chat.sendPresetPrompt('Plan a 4-day autumn cultural journey to Kyoto under ¥180,000 for a couple, focusing on temples and local food.')">
-                  <div class="prompt-icon">
-                    <svg class="svg-icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="2" y1="22" x2="22" y2="22"></line><line x1="12" y1="2" x2="20" y2="7"></line><line x1="12" y1="2" x2="4" y2="7"></line><polyline points="4 7 20 7 20 10 4 10"></polyline><line x1="6" y1="10" x2="6" y2="22"></line><line x1="10" y1="10" x2="10" y2="22"></line><line x1="14" y1="10" x2="14" y2="22"></line><line x1="18" y1="10" x2="18" y2="22"></line></svg>
-                  </div>
-                  <div class="prompt-headline">4-Day Kyoto Culture & Gastronomy</div>
-                  <div class="prompt-desc">Higashiyama temples, Gion dining, and Arashiyama bamboo path with weather guard.</div>
-                </div>
-
-                <div class="prompt-card" onclick="voyAgentApp.chat.sendPresetPrompt('Plan a 3-day Melbourne weekend road trip including specialty coffee and the Great Ocean Road sunset.')">
-                  <div class="prompt-icon">
-                    <svg class="svg-icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
-                  </div>
-                  <div class="prompt-headline">3-Day Melbourne & Coastal Drive</div>
-                  <div class="prompt-desc">CBD laneway coffee crawl, Queen Vic market, and Twelve Apostles coastal tour.</div>
-                </div>
-
                 <div class="prompt-card" onclick="voyAgentApp.chat.sendPresetPrompt('Plan a 3-day Kuala Lumpur cultural and foodie journey under RM 2,500, exploring Batu Caves, Petronas Twin Towers, and Jalan Alor street dining.')">
                   <div class="prompt-icon">
                     <svg class="svg-icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18"></path><path d="M5 21V7l8-4v18"></path><path d="M19 21V11l-6-4"></path><line x1="9" y1="9" x2="9" y2="9.01"></line><line x1="9" y1="13" x2="9" y2="13.01"></line><line x1="9" y1="17" x2="9" y2="17.01"></line></svg>
@@ -220,12 +215,28 @@
                   <div class="prompt-desc">Petronas Twin Towers, Batu Caves rainbow stairs, and Jalan Alor night street food.</div>
                 </div>
 
-                <div class="prompt-card" onclick="voyAgentApp.chat.sendPresetPrompt('Show me how VoyAgent adapts when sudden afternoon rain hits an outdoor mountain itinerary.')">
+                <div class="prompt-card" onclick="voyAgentApp.chat.sendPresetPrompt('Plan a 4-day Penang foodie and heritage journey under RM 2,200, exploring George Town street art, Pinang Peranakan Mansion, and Penang Hill.')">
+                  <div class="prompt-icon">
+                    <svg class="svg-icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                  </div>
+                  <div class="prompt-headline">4-Day Penang Heritage & Street Food</div>
+                  <div class="prompt-desc">George Town UNESCO murals, Kek Lok Si hilltop pagoda, and world-class hawker trails.</div>
+                </div>
+
+                <div class="prompt-card" onclick="voyAgentApp.chat.sendPresetPrompt('Plan a 3-day Kota Kinabalu nature and island journey under RM 2,200, exploring Mount Kinabalu trails, Manukan Island, and Tanjung Aru sunset.')">
+                  <div class="prompt-icon">
+                    <svg class="svg-icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                  </div>
+                  <div class="prompt-headline">3-Day Kota Kinabalu Nature & Coast</div>
+                  <div class="prompt-desc">Tanjung Aru sunset, Manukan Island marine reserve, and Mount Kinabalu highland canopy.</div>
+                </div>
+
+                <div class="prompt-card" onclick="voyAgentApp.chat.sendPresetPrompt('Show me how VoyAgent adapts when sudden afternoon monsoon rain hits an outdoor itinerary in Kuala Lumpur.')">
                   <div class="prompt-icon">
                     <svg class="svg-icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="16" y1="13" x2="16" y2="21"></line><line x1="8" y1="13" x2="8" y2="21"></line><line x1="12" y1="15" x2="12" y2="23"></line><path d="M20 16.58A5 5 0 0 0 18 7h-1.26A8 8 0 1 0 4 15.25"></path></svg>
                   </div>
-                  <div class="prompt-headline">Dynamic Weather Replanning Demo</div>
-                  <div class="prompt-desc">Simulate heavy rain and observe how AI swaps outdoor climbs with sheltered museums.</div>
+                  <div class="prompt-headline">Dynamic Monsoon Replanning Demo</div>
+                  <div class="prompt-desc">Simulate heavy tropical downpour and observe how AI swaps outdoor parks with sheltered oceanarium tunnels.</div>
                 </div>
               </div>
             </div>
@@ -235,8 +246,8 @@
               <div class="message-avatar agent-avatar">V</div>
               <div class="message-content">
                 <div class="message-bubble">
-                  Hello! I'm <strong>VoyAgent</strong>, your personal AI travel companion. I've curated a thoughtful <strong>4-Day Kyoto Cultural Odyssey</strong> below, complete with live route mapping and budget breakdown.<br><br>
-                  <span style="color: var(--primary-600); font-weight: 700;">Tip:</span> <em>Try clicking <strong>"Simulate Afternoon Rain (14:00)"</strong> on Day 2 to see how I automatically adjust outdoor activities to sheltered alternatives!</em>
+                  Hello! I'm <strong>VoyAgent</strong>, your personal AI travel companion for Malaysia. I've curated a thoughtful <strong>3-Day Kuala Lumpur Cultural Tapestry & Modern Skyline</strong> journey below, complete with live road-snapped route mapping and budget breakdown.<br><br>
+                  <span style="color: var(--primary-600); font-weight: 700;">Tip:</span> <em>Try clicking <strong>"Simulate Afternoon Tropical Shower (15:30)"</strong> on Day 2 to see how I automatically adjust open outdoor activities (KLCC Park) to sheltered indoor alternatives (Aquaria KLCC)!</em>
                 </div>
               </div>
             </div>
@@ -253,7 +264,7 @@
                 <textarea 
                   class="chat-textarea" 
                   id="chat-prompt-input" 
-                  placeholder="Ask VoyAgent anything (e.g. 'Plan 3 days in Tokyo')..." 
+                  placeholder="Ask VoyAgent anything (e.g. 'Plan 3 days in Kuala Lumpur')..." 
                   rows="1"></textarea>
                 <button class="btn-send-message" id="btn-send" title="Send message" aria-label="Send message">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>

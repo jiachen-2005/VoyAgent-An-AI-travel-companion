@@ -110,18 +110,19 @@ class VoyAgentChat {
     this.messagesContainer.appendChild(typingRow);
     this.scrollToBottom();
 
-    // Determine context
+    // Determine context (Malaysia regions exclusively)
     const lowerPrompt = promptText.toLowerCase();
-    const isMelbourne = lowerPrompt.includes("melbourne");
-    const isKL = lowerPrompt.includes("kuala lumpur") || lowerPrompt.includes("kl") || promptText.includes("吉隆坡") || lowerPrompt.includes("malaysia") || promptText.includes("马来西亚");
-    
-    let tripKey = "kyoto";
-    if (isKL) {
+    let tripKey = "kl"; // Default to Kuala Lumpur
+    if (lowerPrompt.includes("penang") || promptText.includes("槟城") || lowerPrompt.includes("george town") || lowerPrompt.includes("georgetown")) {
+      tripKey = "penang";
+    } else if (lowerPrompt.includes("melaka") || lowerPrompt.includes("malacca") || promptText.includes("马六甲")) {
+      tripKey = "melaka";
+    } else if (lowerPrompt.includes("kinabalu") || lowerPrompt.includes("sabah") || promptText.includes("亚庇") || promptText.includes("沙巴")) {
+      tripKey = "kotakinabalu";
+    } else if (lowerPrompt.includes("kuala lumpur") || lowerPrompt.includes("kl") || promptText.includes("吉隆坡") || lowerPrompt.includes("malaysia") || promptText.includes("马来西亚")) {
       tripKey = "kl";
-    } else if (isMelbourne) {
-      tripKey = "melbourne";
     }
-    const targetTrip = window.VOYAGENT_DATA.trips[tripKey];
+    const targetTrip = window.VOYAGENT_DATA.trips[tripKey] || window.VOYAGENT_DATA.trips.kl;
 
     setTimeout(() => {
       // Remove typing row
@@ -129,9 +130,14 @@ class VoyAgentChat {
         typingRow.parentNode.removeChild(typingRow);
       }
 
-      const weatherHighlight = tripKey === "kl" 
-        ? "Tropical climate (31-33°C), with live monsoon rain tracking and sheltered underground rerouting enabled."
-        : "Clear and mild, with live weather tracking activated.";
+      let weatherHighlight = "Tropical climate (31-33°C), with live monsoon rain tracking and sheltered rerouting enabled.";
+      if (tripKey === "penang") {
+        weatherHighlight = "Warm coastal breeze (30-32°C), with shaded heritage five-foot-ways and hill canopy options.";
+      } else if (tripKey === "melaka") {
+        weatherHighlight = "Pleasant Straits breeze (31-33°C), with covered riverwalks and colonial shaded precincts.";
+      } else if (tripKey === "kotakinabalu") {
+        weatherHighlight = "Crisp highland & coastal sea breeze (22-31°C), with island marine weather radar enabled.";
+      }
 
       this.appendAgentMessageWithTools({
         content: `I have synthesized your preferences and created a comprehensive travel blueprint for **${targetTrip.destination}**!\n\n` +

@@ -1,365 +1,12 @@
 /**
  * VoyAgent Mock Data
- * FIT3161 - Personal AI Travel Companion
- * Professional clean data without emojis; rich verified reviews & sentiment profiles.
+ * FIT3161 - Personal AI Travel Companion (Malaysia Exclusively)
+ * Authentic verified reviews, realistic pricing (MYR), & multi-region Malaysian travel profiles.
  */
 
 window.VOYAGENT_DATA = {
-  // Preset Trips
+  // Preset Trips for Malaysia
   trips: {
-    kyoto: {
-      id: "kyoto",
-      title: "Kyoto Autumn Cultural Odyssey",
-      destination: "Kyoto, Japan",
-      duration: "4 Days / 3 Nights",
-      budget: {
-        total: "¥180,000",
-        allocated: "¥142,500",
-        currency: "JPY",
-        percentUsed: 79,
-        breakdown: [
-          { category: "Accommodation", amount: "¥68,000", share: "48%", icon: "hotel" },
-          { category: "Dining & Cafes", amount: "¥38,500", share: "27%", icon: "utensils" },
-          { category: "Transport & IC", amount: "¥14,000", share: "10%", icon: "train" },
-          { category: "Temples & Activities", amount: "¥16,000", share: "11%", icon: "landmark" },
-          { category: "Shopping & Tea", amount: "¥6,000", share: "4%", icon: "shopping-bag" }
-        ]
-      },
-      tags: ["Solo/Couple", "Cultural Heritage", "Moderate Pace", "Foodie Focus"],
-      weatherForecast: [
-        { day: "Day 1 (Thu)", temp: "18°C / 10°C", condition: "Sunny", icon: "sun", rain: "0%", alert: false },
-        { day: "Day 2 (Fri)", temp: "15°C / 11°C", condition: "Heavy Rain (PM)", icon: "cloud-rain", rain: "85%", alert: true, alertText: "Heavy rain 14:00-18:00 (18mm)" },
-        { day: "Day 3 (Sat)", temp: "19°C / 12°C", condition: "Partly Cloudy", icon: "cloud-sun", rain: "10%", alert: false },
-        { day: "Day 4 (Sun)", temp: "21°C / 13°C", condition: "Clear Sky", icon: "sun", rain: "5%", alert: false }
-      ],
-      days: [
-        {
-          dayNumber: 1,
-          dateTitle: "Day 1: Historic Higashiyama & Gion Nightfall",
-          slots: [
-            {
-              id: "k1",
-              time: "09:30 - 12:00",
-              title: "Kiyomizu-dera & Wooden Terrace",
-              category: "Temple / Culture",
-              desc: "Explore the UNESCO World Heritage temple famous for its wooden stage offering panoramic Kyoto vistas and sacred Otowa Waterfall.",
-              location: "Higashiyama Ward, Kyoto",
-              coords: [34.9949, 135.7850],
-              rating: "4.8 (12.4k)",
-              ratingScore: 4.8,
-              reviewCount: "12.4k",
-              cost: "¥400 entrance",
-              transitNext: { mode: "footprints", info: "8 min walk down historic stone slopes (600m)" }
-            },
-            {
-              id: "k2",
-              time: "12:15 - 14:30",
-              title: "Sannenzaka & Ninenzaka Traditional Teahouses",
-              category: "Gastronomy & Tea",
-              desc: "Stroll preserved Edo-period stone-paved streets, enjoy warm matcha parfaits and artisanal Kyoto soba noodles.",
-              location: "Sannenzaka, Higashiyama",
-              coords: [34.9984, 135.7806],
-              rating: "4.7 (8.9k)",
-              ratingScore: 4.7,
-              reviewCount: "8.9k",
-              cost: "¥1,800 lunch",
-              transitNext: { mode: "footprints", info: "12 min scenic stroll through Maruyama Park (900m)" }
-            },
-            {
-              id: "k3",
-              time: "15:00 - 17:30",
-              title: "Yasaka Shrine & Maruyama Park",
-              category: "Historic Landmark",
-              desc: "Visit the vibrant vermilion gate of Gion's spiritual heart, famous for hanging paper lanterns and tranquil autumn gardens.",
-              location: "Gionmachi Kitagawa, Higashiyama",
-              coords: [35.0037, 135.7785],
-              rating: "4.6 (9.5k)",
-              ratingScore: 4.6,
-              reviewCount: "9.5k",
-              cost: "Free entrance",
-              transitNext: { mode: "footprints", info: "6 min walk across Shijo Dori (450m)" }
-            },
-            {
-              id: "k4",
-              time: "18:00 - 20:30",
-              title: "Gion Shirakawa & Pontocho Alley Dinner",
-              category: "Nightlife & Dining",
-              desc: "Atmospheric evening stroll alongside the canal with willow trees, followed by traditional Kyoto Kaiseki dinner overlooking the Kamogawa River.",
-              location: "Pontocho, Nakagyo Ward",
-              coords: [35.0062, 135.7712],
-              rating: "4.9 (5.3k)",
-              ratingScore: 4.9,
-              reviewCount: "5.3k",
-              cost: "¥5,500 dinner"
-            }
-          ]
-        },
-        {
-          dayNumber: 2,
-          dateTitle: "Day 2: Arashiyama & Mountain Heritage",
-          slots: [
-            {
-              id: "k5",
-              time: "08:30 - 11:00",
-              title: "Arashiyama Bamboo Grove & Tenryu-ji",
-              category: "Nature & Zen",
-              desc: "Morning walk through towering emerald bamboo stalks, visiting Tenryu-ji's legendary 14th-century Zen garden.",
-              location: "Ukyo Ward, Kyoto",
-              coords: [35.0170, 135.6713],
-              rating: "4.8 (21k)",
-              ratingScore: 4.8,
-              reviewCount: "21k",
-              cost: "¥500 temple fee",
-              transitNext: { mode: "footprints", info: "15 min walk across Togetsukyo Bridge (1.1km)" }
-            },
-            {
-              id: "k6",
-              time: "11:30 - 13:30",
-              title: "Togetsukyo Bridge & Riverside Soba Lunch",
-              category: "Lunch & Scenery",
-              desc: "Enjoy traditional handmade soba alongside the picturesque Katsura River with views of autumn hillsides.",
-              location: "Arashiyama, Ukyo Ward",
-              coords: [35.0128, 135.6777],
-              rating: "4.6 (4.2k)",
-              ratingScore: 4.6,
-              reviewCount: "4.2k",
-              cost: "¥2,200",
-              transitNext: { mode: "footprints", info: "10 min walk to mountain hiking path" }
-            },
-            {
-              id: "k7",
-              time: "14:00 - 16:30",
-              title: "Iwatayama Monkey Park (Outdoor Mountain Hike)",
-              category: "Outdoor Activity",
-              desc: "Hike up the open hill trail to observe wild Japanese macaques and enjoy Kyoto skyline views.",
-              location: "Arashiyama Iwatayama",
-              coords: [35.0102, 135.6763],
-              rating: "4.5 (3.8k)",
-              ratingScore: 4.5,
-              reviewCount: "3.8k",
-              cost: "¥600",
-              isVulnerableToRain: true,
-              transitNext: { mode: "bus", info: "Kyoto Bus #11 to Kinkaku-ji (35 min)" }
-            },
-            {
-              id: "k8",
-              time: "17:00 - 19:30",
-              title: "Kinkaku-ji (Golden Pavilion) Sunset",
-              category: "Iconic Landmark",
-              desc: "Marvel at the top two floors covered in gold leaf reflecting across Mirror Pond.",
-              location: "Kita Ward, Kyoto",
-              coords: [35.0394, 135.7292],
-              rating: "4.7 (19k)",
-              ratingScore: 4.7,
-              reviewCount: "19k",
-              cost: "¥500"
-            }
-          ]
-        },
-        {
-          dayNumber: 3,
-          dateTitle: "Day 3: Fushimi Inari & Uji Green Tea Legacy",
-          slots: [
-            {
-              id: "k9",
-              time: "07:30 - 10:30",
-              title: "Fushimi Inari Taisha 1,000 Torii Path",
-              category: "Sacred Shrine",
-              desc: "Early morning hike through thousands of vibrant vermilion gates winding up the sacred Mount Inari.",
-              location: "Fushimi Ward, Kyoto",
-              coords: [34.9671, 135.7727],
-              rating: "4.9 (35k)",
-              ratingScore: 4.9,
-              reviewCount: "35k",
-              cost: "Free entrance",
-              transitNext: { mode: "train", info: "JR Nara Line to Uji Station (22 min)" }
-            },
-            {
-              id: "k10",
-              time: "11:15 - 14:00",
-              title: "Byodoin Phoenix Hall & Uji River Crossing",
-              category: "National Treasure",
-              desc: "The iconic Pure Land Buddhist temple depicted on Japan's 10-yen coin, surrounded by tranquil lotus ponds.",
-              location: "Uji, Kyoto Prefecture",
-              coords: [34.8893, 135.8078],
-              rating: "4.8 (8.1k)",
-              ratingScore: 4.8,
-              reviewCount: "8.1k",
-              cost: "¥600",
-              transitNext: { mode: "footprints", info: "5 min to Uji Omotesando (300m)" }
-            },
-            {
-              id: "k11",
-              time: "14:15 - 16:45",
-              title: "Tsuen Authentic Matcha Grinding Workshop",
-              category: "Heritage Experience",
-              desc: "Hands-on tea master workshop grinding Uji Gyokuro matcha in an 860-year-old tea shop.",
-              location: "Uji Bridge East, Uji",
-              coords: [34.8926, 135.8115],
-              rating: "4.8 (1.9k)",
-              ratingScore: 4.8,
-              reviewCount: "1.9k",
-              cost: "¥3,500 workshop"
-            }
-          ]
-        },
-        {
-          dayNumber: 4,
-          dateTitle: "Day 4: Shogun Fortresses & Departure",
-          slots: [
-            {
-              id: "k12",
-              time: "09:00 - 11:30",
-              title: "Nijo Castle & Nightingale Security Floors",
-              category: "Feudal Palace",
-              desc: "Explore Tokugawa Shogunate residence famous for squeaking 'nightingale' wooden alarm floors and Ninomaru Palace murals.",
-              location: "Nakagyo Ward, Kyoto",
-              coords: [35.0142, 135.7482],
-              rating: "4.7 (14k)",
-              ratingScore: 4.7,
-              reviewCount: "14k",
-              cost: "¥1,300 with palace",
-              transitNext: { mode: "subway", info: "Tozai Subway Line to Kyoto Station (15 min)" }
-            },
-            {
-              id: "k13",
-              time: "12:00 - 14:30",
-              title: "Kyoto Station Skyway & Souvenir Hall",
-              category: "Departure & Bento",
-              desc: "Pick up authentic Yatsuhashi pastries and artisan crafts before boarding the Shinkansen.",
-              location: "Shimogyo Ward, Kyoto",
-              coords: [34.9858, 135.7588],
-              rating: "4.5 (18k)",
-              ratingScore: 4.5,
-              reviewCount: "18k",
-              cost: "¥3,000 shopping"
-            }
-          ]
-        }
-      ]
-    },
-
-    melbourne: {
-      id: "melbourne",
-      title: "Melbourne Laneways & Coastal Odyssey",
-      destination: "Melbourne & Great Ocean Road, Australia",
-      duration: "3 Days / 2 Nights",
-      budget: {
-        total: "A$1,200",
-        allocated: "A$940",
-        currency: "AUD",
-        percentUsed: 78,
-        breakdown: [
-          { category: "Rental Car & Fuel", amount: "A$280", share: "30%", icon: "car" },
-          { category: "Boutique Lodging", amount: "A$390", share: "41%", icon: "hotel" },
-          { category: "Specialty Dining", amount: "A$180", share: "19%", icon: "coffee" },
-          { category: "Wildlife Sanctuary", amount: "A$90", share: "10%", icon: "compass" }
-        ]
-      },
-      tags: ["Weekend Getaway", "Scenic Coastal Drive", "Specialty Coffee", "Active Wildlife"],
-      weatherForecast: [
-        { day: "Day 1 (Sat)", temp: "22°C / 14°C", condition: "Sunny & Mild", icon: "sun", rain: "5%", alert: false },
-        { day: "Day 2 (Sun)", temp: "19°C / 13°C", condition: "Coastal Breeze", icon: "cloud-sun", rain: "15%", alert: false },
-        { day: "Day 3 (Mon)", temp: "24°C / 15°C", condition: "Clear Sky", icon: "sun", rain: "0%", alert: false }
-      ],
-      days: [
-        {
-          dayNumber: 1,
-          dateTitle: "Day 1: Cultural Laneways & Culinary Heart",
-          slots: [
-            {
-              id: "m1",
-              time: "09:00 - 11:30",
-              title: "Flinders Street & Degraves Street Coffee Crawl",
-              category: "Specialty Coffee",
-              desc: "Begin at Melbourne's iconic copper-domed station, weaving into laneways renowned for world-class flat whites.",
-              location: "Melbourne CBD",
-              coords: [-37.8180, 144.9671],
-              rating: "4.7 (9.2k)",
-              ratingScore: 4.7,
-              reviewCount: "9.2k",
-              cost: "A$18",
-              transitNext: { mode: "footprints", info: "5 min to Hosier Lane (350m)" }
-            },
-            {
-              id: "m2",
-              time: "11:45 - 13:30",
-              title: "Hosier Lane Street Art & ACMI Gallery",
-              category: "Arts & Media",
-              desc: "Experience ever-evolving graffiti murals and Australia's national museum of screen culture at Fed Square.",
-              location: "Federation Square",
-              coords: [-37.8163, 144.9691],
-              rating: "4.8 (11k)",
-              ratingScore: 4.8,
-              reviewCount: "11k",
-              cost: "Free entrance",
-              transitNext: { mode: "tram", info: "Tram Route 19 to Queen Victoria Market (12 min)" }
-            },
-            {
-              id: "m3",
-              time: "14:00 - 16:30",
-              title: "Queen Victoria Market Artisan Delis",
-              category: "Gourmet Market",
-              desc: "Historic 1878 marketplace filled with fresh Tasmanian oysters, artisan cheeses, and hot jam donuts.",
-              location: "Queen St, Melbourne",
-              coords: [-37.8076, 144.9568],
-              rating: "4.6 (24k)",
-              ratingScore: 4.6,
-              reviewCount: "24k",
-              cost: "A$35 tasting"
-            }
-          ]
-        },
-        {
-          dayNumber: 2,
-          dateTitle: "Day 2: Great Ocean Road & Twelve Apostles",
-          slots: [
-            {
-              id: "m4",
-              time: "08:00 - 11:00",
-              title: "Torquay Surf Beach & Memorial Arch Drive",
-              category: "Coastal Road",
-              desc: "Pick up the coastal highway, stopping at the birthplace of Rip Curl and the historic WWI Memorial Archway.",
-              location: "Eastern View, Victoria",
-              coords: [-38.4500, 144.0000],
-              rating: "4.8 (7k)",
-              ratingScore: 4.8,
-              reviewCount: "7k",
-              cost: "A$45 petrol share",
-              transitNext: { mode: "car", info: "1h 20m scenic coastal twists to Apollo Bay" }
-            },
-            {
-              id: "m5",
-              time: "12:30 - 14:00",
-              title: "Apollo Bay Fishermen's Seafood Lunch",
-              category: "Fresh Catch",
-              desc: "Dine on southern rock lobster rolls overlooking the calm ocean harbour.",
-              location: "Apollo Bay, VIC",
-              coords: [-38.7567, 143.6667],
-              rating: "4.6 (3.2k)",
-              ratingScore: 4.6,
-              reviewCount: "3.2k",
-              cost: "A$42",
-              transitNext: { mode: "car", info: "1h 15m inland rainforest drive through Great Otway" }
-            },
-            {
-              id: "m6",
-              time: "16:00 - 18:30",
-              title: "Twelve Apostles & Loch Ard Gorge Sunset",
-              category: "Natural Wonder",
-              desc: "Spectacular golden hour light illuminating dramatic limestone stacks rising 45 meters above the Southern Ocean.",
-              location: "Port Campbell National Park",
-              coords: [-38.6658, 143.1047],
-              rating: "4.9 (29k)",
-              ratingScore: 4.9,
-              reviewCount: "29k",
-              cost: "Free entrance"
-            }
-          ]
-        }
-      ]
-    },
-
     kl: {
       id: "kl",
       title: "Kuala Lumpur Cultural Tapestry & Modern Skyline",
@@ -570,84 +217,702 @@ window.VOYAGENT_DATA = {
           ]
         }
       ]
-    }
-  },
+    },
 
-  // Dynamic Replanning Event: Kyoto Day 2 Afternoon Rainstorm
-  replannedKyotoDay2: {
-    event: "Afternoon Heavy Rain Alert in Kyoto (Expected from 14:00)",
-    agentReasoning: [
-      "Weather Alert: Arashiyama outdoor hiking trail (Monkey Park) is exposed and slippery in heavy rain.",
-      "Indoor Search: Discovered top-rated sheltered attractions within 25 min transit radius.",
-      "Schedule Swap: Replaced outdoor mountain walk with Kyoto National Museum & covered Nishiki Market arcade.",
-      "Transit Adjusted: Switched to covered Randen tram and Tozai subway line."
-    ],
-    toolCalls: [
-      { step: "Precipitation Forecast Check", detail: "Heavy rainfall window expected 14:00 - 18:00", icon: "cloud-rain" },
-      { step: "Sheltered Attractions Search", detail: "Found Kyoto National Museum & covered Nishiki Market", icon: "landmark" },
-      { step: "Comfortable Transit Rerouting", detail: "24 min via covered tram & subway line", icon: "subway" }
-    ],
-    newSlots: [
-      {
-        id: "k5",
-        time: "08:30 - 11:00",
-        title: "Arashiyama Bamboo Grove & Tenryu-ji",
-        category: "Nature & Zen",
-        desc: "Morning walk through towering emerald bamboo stalks, visiting Tenryu-ji's legendary 14th-century Zen garden.",
-        location: "Ukyo Ward, Kyoto",
-        coords: [35.0170, 135.6713],
-        rating: "4.8 (21k)",
-        ratingScore: 4.8,
-        reviewCount: "21k",
-        cost: "¥500 temple fee",
-        transitNext: { mode: "footprints", info: "15 min walk across Togetsukyo Bridge (1.1km)" }
+    penang: {
+      id: "penang",
+      title: "Penang UNESCO Heritage & Culinary Trail",
+      destination: "Penang, Malaysia",
+      duration: "4 Days / 3 Nights",
+      budget: {
+        total: "RM 2,200",
+        allocated: "RM 1,820",
+        currency: "MYR",
+        percentUsed: 83,
+        breakdown: [
+          { category: "Lodging (George Town Shophouse)", amount: "RM 960", share: "53%", icon: "hotel" },
+          { category: "Street Food & Peranakan Dining", amount: "RM 520", share: "28%", icon: "utensils" },
+          { category: "Grab & Rapid Penang Transit", amount: "RM 160", share: "9%", icon: "train" },
+          { category: "Penang Hill Funicular & Passes", amount: "RM 120", share: "7%", icon: "landmark" },
+          { category: "Nutmeg & Tambun Confectionery", amount: "RM 60", share: "3%", icon: "shopping-bag" }
+        ]
       },
-      {
-        id: "k6",
-        time: "11:30 - 13:30",
-        title: "Togetsukyo Bridge & Riverside Soba Lunch",
-        category: "Lunch & Scenery",
-        desc: "Enjoy traditional handmade soba alongside the picturesque Katsura River with views of autumn hillsides.",
-        location: "Arashiyama, Ukyo Ward",
-        coords: [35.0128, 135.6777],
-        rating: "4.6 (4.2k)",
-        ratingScore: 4.6,
-        reviewCount: "4.2k",
-        cost: "¥2,200",
-        transitNext: { mode: "train", info: "Randen Tram to Shijo-Omiya & Metro (24 min sheltered)" }
+      tags: ["Foodie Capital", "UNESCO Heritage", "Colonial History", "Scenic Views"],
+      weatherForecast: [
+        { day: "Day 1 (Thu)", temp: "31°C / 25°C", condition: "Sunny & Breezy", icon: "sun", rain: "10%", alert: false },
+        { day: "Day 2 (Fri)", temp: "30°C / 24°C", condition: "Coastal Shower (PM)", icon: "cloud-rain", rain: "70%", alert: true, alertText: "Coastal shower expected 15:00-17:00 (25mm)" },
+        { day: "Day 3 (Sat)", temp: "32°C / 25°C", condition: "Clear & Humid", icon: "cloud-sun", rain: "15%", alert: false },
+        { day: "Day 4 (Sun)", temp: "31°C / 25°C", condition: "Tropical Sunshine", icon: "sun", rain: "10%", alert: false }
+      ],
+      days: [
+        {
+          dayNumber: 1,
+          dateTitle: "Day 1: Historic George Town Shophouses & Street Food Haven",
+          slots: [
+            {
+              id: "pen1",
+              time: "09:00 - 11:30",
+              title: "Pinang Peranakan Mansion & Heritage Courtyard",
+              category: "Baba Nyonya Heritage",
+              desc: "Step inside a sumptuous 19th-century emerald-green mansion showcasing over 1,000 antique Peranakan artifacts, gold-leaf woodwork, English floor tiles, and intricate porcelain dinnerware.",
+              location: "Church Street, George Town",
+              coords: [5.4180, 100.3406],
+              rating: "4.8 (14.2k)",
+              ratingScore: 4.8,
+              reviewCount: "14.2k",
+              cost: "RM 25 entry",
+              transitNext: { mode: "footprints", info: "6 min walk through heritage streets to Armenian St (450m)" }
+            },
+            {
+              id: "pen2",
+              time: "11:45 - 14:15",
+              title: "Armenian Street Murals & Heritage Coffee",
+              category: "UNESCO Street Murals",
+              desc: "Explore Ernest Zacharevic's world-famous 'Kids on Bicycle' street mural, quirky steel-rod caricatures, antique toy museums, and artisanal cold brew coffee shops.",
+              location: "Armenian Street, George Town",
+              coords: [5.4150, 100.3375],
+              rating: "4.7 (21.5k)",
+              ratingScore: 4.7,
+              reviewCount: "21.5k",
+              cost: "Free exploration",
+              transitNext: { mode: "footprints", info: "7 min walk towards the waterfront (550m)" }
+            },
+            {
+              id: "pen3",
+              time: "15:00 - 17:30",
+              title: "Clan Jetties (Chew Jetty) Stilt Village",
+              category: "Historic Maritime Stilt Settlement",
+              desc: "Wander along historic 19th-century wooden boardwalks suspended above tidal waters, built by early Chinese immigrant clans with temple shrines and sea breeze.",
+              location: "Weld Quay, George Town",
+              coords: [5.4128, 100.3400],
+              rating: "4.6 (18.1k)",
+              ratingScore: 4.6,
+              reviewCount: "18.1k",
+              cost: "Free exploration",
+              transitNext: { mode: "footprints", info: "8 min walk to Chulia Street culinary corridor (600m)" }
+            },
+            {
+              id: "pen4",
+              time: "18:00 - 20:30",
+              title: "Chulia Street & Kimberley Street Night Food Feast",
+              category: "Legendary Street Food",
+              desc: "Feast on Penang's most iconic Michelin Bib Gourmand hawker dishes: smoky wok-hei Char Kway Teow with duck egg, spicy sour Assam Laksa, and duck meat Koay Chiap.",
+              location: "Chulia Street, George Town",
+              coords: [5.4169, 100.3340],
+              rating: "4.8 (26.4k)",
+              ratingScore: 4.8,
+              reviewCount: "26.4k",
+              cost: "RM 45 hawker feast"
+            }
+          ]
+        },
+        {
+          dayNumber: 2,
+          dateTitle: "Day 2: Sacred Hilltop Pagodas & Rainforest Biosphere Canopy",
+          slots: [
+            {
+              id: "pen5",
+              time: "08:30 - 11:30",
+              title: "Kek Lok Si Temple & Pagoda of 10,000 Buddhas",
+              category: "Buddhist Monastery Complex",
+              desc: "Southeast Asia's largest Buddhist temple complex atop Crane Hill, featuring the 7-tier Ban Po Thar Pagoda, ponds with hundreds of sacred tortoises, and a 30m bronze Guanyin statue.",
+              location: "Air Itam, Penang",
+              coords: [5.3995, 100.2736],
+              rating: "4.8 (32.8k)",
+              ratingScore: 4.8,
+              reviewCount: "32.8k",
+              cost: "RM 6 incline lift",
+              transitNext: { mode: "car", info: "10 min Grab car ride to Penang Hill Lower Station (3.2km)" }
+            },
+            {
+              id: "pen6",
+              time: "12:00 - 14:45",
+              title: "Penang Hill Funicular & The Habitat Biosphere",
+              category: "Hilltop Nature & UNESCO Biosphere",
+              desc: "Ride the Swiss-engineered funicular railway 833 meters above sea level. Walk the Curtis Crest tree-top canopy walk overlooking lush 130-million-year-old virgin rainforest.",
+              location: "Bukit Bendera, Penang",
+              coords: [5.4246, 100.2690],
+              rating: "4.7 (28.9k)",
+              ratingScore: 4.7,
+              reviewCount: "28.9k",
+              cost: "RM 30 funicular ticket",
+              transitNext: { mode: "footprints", info: "3 min scenic garden path to David Brown's terrace (180m)" }
+            },
+            {
+              id: "pen7",
+              time: "15:00 - 17:00",
+              title: "David Brown's Hilltop Tea Terrace & Garden",
+              category: "Colonial Afternoon Tea",
+              desc: "Relax in a quintessential British colonial garden restaurant on strawberry hill, sipping English breakfast tea and warm scones with panoramic views over George Town and the Penang Strait.",
+              location: "Penang Hill Summit",
+              coords: [5.4239, 100.2681],
+              rating: "4.6 (6.5k)",
+              ratingScore: 4.6,
+              reviewCount: "6.5k",
+              cost: "RM 55 afternoon tea",
+              transitNext: { mode: "train", info: "Funicular descent + 15 min Grab to Gurney Drive (8.5km)" }
+            },
+            {
+              id: "pen8",
+              time: "18:00 - 20:30",
+              title: "Gurney Drive Hawker Centre & Seafront Promenade",
+              category: "Coastal Dining & Night Promenade",
+              desc: "Sample Penang Rojak, crispy oyster omelette (Oh Chien), and nutmeg juice along Penang's premier seafront hawker hub while feeling the cool Malacca Strait sea breeze.",
+              location: "Gurney Drive, George Town",
+              coords: [5.4398, 100.3090],
+              rating: "4.7 (22k)",
+              ratingScore: 4.7,
+              reviewCount: "22k",
+              cost: "RM 50 dinner"
+            }
+          ]
+        },
+        {
+          dayNumber: 3,
+          dateTitle: "Day 3: Coastal Spice Gardens & White Sand Beach",
+          slots: [
+            {
+              id: "pen9",
+              time: "09:00 - 11:30",
+              title: "Tropical Spice Garden & Eco Trails",
+              category: "Botanical Living Museum",
+              desc: "Discover over 500 species of exotic spices, herbs, and tropical flora nestled in a secluded coastal valley. Walk shaded fern groves and breathe in fragrant cinnamon and lemongrass.",
+              location: "Teluk Bahang, Penang",
+              coords: [5.4633, 100.2290],
+              rating: "4.7 (7.2k)",
+              ratingScore: 4.7,
+              reviewCount: "7.2k",
+              cost: "RM 31 garden ticket",
+              transitNext: { mode: "car", info: "5 min Grab drive to Entopia (2.1km)" }
+            },
+            {
+              id: "pen13",
+              time: "11:45 - 13:45",
+              title: "Entopia by Penang Butterfly Farm",
+              category: "Tropical Sanctuary & Butterfly Aviary",
+              desc: "A massive glass dome aviary home to over 15,000 free-flying tropical butterflies, cascading waterfalls, living cocoon discovery stations, and lush indoor rainforest flora.",
+              location: "Teluk Bahang, Penang",
+              coords: [5.4646, 100.2248],
+              rating: "4.8 (11.5k)",
+              ratingScore: 4.8,
+              reviewCount: "11.5k",
+              cost: "RM 45 entry pass",
+              transitNext: { mode: "car", info: "8 min coastal Grab drive to Batu Ferringhi (5km)" }
+            },
+            {
+              id: "pen10",
+              time: "14:15 - 17:30",
+              title: "Batu Ferringhi Beach & Waterfront Lounge",
+              category: "Tropical Coast & White Sand",
+              desc: "Unwind on golden sands framed by casuarina trees. Enjoy fresh chilled coconut water and local seafood laksa overlooking gentle emerald waves.",
+              location: "Batu Ferringhi Coast",
+              coords: [5.4746, 100.2470],
+              rating: "4.6 (16.5k)",
+              ratingScore: 4.6,
+              reviewCount: "16.5k",
+              cost: "RM 35 lunch & refreshments",
+              transitNext: { mode: "footprints", info: "3 min walk to night market street (150m)" }
+            },
+            {
+              id: "pen14",
+              time: "18:00 - 20:30",
+              title: "Batu Ferringhi Night Market & Seafood Grill",
+              category: "Beachfront Night Market & Dining",
+              desc: "Browse colorful artisan beach stalls under palm trees and feast on charcoal-grilled fresh tiger prawns, sambal stingray, and tropical fruit smoothies along the coast.",
+              location: "Jalan Batu Ferringhi",
+              coords: [5.4741, 100.2460],
+              rating: "4.7 (19k)",
+              ratingScore: 4.7,
+              reviewCount: "19k",
+              cost: "RM 55 seafood dinner"
+            }
+          ]
+        },
+        {
+          dayNumber: 4,
+          dateTitle: "Day 4: Colonial Bastions, Heritage Clan Houses & Souvenirs",
+          slots: [
+            {
+              id: "pen11",
+              time: "09:00 - 11:00",
+              title: "Fort Cornwallis & Queen Victoria Memorial Clock",
+              category: "Colonial Bastion & Maritime Beacon",
+              desc: "Explore the star-shaped fort built by Captain Francis Light in 1786, the bronze Seri Rambai cannon, gunpowder magazine, and the 60-foot diamond jubilee clock tower.",
+              location: "Padang Kota Lama, George Town",
+              coords: [5.4206, 100.3440],
+              rating: "4.6 (11.8k)",
+              ratingScore: 4.6,
+              reviewCount: "11.8k",
+              cost: "RM 20 entrance",
+              transitNext: { mode: "footprints", info: "7 min walk into heritage quarter to Khoo Kongsi (550m)" }
+            },
+            {
+              id: "pen15",
+              time: "11:15 - 13:30",
+              title: "Khoo Kongsi Leong San Tong Clan Temple",
+              category: "Grand Chinese Clan Temple Architecture",
+              desc: "Regarded as the most magnificent Chinese clan temple in Southeast Asia, adorned with intricate stone pillar dragons, gold-leaf gables, and 1906 guild hall heritage.",
+              location: "Cannon Square, George Town",
+              coords: [5.4144, 100.3364],
+              rating: "4.9 (16.2k)",
+              ratingScore: 4.9,
+              reviewCount: "16.2k",
+              cost: "RM 15 entrance",
+              transitNext: { mode: "footprints", info: "8 min walk to Chowrasta Market (650m)" }
+            },
+            {
+              id: "pen12",
+              time: "14:00 - 16:00",
+              title: "Chowrasta Market Local Confectionery & Tea",
+              category: "Heritage Market & Artisan Souvenirs",
+              desc: "Stock up on authentic Penang gifts: freshly baked Ghee Hiang baby tambun biscuits, preserved nutmeg slices, Belacan shrimp paste, and White Kopi before heading to the airport.",
+              location: "Penang Road, George Town",
+              coords: [5.4168, 100.3315],
+              rating: "4.6 (13.4k)",
+              ratingScore: 4.6,
+              reviewCount: "13.4k",
+              cost: "RM 40 gifts & snacks",
+              transitNext: { mode: "car", info: "25 min Grab ride to Penang International Airport (16km)" }
+            },
+            {
+              id: "pen16",
+              time: "16:30 - 18:30",
+              title: "Penang International Airport (PIA) Departure Hub",
+              category: "Aviation Hub & Duty Free Concourse",
+              desc: "Board flights connecting to Kuala Lumpur, Singapore, or regional destinations, concluding an unforgettable 4-day culinary, nature, and cultural journey across Penang.",
+              location: "Bayan Lepas, Penang",
+              coords: [5.2971, 100.2768],
+              rating: "4.6 (12.8k)",
+              ratingScore: 4.6,
+              reviewCount: "12.8k",
+              cost: "Free departure"
+            }
+          ]
+        }
+      ]
+    },
+
+    melaka: {
+      id: "melaka",
+      title: "Melaka Historic Straits Port & Peranakan Trail",
+      destination: "Melaka, Malaysia",
+      duration: "3 Days / 2 Nights",
+      budget: {
+        total: "RM 1,200",
+        allocated: "RM 960",
+        currency: "MYR",
+        percentUsed: 80,
+        breakdown: [
+          { category: "Lodging (Riverside Heritage Hotel)", amount: "RM 460", share: "48%", icon: "hotel" },
+          { category: "Nyonya Dining & Jonker Street Bites", amount: "RM 310", share: "32%", icon: "utensils" },
+          { category: "Melaka River Cruise & Trishaw", amount: "RM 90", share: "9%", icon: "train" },
+          { category: "Museum Passes & St. Paul's Hill", amount: "RM 50", share: "5%", icon: "landmark" },
+          { category: "Gula Melaka & Artisan Handcrafts", amount: "RM 50", share: "5%", icon: "shopping-bag" }
+        ]
       },
-      {
-        id: "k7_replanned",
-        time: "14:15 - 16:45",
-        title: "Kyoto National Museum (Indoor Masterpieces)",
-        category: "Sheltered Museum",
-        desc: "Admire historic Buddhist sculptures, exquisite samurai armor and Japanese calligraphy in the comfortable, climate-controlled Meiji pavilion away from the rain.",
-        location: "Higashiyama Ward, Kyoto",
-        coords: [34.9902, 135.7728],
-        rating: "4.7 (7.2k)",
-        ratingScore: 4.7,
-        reviewCount: "7.2k",
-        cost: "¥700",
-        replanned: true,
-        originalTitle: "Iwatayama Monkey Park",
-        transitNext: { mode: "footprints", info: "12 min covered walk to Nishiki Arcade (850m)" }
+      tags: ["UNESCO Straits Port", "Peranakan Heritage", "Historic Architecture", "Riverfront Charm"],
+      weatherForecast: [
+        { day: "Day 1 (Thu)", temp: "32°C / 24°C", condition: "Sunny & Warm", icon: "sun", rain: "10%", alert: false },
+        { day: "Day 2 (Fri)", temp: "31°C / 24°C", condition: "Afternoon Drizzle (PM)", icon: "cloud-rain", rain: "60%", alert: true, alertText: "Brief coastal shower 16:00-17:30 (15mm)" },
+        { day: "Day 3 (Sat)", temp: "33°C / 25°C", condition: "Tropical Sunshine", icon: "sun", rain: "5%", alert: false }
+      ],
+      days: [
+        {
+          dayNumber: 1,
+          dateTitle: "Day 1: Dutch Red Square, Colonial Fortress & Jonker Night Market",
+          slots: [
+            {
+              id: "mel1",
+              time: "09:00 - 11:15",
+              title: "Dutch Square (Red Square) & Christ Church",
+              category: "Colonial Dutch Architecture",
+              desc: "Stand amid terracotta-red colonial structures built by the Dutch in the 17th-18th century, including Christ Church (1753), the Stadthuys museum, and the Queen Victoria Fountain.",
+              location: "Bandar Hilir, Melaka",
+              coords: [2.1942, 102.2492],
+              rating: "4.8 (28.5k)",
+              ratingScore: 4.8,
+              reviewCount: "28.5k",
+              cost: "Free entrance",
+              transitNext: { mode: "footprints", info: "4 min walk through shaded gardens up St. Paul's Hill (250m)" }
+            },
+            {
+              id: "mel2",
+              time: "11:30 - 13:45",
+              title: "A Famosa (Porta de Santiago) & St. Paul's Church",
+              category: "Portuguese Colonial Fortress",
+              desc: "Explore the ruins of the Portuguese fortress built in 1511 by Afonso de Albuquerque, and climb St. Paul's Hill for expansive views over the Malacca Strait and ancient tombstones.",
+              location: "Jalan Kota, Bandar Hilir",
+              coords: [2.1925, 102.2497],
+              rating: "4.7 (24k)",
+              ratingScore: 4.7,
+              reviewCount: "24k",
+              cost: "Free entrance",
+              transitNext: { mode: "footprints", info: "6 min walk across historic bridge to Jonker Street (400m)" }
+            },
+            {
+              id: "mel3",
+              time: "14:15 - 16:30",
+              title: "Baba & Nyonya Heritage Museum",
+              category: "Peranakan Townhouse Mansion",
+              desc: "Discover three adjoining pre-war heritage terrace townhouses restored with Victorian Dutch tiles, gilded blackwood mother-of-pearl furniture, and opulent silk Kebayas.",
+              location: "Jalan Tun Tan Cheng Lock, Melaka",
+              coords: [2.1963, 102.2464],
+              rating: "4.8 (9.6k)",
+              ratingScore: 4.8,
+              reviewCount: "9.6k",
+              cost: "RM 18 guided tour",
+              transitNext: { mode: "footprints", info: "2 min walk into Jonker Street (150m)" }
+            },
+            {
+              id: "mel4",
+              time: "17:30 - 20:30",
+              title: "Jonker Street Night Market & Chicken Rice Balls",
+              category: "Historic Night Market & Food",
+              desc: "Sample iconic Hainanese steamed chicken with fragrant hand-rolled rice balls, Peranakan Popiah with crispy pork lard, grilled coconut otak-otak, and icy shaved Cendol with smoky Gula Melaka.",
+              location: "Jalan Hang Jebat (Jonker Walk)",
+              coords: [2.1975, 102.2472],
+              rating: "4.8 (38.2k)",
+              ratingScore: 4.8,
+              reviewCount: "38.2k",
+              cost: "RM 45 night dinner"
+            }
+          ]
+        },
+        {
+          dayNumber: 2,
+          dateTitle: "Day 2: Historic River Navigation & Maritime Galleon Museum",
+          slots: [
+            {
+              id: "mel5",
+              time: "09:30 - 11:30",
+              title: "Melaka River Cruise & Waterfront Murals",
+              category: "Riverfront Heritage Navigation",
+              desc: "Embark on a gentle 45-minute cruise along the historic trading canal once lined with spice warehouses. Admire restored shophouses painted with colorful Malaysian murals.",
+              location: "Muara Jetty, Melaka River",
+              coords: [2.1948, 102.2483],
+              rating: "4.7 (22.5k)",
+              ratingScore: 4.7,
+              reviewCount: "22.5k",
+              cost: "RM 30 riverboat pass",
+              transitNext: { mode: "footprints", info: "4 min walk to Maritime Museum (300m)" }
+            },
+            {
+              id: "mel6",
+              time: "11:45 - 14:00",
+              title: "Flora de la Mar Maritime Museum (Replica Galleon)",
+              category: "Maritime History Museum",
+              desc: "Step aboard an impressive 34-meter tall life-sized replica of the Portuguese galleon Flora de la Mar, housing historical trade charts, porcelain cargo, and maritime navigational relics.",
+              location: "Jalan Merdeka, Bandar Hilir",
+              coords: [2.1917, 102.2465],
+              rating: "4.6 (14k)",
+              ratingScore: 4.6,
+              reviewCount: "14k",
+              cost: "RM 12 museum entry",
+              transitNext: { mode: "car", info: "7 min Grab ride upriver to Kampung Morten (2.2km)" }
+            },
+            {
+              id: "mel7",
+              time: "14:30 - 16:45",
+              title: "Kampung Morten Traditional Malay Heritage Village",
+              category: "Living Malay Cultural Hamlet",
+              desc: "Known as a living museum, this traditional Malay village on the riverbank features ornate carved timber stilt houses with colorful ceramic staircases and lush tropical potted plants.",
+              location: "Kampung Morten, Melaka",
+              coords: [2.2028, 102.2505],
+              rating: "4.7 (7.8k)",
+              ratingScore: 4.7,
+              reviewCount: "7.8k",
+              cost: "Free entrance",
+              transitNext: { mode: "car", info: "12 min Grab ride to Straits Floating Mosque (4.8km)" }
+            },
+            {
+              id: "mel8",
+              time: "17:15 - 19:45",
+              title: "Melaka Straits Mosque (Masjid Selat Melaka) Sunset",
+              category: "Floating Sanctuary & Sunset Haven",
+              desc: "Built on stilts above the sea on Pulau Melaka, this modern mosque blends Middle Eastern and Malay architecture. At high tide, it appears to float serenely on the glowing sunset waters.",
+              location: "Pulau Melaka, Melaka",
+              coords: [2.1772, 102.2506],
+              rating: "4.9 (19.8k)",
+              ratingScore: 4.9,
+              reviewCount: "19.8k",
+              cost: "Free entrance"
+            }
+          ]
+        },
+        {
+          dayNumber: 3,
+          dateTitle: "Day 3: Straits Panorama & Traditional Confectionery Crafts",
+          slots: [
+            {
+              id: "mel9",
+              time: "09:30 - 11:30",
+              title: "Menara Taming Sari 360° Revolving Tower",
+              category: "Revolving Panoramic Observatory",
+              desc: "Ascend 110 meters into the air inside a Swiss-designed air-conditioned revolving glass cabin, offering 360-degree views of Melaka city, the Straits of Malacca, and historic St. Paul's Hill.",
+              location: "Jalan Merdeka, Bandar Hilir",
+              coords: [2.1908, 102.2476],
+              rating: "4.6 (15.2k)",
+              ratingScore: 4.6,
+              reviewCount: "15.2k",
+              cost: "RM 23 observatory pass",
+              transitNext: { mode: "footprints", info: "9 min walk to Harmony Street (650m)" }
+            },
+            {
+              id: "mel10",
+              time: "11:45 - 13:45",
+              title: "Cheng Hoon Teng Temple & Harmony Street",
+              category: "Oldest Taoist Sanctuary (1645)",
+              desc: "Malaysia's oldest functioning Chinese temple, renowned for exquisite lacquerwork and ridge dragons. Situated along Jalan Tokong alongside historic mosques and Hindu shrines.",
+              location: "Jalan Tokong, Melaka",
+              coords: [2.1979, 102.2458],
+              rating: "4.8 (8.9k)",
+              ratingScore: 4.8,
+              reviewCount: "8.9k",
+              cost: "Free entrance",
+              transitNext: { mode: "footprints", info: "3 min walk to San Shu Gong souvenir flagship (200m)" }
+            },
+            {
+              id: "mel11",
+              time: "14:15 - 16:30",
+              title: "San Shu Gong Traditional Confectionery House",
+              category: "Historic Confectionery & Gula Melaka Treats",
+              desc: "Pick up authentic Melaka delicacies: pure Nyonya Gula Melaka palm sugar cylinders, durian dodol, pineapple tarts, and freshly prepared bowl of shaved durian cendol upstairs.",
+              location: "Jalan Hang Jebat, Jonker Walk",
+              coords: [2.1956, 102.2481],
+              rating: "4.7 (12.3k)",
+              ratingScore: 4.7,
+              reviewCount: "12.3k",
+              cost: "RM 35 gifts & snacks",
+              transitNext: { mode: "car", info: "15 min Grab to Melaka Sentral (4.5km)" }
+            },
+            {
+              id: "mel12",
+              time: "17:00 - 18:30",
+              title: "Melaka Sentral Regional Departure Hub",
+              category: "Regional Express Bus Terminal",
+              desc: "Board frequent luxury express coaches direct to Kuala Lumpur (2 hours) or Singapore (4 hours), concluding a deeply enriching journey along Malaysia's historic trading strait.",
+              location: "Peringgit, Melaka",
+              coords: [2.2216, 102.2498],
+              rating: "4.5 (8.1k)",
+              ratingScore: 4.5,
+              reviewCount: "8.1k",
+              cost: "RM 30 express bus"
+            }
+          ]
+        }
+      ]
+    },
+
+    kotakinabalu: {
+      id: "kotakinabalu",
+      title: "Kota Kinabalu Borneo Nature & Island Escape",
+      destination: "Kota Kinabalu, Sabah, Malaysia",
+      duration: "3 Days / 2 Nights",
+      budget: {
+        total: "RM 2,200",
+        allocated: "RM 1,750",
+        currency: "MYR",
+        percentUsed: 80,
+        breakdown: [
+          { category: "Lodging (Waterfront / Kundasang)", amount: "RM 820", share: "47%", icon: "hotel" },
+          { category: "Fresh Seafood & Kadazan Dining", amount: "RM 480", share: "27%", icon: "utensils" },
+          { category: "Island Speedboat & Mountain Van", amount: "RM 240", share: "14%", icon: "train" },
+          { category: "Marine Park & Canopy Walk Passes", amount: "RM 130", share: "7%", icon: "landmark" },
+          { category: "Sabah Pearl & Artisan Souvenirs", amount: "RM 80", share: "5%", icon: "shopping-bag" }
+        ]
       },
-      {
-        id: "k8_replanned",
-        time: "17:00 - 19:30",
-        title: "Nishiki Market 'Kyoto's Kitchen' Covered Arcade",
-        category: "Sheltered Foodie Haven",
-        desc: "A 400-year-old 5-block covered shopping street completely protected from weather. Sample fresh grilled eel, dashi tamago, and artisanal wagashi.",
-        location: "Nakagyo Ward, Kyoto",
-        coords: [35.0050, 135.7652],
-        rating: "4.7 (16k)",
-        ratingScore: 4.7,
-        reviewCount: "16k",
-        cost: "¥3,500 food crawl",
-        replanned: true,
-        originalTitle: "Kinkaku-ji Golden Pavilion"
-      }
-    ]
+      tags: ["Borneo Nature", "Marine Park", "Mount Kinabalu", "Fresh Seafood"],
+      weatherForecast: [
+        { day: "Day 1 (Thu)", temp: "31°C / 24°C", condition: "Sunny & Island Breeze", icon: "sun", rain: "10%", alert: false },
+        { day: "Day 2 (Fri)", temp: "22°C / 16°C", condition: "Highland Mist & Cloud", icon: "cloud-rain", rain: "40%", alert: false },
+        { day: "Day 3 (Sat)", temp: "32°C / 25°C", condition: "Coastal Sunshine", icon: "sun", rain: "10%", alert: false }
+      ],
+      days: [
+        {
+          dayNumber: 1,
+          dateTitle: "Day 1: Coral Islands & World-Renowned Tanjung Aru Sunset",
+          slots: [
+            {
+              id: "kk1",
+              time: "09:00 - 10:30",
+              title: "Jesselton Point Ferry Terminal & Marine Hub",
+              category: "Historic Maritime Pier",
+              desc: "Historic British North Borneo colonial port terminal. Board comfortable twin-engine speedboats slicing across emerald waters towards the protected marine park islands.",
+              location: "Jalan Haji Saman, Kota Kinabalu",
+              coords: [5.9912, 116.0792],
+              rating: "4.7 (11.5k)",
+              ratingScore: 4.7,
+              reviewCount: "11.5k",
+              cost: "RM 35 boat transfer",
+              transitNext: { mode: "boat", info: "15 min speedboat across crystal coral sea (6km)" }
+            },
+            {
+              id: "kk2",
+              time: "11:00 - 14:30",
+              title: "Tunku Abdul Rahman Marine Park (Manukan Island)",
+              category: "Coral Island & Snorkeling Reserve",
+              desc: "Relax on powdery white sand beaches and snorkel amid thriving shallow coral reefs home to clownfish, blue sea stars, and parrotfish in turquoise tropical waters.",
+              location: "Manukan Island, Sabah",
+              coords: [5.9744, 116.0076],
+              rating: "4.8 (21k)",
+              ratingScore: 4.8,
+              reviewCount: "21k",
+              cost: "RM 25 conservation pass",
+              transitNext: { mode: "boat", info: "Speedboat return to city, 15 min Grab to Tanjung Aru (9km)" }
+            },
+            {
+              id: "kk3",
+              time: "16:30 - 18:45",
+              title: "Tanjung Aru Beach Sunset Promenade",
+              category: "World Top 10 Sunset Coast",
+              desc: "Experience Sabah's world-famous fiery sunset, with sky shifting from incandescent gold to vivid purple over the South China Sea. Enjoy fresh avocado and mango smoothies.",
+              location: "Tanjung Aru, Kota Kinabalu",
+              coords: [5.9485, 116.0450],
+              rating: "4.9 (35.2k)",
+              ratingScore: 4.9,
+              reviewCount: "35.2k",
+              cost: "Free entrance",
+              transitNext: { mode: "car", info: "10 min Grab car to Waterfront Night Market (5km)" }
+            },
+            {
+              id: "kk4",
+              time: "19:15 - 21:30",
+              title: "Kota Kinabalu Waterfront & Night Food Market",
+              category: "Seafood Feast & Night Market",
+              desc: "Feast on live charcoal-grilled tiger prawns, sambal stingray, spicy squid skewers, and Kadazan Hinava raw fish salad while watching illuminated fishing boats return.",
+              location: "Jalan Tun Fuad Stephens, KK",
+              coords: [5.9818, 116.0722],
+              rating: "4.7 (24.1k)",
+              ratingScore: 4.7,
+              reviewCount: "24.1k",
+              cost: "RM 65 seafood dinner"
+            }
+          ]
+        },
+        {
+          dayNumber: 2,
+          dateTitle: "Day 2: Mount Kinabalu Foothills, Canopy Walk & Highland Breeze",
+          slots: [
+            {
+              id: "kk5",
+              time: "08:00 - 11:00",
+              title: "Kinabalu UNESCO National Park Headquarters",
+              category: "UNESCO World Heritage Foothills",
+              desc: "Marvel at the majestic granite peaks of 4,095m Mount Kinabalu towering above mist-laden valleys. Walk guided botanical trails featuring rare wild pitcher plants and native orchids.",
+              location: "Ranau, Sabah",
+              coords: [6.0069, 116.5414],
+              rating: "4.9 (18.6k)",
+              ratingScore: 4.9,
+              reviewCount: "18.6k",
+              cost: "RM 50 park pass",
+              transitNext: { mode: "car", info: "35 min scenic mountain drive to Poring Hot Springs (28km)" }
+            },
+            {
+              id: "kk6",
+              time: "11:45 - 14:15",
+              title: "Poring Hot Springs & Treetop Canopy Walkway",
+              category: "Lowland Rainforest & Treetop Walk",
+              desc: "Walk suspended 40 meters above the jungle floor on rope bridges between giant Menggaris trees, followed by soaking in soothing natural sulphur mineral pools.",
+              location: "Poring, Ranau",
+              coords: [5.9675, 116.7039],
+              rating: "4.7 (14.2k)",
+              ratingScore: 4.7,
+              reviewCount: "14.2k",
+              cost: "RM 20 canopy walk",
+              transitNext: { mode: "car", info: "30 min mountain drive to Desa Dairy Farm (22km)" }
+            },
+            {
+              id: "kk7",
+              time: "15:00 - 16:45",
+              title: "Desa Cattle Dairy Farm ('Sabah\'s New Zealand')",
+              category: "Highland Pasture & Scenic Viewpoint",
+              desc: "Lush green rolling pastures nestled right against the towering rocky wall of Mount Kinabalu. Savor fresh gelato, bottled Jersey milk, and cheese pudding.",
+              location: "Kundasang Highlands",
+              coords: [5.9806, 116.5908],
+              rating: "4.8 (27.5k)",
+              ratingScore: 4.8,
+              reviewCount: "27.5k",
+              cost: "RM 5 entrance & gelato",
+              transitNext: { mode: "car", info: "8 min drive down to Kundasang market (3.5km)" }
+            },
+            {
+              id: "kk8",
+              time: "17:15 - 19:30",
+              title: "Kundasang Highland Market & Mountain Rest",
+              category: "Alpine Market & Cool Climate Haven",
+              desc: "Breathe crisp 18°C mountain air while browsing fresh highland strawberries, sweet corn, and honey. Enjoy a steaming hotpot dinner before returning down the range.",
+              location: "Kundasang Town, Ranau",
+              coords: [5.9863, 116.5772],
+              rating: "4.6 (12k)",
+              ratingScore: 4.6,
+              reviewCount: "12k",
+              cost: "RM 45 hotpot dinner"
+            }
+          ]
+        },
+        {
+          dayNumber: 3,
+          dateTitle: "Day 3: City Heritage, Floating Mosque & Waterfront Artisan Pearls",
+          slots: [
+            {
+              id: "kk9",
+              time: "09:00 - 11:15",
+              title: "Kota Kinabalu City Mosque ('Floating Mosque')",
+              category: "Contemporary Islamic Architecture",
+              desc: "A stunning white and blue modern sanctuary surrounded by a man-made saltwater lagoon. Its reflection on the calm water creates a mesmerizing floating illusion.",
+              location: "Likas Bay, Kota Kinabalu",
+              coords: [5.9959, 116.1080],
+              rating: "4.8 (19.4k)",
+              ratingScore: 4.8,
+              reviewCount: "19.4k",
+              cost: "RM 10 rental & visit",
+              transitNext: { mode: "car", info: "10 min Grab ride to Signal Hill (4.2km)" }
+            },
+            {
+              id: "kk10",
+              time: "11:45 - 13:30",
+              title: "Signal Hill Eco Observatory Platform",
+              category: "Panoramic City & Ocean Lookout",
+              desc: "Perched atop the highest hill within the CBD, offering 180° sweeping views over the city grid, Likas Bay, and the offshore islands of Tunku Abdul Rahman Park.",
+              location: "Signal Hill, Kota Kinabalu",
+              coords: [5.9868, 116.0799],
+              rating: "4.6 (9.1k)",
+              ratingScore: 4.6,
+              reviewCount: "9.1k",
+              cost: "Free entrance",
+              transitNext: { mode: "footprints", info: "7 min walk downhill to Handicraft Market (500m)" }
+            },
+            {
+              id: "kk11",
+              time: "14:00 - 16:30",
+              title: "Sabah Handicraft Market (Sabah Pearls & Sompoton)",
+              category: "Artisan Crafts & Freshwater Pearls",
+              desc: "Famous for genuine Sabah saltwater and freshwater pearl jewelry, handwoven Rungus beaded necklaces, bamboo Sompoton instruments, and rich Tenom coffee beans.",
+              location: "Jalan Tun Fuad Stephens, KK",
+              coords: [5.9809, 116.0715],
+              rating: "4.6 (16.2k)",
+              ratingScore: 4.6,
+              reviewCount: "16.2k",
+              cost: "RM 60 gifts & coffee",
+              transitNext: { mode: "car", info: "15 min Grab to KK International Airport (8.5km)" }
+            },
+            {
+              id: "kk12",
+              time: "17:00 - 18:30",
+              title: "Kota Kinabalu International Airport (KKIA) Hub",
+              category: "Borneo Aviation Gateway",
+              desc: "Board flights connecting to Kuala Lumpur, Singapore, or international hubs, finishing an unforgettable wildlife, marine, and mountain adventure across Sabah.",
+              location: "KKIA Terminal 1, Kepayan",
+              coords: [5.9372, 116.0512],
+              rating: "4.6 (14k)",
+              ratingScore: 4.6,
+              reviewCount: "14k",
+              cost: "Free departure"
+            }
+          ]
+        }
+      ]
+    }
   },
 
   // Dynamic Replanning Event: Kuala Lumpur Day 2 Afternoon Tropical Shower
@@ -732,891 +997,6 @@ window.VOYAGENT_DATA = {
   // Directly implements Project Developing Guide Section 3.12 & ratings extension
   // =========================================================================
   reviews: {
-    "k1": {
-      poiName: "Kiyomizu-dera Temple & Wooden Stage",
-      category: "UNESCO World Heritage · Buddhist Temple",
-      overallScore: 4.8,
-      totalReviews: "12,480",
-      recommendRate: "98%",
-      subRatings: {
-        atmosphere: 4.9,
-        photoSpots: 5.0,
-        crowdControl: 4.2,
-        value: 4.8
-      },
-      socialSentiment: {
-        platform: "Xiaohongshu & TikTok",
-        trendTag: "Top Kyoto Sunrise Destination",
-        sentimentScore: "97% Positive Sentiment",
-        summary: "Travelers strongly praise the sunrise view from the wooden terrace looking out toward the Higashiyama hills. Most recommended tip is arriving at the 06:00 AM gate opening to beat tour coaches and drink peacefully from the Otowa Waterfall."
-      },
-      breakdown: [
-        { stars: 5, pct: 84 },
-        { stars: 4, pct: 13 },
-        { stars: 3, pct: 2 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
-      reviews: [
-        {
-          id: "rev-k1-1",
-          author: "Elena Rostova",
-          persona: "Solo Cultural Traveler",
-          avatarText: "ER",
-          rating: 5,
-          date: "Visited Autumn 2026",
-          tag: "Sunrise Timing",
-          text: "The morning light filtering through the maple trees onto the wooden stage was worth waking up at 5:30 AM. Zero crowds, serene bell echoes, and the view toward Kyoto Tower was crystal clear.",
-          helpful: 52
-        },
-        {
-          id: "rev-k1-2",
-          author: "Kenji Sato",
-          persona: "Local Guide",
-          avatarText: "KS",
-          rating: 5,
-          date: "Visited 3 weeks ago",
-          tag: "Photography Route",
-          text: "Take the path past Koyasu Pagoda for the iconic postcard perspective of the main hall suspended over the cliff. If it begins to rain, the sheltered verandah provides dry seating.",
-          helpful: 38
-        },
-        {
-          id: "rev-k1-3",
-          author: "Marcus & Lily",
-          persona: "Couple",
-          avatarText: "ML",
-          rating: 4,
-          date: "Visited September 2026",
-          tag: "Walking Advisory",
-          text: "Incredible architecture, but the hill climb up Matsubara-dori is moderately steep. Wear comfortable walking shoes rather than fashion boots.",
-          helpful: 19
-        }
-      ]
-    },
-
-    "k2": {
-      poiName: "Sannenzaka & Ninenzaka Teahouses",
-      category: "Preserved Edo Historic District",
-      overallScore: 4.7,
-      totalReviews: "8,920",
-      recommendRate: "95%",
-      subRatings: {
-        atmosphere: 4.9,
-        photoSpots: 4.8,
-        crowdControl: 3.9,
-        value: 4.5
-      },
-      socialSentiment: {
-        platform: "Xiaohongshu & Instagram",
-        trendTag: "Kimono Stroll & Hidden Cafes",
-        sentimentScore: "94% Positive Sentiment",
-        summary: "Highly recommended for traditional Japanese sweet shops and historic Machiya townhouses. Popular tips highlight the tatami Starbucks and small alleyway soba spots away from the main stairs."
-      },
-      breakdown: [
-        { stars: 5, pct: 76 },
-        { stars: 4, pct: 18 },
-        { stars: 3, pct: 4 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 1 }
-      ],
-      reviews: [
-        {
-          id: "rev-k2-1",
-          author: "Chloe Dubois",
-          persona: "Foodie Focus",
-          avatarText: "CD",
-          rating: 5,
-          date: "Visited October 2026",
-          tag: "Matcha Paradise",
-          text: "Do not miss the fresh roasted dango and warm hojicha tea in the courtyard behind the main stone staircase. Traditional Kyoto hospitality at its best.",
-          helpful: 41
-        },
-        {
-          id: "rev-k2-2",
-          author: "Daniel Zhao",
-          persona: "Solo / Couple",
-          avatarText: "DZ",
-          rating: 4,
-          date: "Visited last week",
-          tag: "Crowd Tip",
-          text: "After 11:00 AM the narrow staircases get packed with photo seekers. Come either before 9:00 AM or after 17:30 when the paper lanterns light up and the crowds vanish.",
-          helpful: 27
-        }
-      ]
-    },
-
-    "k3": {
-      poiName: "Yasaka Shrine & Maruyama Park",
-      category: "Shinto Shrine & Public Autumn Park",
-      overallScore: 4.6,
-      totalReviews: "9,510",
-      recommendRate: "96%",
-      subRatings: {
-        atmosphere: 4.8,
-        photoSpots: 4.7,
-        crowdControl: 4.5,
-        value: 5.0
-      },
-      socialSentiment: {
-        platform: "TikTok & TripAdvisor",
-        trendTag: "Evening Lantern Illumination",
-        sentimentScore: "95% Positive Sentiment",
-        summary: "Travelers love the free admission and 24-hour access. The dance stage lanterns bearing sponsors' calligraphy glow beautifully around twilight."
-      },
-      breakdown: [
-        { stars: 5, pct: 72 },
-        { stars: 4, pct: 21 },
-        { stars: 3, pct: 5 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 1 }
-      ],
-      reviews: [
-        {
-          id: "rev-k3-1",
-          author: "Hiroshi Mori",
-          persona: "Family Leisure",
-          avatarText: "HM",
-          rating: 5,
-          date: "Visited 1 week ago",
-          tag: "Lantern Stage",
-          text: "Beautiful at dusk when the central pavilion's hundreds of lanterns are turned on. It connects directly into Maruyama Park for a peaceful stroll away from city traffic.",
-          helpful: 34
-        }
-      ]
-    },
-
-    "k4": {
-      poiName: "Gion Shirakawa & Pontocho Alley Dinner",
-      category: "Historic Entertainment Quarter & Riverfront Kaiseki",
-      overallScore: 4.9,
-      totalReviews: "5,340",
-      recommendRate: "99%",
-      subRatings: {
-        atmosphere: 5.0,
-        photoSpots: 4.9,
-        crowdControl: 4.4,
-        value: 4.6
-      },
-      socialSentiment: {
-        platform: "Xiaohongshu & Dianping",
-        trendTag: "Atmospheric Night Walk & River Terraces",
-        sentimentScore: "98% Positive Sentiment",
-        summary: "Praised as Kyoto's most romantic night dining strip. Booking river-facing tables (Kawayuka) in advance is widely encouraged by past diners."
-      },
-      breakdown: [
-        { stars: 5, pct: 89 },
-        { stars: 4, pct: 9 },
-        { stars: 3, pct: 1 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
-      reviews: [
-        {
-          id: "rev-k4-1",
-          author: "Aiden Scott",
-          persona: "Foodie Focus",
-          avatarText: "AS",
-          rating: 5,
-          date: "Visited September 2026",
-          tag: "Pontocho Dining",
-          text: "The narrow stone alleyway lined with traditional noren curtains and wooden lattices is pure magic at night. The multi-course seasonal dinner was unforgettable.",
-          helpful: 48
-        }
-      ]
-    },
-
-    "k5": {
-      poiName: "Arashiyama Bamboo Grove & Tenryu-ji",
-      category: "Natural Landmark & Zen Buddhist Monastery",
-      overallScore: 4.8,
-      totalReviews: "21,300",
-      recommendRate: "97%",
-      subRatings: {
-        atmosphere: 4.9,
-        photoSpots: 4.9,
-        crowdControl: 3.8,
-        value: 4.7
-      },
-      socialSentiment: {
-        platform: "TikTok & Xiaohongshu",
-        trendTag: "Emerald Soundscape & Morning Silence",
-        sentimentScore: "96% Positive Sentiment",
-        summary: "Recognized on Japan's '100 Soundscapes'. Travelers emphasize that gentle breezes rustling the tall stalks is tranquil, but visiting by 08:30 AM is crucial for peaceful photos."
-      },
-      breakdown: [
-        { stars: 5, pct: 82 },
-        { stars: 4, pct: 14 },
-        { stars: 3, pct: 3 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
-      reviews: [
-        {
-          id: "rev-k5-1",
-          author: "Samantha Bell",
-          persona: "Solo / Couple",
-          avatarText: "SB",
-          rating: 5,
-          date: "Visited Autumn 2026",
-          tag: "Early Bird",
-          text: "Arrived at 8:00 AM on a crisp morning. The green bamboo tunnel felt like stepping into another dimension. Tenryu-ji garden right beside it is worth the extra ¥500.",
-          helpful: 63
-        }
-      ]
-    },
-
-    "k6": {
-      poiName: "Togetsukyo Bridge & Riverside Soba Lunch",
-      category: "Historic Bridge & Scenic Dining",
-      overallScore: 4.6,
-      totalReviews: "4,200",
-      recommendRate: "94%",
-      subRatings: {
-        atmosphere: 4.8,
-        photoSpots: 4.7,
-        crowdControl: 4.0,
-        value: 4.4
-      },
-      socialSentiment: {
-        platform: "Xiaohongshu & Tabelog",
-        trendTag: "Riverside Soba & Mountain Views",
-        sentimentScore: "93% Positive Sentiment",
-        summary: "Yoshimura handmade soba with views of the Oi River and autumn foliage gets high praise. Window seats are in high demand during midday."
-      },
-      breakdown: [
-        { stars: 5, pct: 70 },
-        { stars: 4, pct: 23 },
-        { stars: 3, pct: 5 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 1 }
-      ],
-      reviews: [
-        {
-          id: "rev-k6-1",
-          author: "Oliver Brown",
-          persona: "Foodie Focus",
-          avatarText: "OB",
-          rating: 5,
-          date: "Visited 2 weeks ago",
-          tag: "Window Counter",
-          text: "Freshly buckwheat-ground soba served with hot tempura overlooking Togetsukyo Bridge. Waiting 15 minutes for a 2nd-floor window seat was well worth it.",
-          helpful: 24
-        }
-      ]
-    },
-
-    "k7": {
-      poiName: "Iwatayama Monkey Park (Outdoor Hike)",
-      category: "Wildlife Sanctuary & Panoramic Hilltop",
-      overallScore: 4.5,
-      totalReviews: "3,820",
-      recommendRate: "91%",
-      subRatings: {
-        atmosphere: 4.6,
-        photoSpots: 4.8,
-        crowdControl: 4.3,
-        value: 4.6
-      },
-      socialSentiment: {
-        platform: "TripAdvisor & YouTube",
-        trendTag: "Wild Macaques & Kyoto Panorama",
-        sentimentScore: "90% Positive Sentiment",
-        summary: "Great open-air views of Kyoto city and playful monkeys. However, reviews universally advise avoiding the 20-minute dirt trail during rainy conditions due to mud and slippery rocks."
-      },
-      breakdown: [
-        { stars: 5, pct: 68 },
-        { stars: 4, pct: 22 },
-        { stars: 3, pct: 7 },
-        { stars: 2, pct: 2 },
-        { stars: 1, pct: 1 }
-      ],
-      reviews: [
-        {
-          id: "rev-k7-1",
-          author: "Liam Walker",
-          persona: "Family Leisure",
-          avatarText: "LW",
-          rating: 4,
-          date: "Visited last month",
-          tag: "Weather Notice",
-          text: "The summit view is fantastic on clear dry days. Note that the 20-minute uphill path is exposed; if it starts raining, the soil gets very slick.",
-          helpful: 31
-        }
-      ]
-    },
-
-    "k7_replanned": {
-      poiName: "Kyoto National Museum (Indoor Masterpieces)",
-      category: "Sheltered National Museum · Meiji Cultural Heritage",
-      overallScore: 4.7,
-      totalReviews: "7,240",
-      recommendRate: "97%",
-      subRatings: {
-        atmosphere: 4.9,
-        photoSpots: 4.5,
-        crowdControl: 4.8,
-        value: 4.9
-      },
-      socialSentiment: {
-        platform: "Xiaohongshu & Google Reviews",
-        trendTag: "Ultimate Rainy Day Sanctuary",
-        sentimentScore: "98% Positive Sentiment",
-        summary: "Highly lauded as Kyoto's premier cultural haven during inclement weather. The modern Heisei Chishinkan wing offers world-class climate control, quiet viewing galleries, and English audioguides."
-      },
-      breakdown: [
-        { stars: 5, pct: 78 },
-        { stars: 4, pct: 18 },
-        { stars: 3, pct: 3 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
-      reviews: [
-        {
-          id: "rev-k7r-1",
-          author: "Dr. Evelyn Reed",
-          persona: "Solo Cultural Traveler",
-          avatarText: "ER",
-          rating: 5,
-          date: "Visited Autumn 2026",
-          tag: "Rain Shelter Gem",
-          text: "When heavy afternoon rain began, VoyAgent suggested swapping over here. It was the best decision! The samurai armor and Buddhist wooden statues in the dry, quiet gallery were breathtaking.",
-          helpful: 47
-        },
-        {
-          id: "rev-k7r-2",
-          author: "Tetsuya Kondo",
-          persona: "Local Guide",
-          avatarText: "TK",
-          rating: 5,
-          date: "Visited 1 week ago",
-          tag: "Garden Cafe",
-          text: "The cafe inside the museum looking out through floor-to-ceiling glass onto the Meiji red-brick building is relaxing while rain falls outside.",
-          helpful: 33
-        }
-      ]
-    },
-
-    "k8_replanned": {
-      poiName: "Nishiki Market Covered Arcade",
-      category: "Sheltered Food Arcade · 'Kyoto's Kitchen'",
-      overallScore: 4.7,
-      totalReviews: "16,100",
-      recommendRate: "96%",
-      subRatings: {
-        atmosphere: 4.8,
-        photoSpots: 4.6,
-        crowdControl: 4.1,
-        value: 4.7
-      },
-      socialSentiment: {
-        platform: "TikTok & Xiaohongshu",
-        trendTag: "400m Weatherproof Street Food Heaven",
-        sentimentScore: "95% Positive Sentiment",
-        summary: "Over 130 stalls along a 400-meter covered corridor. Completely sheltered from torrential rain. Top items: dashi tamagoyaki, grilled unagi skewers, and artisanal pickles."
-      },
-      breakdown: [
-        { stars: 5, pct: 77 },
-        { stars: 4, pct: 18 },
-        { stars: 3, pct: 3 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 1 }
-      ],
-      reviews: [
-        {
-          id: "rev-k8r-1",
-          author: "Mei-Ling Chang",
-          persona: "Foodie Focus",
-          avatarText: "MC",
-          rating: 5,
-          date: "Visited Autumn 2026",
-          tag: "Food Crawl",
-          text: "Raining buckets outside, but we were completely warm and dry inside Nishiki. The freshly grilled octopus skewers and warm soybean donuts were perfection.",
-          helpful: 59
-        }
-      ]
-    },
-
-    "k8": {
-      poiName: "Kinkaku-ji (Golden Pavilion)",
-      category: "UNESCO World Heritage · Zen Buddhist Temple",
-      overallScore: 4.7,
-      totalReviews: "19,400",
-      recommendRate: "96%",
-      subRatings: {
-        atmosphere: 4.9,
-        photoSpots: 5.0,
-        crowdControl: 3.6,
-        value: 4.5
-      },
-      socialSentiment: {
-        platform: "Instagram & TikTok",
-        trendTag: "Iconic Gold Mirror Reflection",
-        sentimentScore: "94% Positive Sentiment",
-        summary: "Top-tier photography landmark. The gold leaf exterior gleaming over the lake creates postcard reflections. Note that the visitor path is entirely outdoors."
-      },
-      breakdown: [
-        { stars: 5, pct: 79 },
-        { stars: 4, pct: 16 },
-        { stars: 3, pct: 4 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
-      reviews: [
-        {
-          id: "rev-k8-1",
-          author: "Jonas Richter",
-          persona: "Solo / Couple",
-          avatarText: "JR",
-          rating: 5,
-          date: "Visited September 2026",
-          tag: "Sunset Reflection",
-          text: "Late afternoon light makes the gold glow brilliantly. Just note that the viewing loop is one-way and outdoor; carry an umbrella if clouds gather.",
-          helpful: 35
-        }
-      ]
-    },
-
-    "k9": {
-      poiName: "Fushimi Inari Taisha 1,000 Torii Path",
-      category: "Sacred Shinto Shrine & Mountain Pilgrimage",
-      overallScore: 4.9,
-      totalReviews: "35,200",
-      recommendRate: "99%",
-      subRatings: {
-        atmosphere: 5.0,
-        photoSpots: 5.0,
-        crowdControl: 4.1,
-        value: 5.0
-      },
-      socialSentiment: {
-        platform: "TikTok, Xiaohongshu & YouTube",
-        trendTag: "Number One Landmark in Japan",
-        sentimentScore: "98% Positive Sentiment",
-        summary: "Tens of thousands of vermilion gates winding up the mountain. Travelers emphasize that walking past the Yotsutsuji intersection yields quiet trails and panoramic city vistas."
-      },
-      breakdown: [
-        { stars: 5, pct: 91 },
-        { stars: 4, pct: 7 },
-        { stars: 3, pct: 1 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
-      reviews: [
-        {
-          id: "rev-k9-1",
-          author: "Hannah Clarke",
-          persona: "Solo Cultural Traveler",
-          avatarText: "HC",
-          rating: 5,
-          date: "Visited Autumn 2026",
-          tag: "Mount Inari Loop",
-          text: "Hiked the entire 2.5-hour mountain circuit starting at 7:00 AM. As you ascend, the crowds thin to almost nothing and mountain fox shrines emerge in the forest mist.",
-          helpful: 84
-        }
-      ]
-    },
-
-    "k10": {
-      poiName: "Byodoin Phoenix Hall",
-      category: "National Treasure · Pure Land Architecture",
-      overallScore: 4.8,
-      totalReviews: "8,120",
-      recommendRate: "97%",
-      subRatings: {
-        atmosphere: 4.9,
-        photoSpots: 4.9,
-        crowdControl: 4.4,
-        value: 4.8
-      },
-      socialSentiment: {
-        platform: "Xiaohongshu & Google Maps",
-        trendTag: "10-Yen Coin Temple & Reflection Pond",
-        sentimentScore: "97% Positive Sentiment",
-        summary: "The 1053 AD wooden Phoenix Hall mirrored in the Aji-ike pond is a masterwork. The underground Hoshokan museum is climate-controlled and showcases bronze phoenix statues."
-      },
-      breakdown: [
-        { stars: 5, pct: 83 },
-        { stars: 4, pct: 14 },
-        { stars: 3, pct: 2 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
-      reviews: [
-        {
-          id: "rev-k10-1",
-          author: "Benjamin Lee",
-          persona: "Cultural Heritage",
-          avatarText: "BL",
-          rating: 5,
-          date: "Visited October 2026",
-          tag: "Museum Treasure",
-          text: "Holding up a 10-yen coin against the actual Phoenix Hall is an essential photo, but the modern underground museum displaying original flying Bodhisattvas was the true highlight.",
-          helpful: 46
-        }
-      ]
-    },
-
-    "k11": {
-      poiName: "Tsuen Authentic Matcha Workshop",
-      category: "860-Year-Old Historic Teahouse",
-      overallScore: 4.8,
-      totalReviews: "1,940",
-      recommendRate: "98%",
-      subRatings: {
-        atmosphere: 5.0,
-        photoSpots: 4.7,
-        crowdControl: 4.8,
-        value: 4.7
-      },
-      socialSentiment: {
-        platform: "Xiaohongshu & Instagram",
-        trendTag: "World's Oldest Operating Teahouse (Est. 1160)",
-        sentimentScore: "99% Positive Sentiment",
-        summary: "Run by the 24th generation master. Stone-grinding your own Gyokuro green tea leaves and drinking fresh froth beside the Uji River bridge."
-      },
-      breakdown: [
-        { stars: 5, pct: 85 },
-        { stars: 4, pct: 13 },
-        { stars: 3, pct: 2 },
-        { stars: 2, pct: 0 },
-        { stars: 1, pct: 0 }
-      ],
-      reviews: [
-        {
-          id: "rev-k11-1",
-          author: "Charlotte Evans",
-          persona: "Foodie Focus",
-          avatarText: "CE",
-          rating: 5,
-          date: "Visited last week",
-          tag: "Tea Master Class",
-          text: "Drinking fresh ceremonial matcha ground with your own hands while listening to stories from a family that has poured tea since the 12th century. Unrivaled authentic depth.",
-          helpful: 39
-        }
-      ]
-    },
-
-    "k12": {
-      poiName: "Nijo Castle & Ninomaru Palace",
-      category: "Tokugawa Shogunate Residence · Feudal History",
-      overallScore: 4.7,
-      totalReviews: "14,200",
-      recommendRate: "95%",
-      subRatings: {
-        atmosphere: 4.8,
-        photoSpots: 4.6,
-        crowdControl: 4.3,
-        value: 4.6
-      },
-      socialSentiment: {
-        platform: "TripAdvisor & YouTube",
-        trendTag: "Chirping Nightingale Security Floors",
-        sentimentScore: "95% Positive Sentiment",
-        summary: "The clever architectural security system of floorboards that chirp like birds when walked upon is a crowd favorite. Beautiful Kano school gold leaf wall paintings inside."
-      },
-      breakdown: [
-        { stars: 5, pct: 76 },
-        { stars: 4, pct: 19 },
-        { stars: 3, pct: 4 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
-      reviews: [
-        {
-          id: "rev-k12-1",
-          author: "Nathan King",
-          persona: "Solo Cultural Traveler",
-          avatarText: "NK",
-          rating: 5,
-          date: "Visited 3 weeks ago",
-          tag: "Palace Walk",
-          text: "Walking barefoot through Ninomaru Palace hearing the nightingale floorboards chirp beneath your feet is incredible living history.",
-          helpful: 28
-        }
-      ]
-    },
-
-    "k13": {
-      poiName: "Kyoto Station Skyway & Souvenir Hall",
-      category: "Modern Architectural Hub & Craft Plaza",
-      overallScore: 4.5,
-      totalReviews: "18,300",
-      recommendRate: "93%",
-      subRatings: {
-        atmosphere: 4.6,
-        photoSpots: 4.7,
-        crowdControl: 3.9,
-        value: 4.5
-      },
-      socialSentiment: {
-        platform: "Google Reviews",
-        trendTag: "11-Story Glass Atrium & Skywalk",
-        sentimentScore: "93% Positive Sentiment",
-        summary: "Hiroshi Hara's futuristic glass and steel complex. The 10th-floor Skyway corridor offers panoramic city and Kyoto Tower views, right above the ramen food floor."
-      },
-      breakdown: [
-        { stars: 5, pct: 67 },
-        { stars: 4, pct: 25 },
-        { stars: 3, pct: 6 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 1 }
-      ],
-      reviews: [
-        {
-          id: "rev-k13-1",
-          author: "Lucas Miller",
-          persona: "Business Travel",
-          avatarText: "LM",
-          rating: 5,
-          date: "Visited yesterday",
-          tag: "Skyway Sunset",
-          text: "Take the giant illuminated grand staircase up to the 11th floor Skyway. Perfect free city viewpoint while picking up bento boxes before boarding the bullet train.",
-          helpful: 22
-        }
-      ]
-    },
-
-    // Melbourne POIs
-    "m1": {
-      poiName: "Flinders Street & Degraves Street Coffee Crawl",
-      category: "Specialty Espresso Bar Precinct",
-      overallScore: 4.7,
-      totalReviews: "9,200",
-      recommendRate: "96%",
-      subRatings: {
-        atmosphere: 4.8,
-        photoSpots: 4.7,
-        crowdControl: 4.0,
-        value: 4.6
-      },
-      socialSentiment: {
-        platform: "TikTok & Broadsheet",
-        trendTag: "World Capital of Flat Whites",
-        sentimentScore: "97% Positive Sentiment",
-        summary: "Bustling cobblestone laneway packed with hole-in-the-wall espresso bars, outdoor umbrella tables, and freshly baked pastries."
-      },
-      breakdown: [
-        { stars: 5, pct: 78 },
-        { stars: 4, pct: 18 },
-        { stars: 3, pct: 3 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
-      reviews: [
-        {
-          id: "rev-m1-1",
-          author: "Jessica Taylor",
-          persona: "Foodie Focus",
-          avatarText: "JT",
-          rating: 5,
-          date: "Visited last weekend",
-          tag: "Best Flat White",
-          text: "Grabbed a single-origin oat flat white from Degraves Espresso. The laneway energy in the morning with commuters and acoustic buskers is quintessential Melbourne.",
-          helpful: 37
-        }
-      ]
-    },
-
-    "m2": {
-      poiName: "Hosier Lane Street Art & ACMI Gallery",
-      category: "Graffiti Arts Precinct & Moving Image Museum",
-      overallScore: 4.8,
-      totalReviews: "11,400",
-      recommendRate: "97%",
-      subRatings: {
-        atmosphere: 4.9,
-        photoSpots: 5.0,
-        crowdControl: 4.1,
-        value: 5.0
-      },
-      socialSentiment: {
-        platform: "Instagram & TikTok",
-        trendTag: "Dynamic Urban Murals & Free ACMI",
-        sentimentScore: "96% Positive Sentiment",
-        summary: "Constantly morphing street art canvas followed by the free permanent media exhibit at ACMI, right across from Federation Square."
-      },
-      breakdown: [
-        { stars: 5, pct: 83 },
-        { stars: 4, pct: 14 },
-        { stars: 3, pct: 2 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
-      reviews: [
-        {
-          id: "rev-m2-1",
-          author: "Liam O'Connor",
-          persona: "Arts & Culture",
-          avatarText: "LO",
-          rating: 5,
-          date: "Visited 2 weeks ago",
-          tag: "Vibrant Murals",
-          text: "Every few weeks artists spray fresh murals. Pair it with ACMI across the street for a full creative immersion.",
-          helpful: 29
-        }
-      ]
-    },
-
-    "m3": {
-      poiName: "Queen Victoria Market Artisan Delis",
-      category: "1878 Historic Produce & Food Hall",
-      overallScore: 4.6,
-      totalReviews: "24,300",
-      recommendRate: "95%",
-      subRatings: {
-        atmosphere: 4.7,
-        photoSpots: 4.5,
-        crowdControl: 3.9,
-        value: 4.7
-      },
-      socialSentiment: {
-        platform: "Xiaohongshu & TikTok",
-        trendTag: "Hot Jam Donuts & Coffin Bay Oysters",
-        sentimentScore: "94% Positive Sentiment",
-        summary: "The heritage Deli Hall is heaven for cheese, cured meats, and fresh Tasmanian oysters shucked to order. American Doughnut Kitchen van outside is a mandatory ritual."
-      },
-      breakdown: [
-        { stars: 5, pct: 72 },
-        { stars: 4, pct: 22 },
-        { stars: 3, pct: 4 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 1 }
-      ],
-      reviews: [
-        {
-          id: "rev-m3-1",
-          author: "Zara Khan",
-          persona: "Foodie Focus",
-          avatarText: "ZK",
-          rating: 5,
-          date: "Visited Autumn 2026",
-          tag: "Deli Hall",
-          text: "Fresh sourdough, truffle brie, and half-a-dozen fresh oysters for lunch. A vibrant feast with local vendors.",
-          helpful: 44
-        }
-      ]
-    },
-
-    "m4": {
-      poiName: "Torquay Surf Beach & Memorial Arch Drive",
-      category: "Coastal Gateway & Historic Memorial",
-      overallScore: 4.8,
-      totalReviews: "7,120",
-      recommendRate: "96%",
-      subRatings: {
-        atmosphere: 4.9,
-        photoSpots: 4.8,
-        crowdControl: 4.4,
-        value: 5.0
-      },
-      socialSentiment: {
-        platform: "YouTube & Instagram",
-        trendTag: "Beginning of the Great Ocean Road",
-        sentimentScore: "97% Positive Sentiment",
-        summary: "The official timber Memorial Arch built by returned WWI diggers. The ocean breeze and rugged Bass Strait breakers kick off the road trip in dramatic fashion."
-      },
-      breakdown: [
-        { stars: 5, pct: 81 },
-        { stars: 4, pct: 15 },
-        { stars: 3, pct: 3 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
-      reviews: [
-        {
-          id: "rev-m4-1",
-          author: "Tom Jenkins",
-          persona: "Road Tripper",
-          avatarText: "TJ",
-          rating: 5,
-          date: "Visited September 2026",
-          tag: "Iconic Start",
-          text: "Pulling over just past the arch to hear the roaring waves crashing into Eastern View beach sets the stage for one of the greatest coastal drives on earth.",
-          helpful: 36
-        }
-      ]
-    },
-
-    "m5": {
-      poiName: "Apollo Bay Fishermen's Seafood Lunch",
-      category: "Ocean Harbor Seafood Wharf",
-      overallScore: 4.6,
-      totalReviews: "3,250",
-      recommendRate: "94%",
-      subRatings: {
-        atmosphere: 4.7,
-        photoSpots: 4.6,
-        crowdControl: 4.2,
-        value: 4.5
-      },
-      socialSentiment: {
-        platform: "Broadsheet & Xiaohongshu",
-        trendTag: "Fresh Crayfish & Harbour Views",
-        sentimentScore: "95% Positive Sentiment",
-        summary: "Southern Rock Lobster grilled with garlic butter and chips directly on the fisherman's pier, midway along the Great Ocean Road."
-      },
-      breakdown: [
-        { stars: 5, pct: 71 },
-        { stars: 4, pct: 23 },
-        { stars: 3, pct: 4 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 1 }
-      ],
-      reviews: [
-        {
-          id: "rev-m5-1",
-          author: "Grace Murphy",
-          persona: "Foodie Focus",
-          avatarText: "GM",
-          rating: 5,
-          date: "Visited 2 weeks ago",
-          tag: "Lobster Roll",
-          text: "Eating fresh caught crayfish roll sitting on the timber wharf while fishing boats come into the bay. Perfection after a morning of coastal driving.",
-          helpful: 27
-        }
-      ]
-    },
-
-    "m6": {
-      poiName: "Twelve Apostles & Loch Ard Gorge Sunset",
-      category: "Dramatic Limestone Sea Stacks · Marine National Park",
-      overallScore: 4.9,
-      totalReviews: "29,400",
-      recommendRate: "99%",
-      subRatings: {
-        atmosphere: 5.0,
-        photoSpots: 5.0,
-        crowdControl: 4.2,
-        value: 5.0
-      },
-      socialSentiment: {
-        platform: "TikTok & National Geographic",
-        trendTag: "Unmatched Southern Ocean Sunset",
-        sentimentScore: "98% Positive Sentiment",
-        summary: "45-meter limestone sentinels carved by the Southern Ocean. Golden hour light illuminating the sea spray is an unforgettable natural wonder."
-      },
-      breakdown: [
-        { stars: 5, pct: 92 },
-        { stars: 4, pct: 7 },
-        { stars: 3, pct: 1 },
-        { stars: 2, pct: 0 },
-        { stars: 1, pct: 0 }
-      ],
-      reviews: [
-        {
-          id: "rev-m6-1",
-          author: "Christian Scott",
-          persona: "Solo / Couple",
-          avatarText: "CS",
-          rating: 5,
-          date: "Visited Autumn 2026",
-          tag: "Golden Hour",
-          text: "Arrive 45 minutes before sunset and walk out to the Castle Rock lookout. The golden sun hitting the limestone stacks while fairy penguins swim ashore is pure poetry.",
-          helpful: 73
-        }
-      ]
-    },
-
     // ==========================================
     // Kuala Lumpur POI Reviews & Feedback
     // ==========================================
@@ -1626,623 +1006,983 @@ window.VOYAGENT_DATA = {
       overallScore: 4.7,
       totalReviews: "18,520",
       recommendRate: "96%",
-      subRatings: {
-        atmosphere: 4.8,
-        photoSpots: 4.9,
-        crowdControl: 4.5,
-        value: 4.8
-      },
+      subRatings: { atmosphere: 4.8, photoSpots: 4.9, crowdControl: 4.5, value: 4.8 },
       socialSentiment: {
         platform: "TikTok & Xiaohongshu",
         trendTag: "Moorish Architecture & River of Life",
         sentimentScore: "96% Positive Sentiment",
         summary: "Travelers strongly recommend morning visits for quiet colonial photography, or evening strolls when the Sultan Abdul Samad building is lit and the River of Life blue mist display runs."
       },
-      breakdown: [
-        { stars: 5, pct: 79 },
-        { stars: 4, pct: 16 },
-        { stars: 3, pct: 4 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
+      breakdown: [ { stars: 5, pct: 79 }, { stars: 4, pct: 16 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl1-1",
-          author: "Ahmad Farhan",
-          persona: "Local Guide",
-          avatarText: "AF",
-          rating: 5,
-          date: "Visited 2 weeks ago",
-          tag: "River of Life Mist",
-          text: "The view of the Moorish copper domes reflected against the mist-fountain of the Klang-Gombak river confluence at dusk is spectacular. Cross the pedestrian bridge directly into Chinatown afterwards.",
-          helpful: 46
-        },
-        {
-          id: "rev-kl1-2",
-          author: "Sophia Taylor",
-          persona: "Solo Cultural Traveler",
-          avatarText: "ST",
-          rating: 5,
-          date: "Visited September 2026",
-          tag: "Colonial History",
-          text: "Incredible historical gravitas where Malaysia gained independence in 1957. The cricket pitch lawn is huge, with the modern Merdeka 118 tower rising dramatically in the backdrop.",
-          helpful: 31
-        },
-        {
-          id: "rev-kl1-3",
-          author: "Julian & Grace",
-          persona: "Couple",
-          avatarText: "JG",
-          rating: 4,
-          date: "Visited October 2026",
-          tag: "Sun Protection",
-          text: "Open lawn area gets hot by 11 AM. Carry an umbrella or sunglasses, then duck into the KL City Gallery for air conditioning.",
-          helpful: 18
-        }
+        { id: "rev-kl1-1", author: "Ahmad Farhan", persona: "Local Guide", avatarText: "AF", rating: 5, date: "Visited 2 weeks ago", tag: "River of Life Mist", text: "The view of the Moorish copper domes reflected against the mist-fountain of the Klang-Gombak river confluence at dusk is spectacular. Cross the pedestrian bridge directly into Chinatown afterwards.", helpful: 46 }
       ]
     },
-
     "kl2": {
       poiName: "Petaling Street & Kwai Chai Hong (Chinatown)",
-      category: "Restored 1960s Shophouses & Gastronomy",
+      category: "Heritage Shophouses & Gastronomy Hub",
       overallScore: 4.6,
       totalReviews: "22,800",
-      recommendRate: "94%",
-      subRatings: {
-        atmosphere: 4.7,
-        photoSpots: 4.9,
-        crowdControl: 3.8,
-        value: 4.6
-      },
+      recommendRate: "95%",
+      subRatings: { atmosphere: 4.7, photoSpots: 4.9, crowdControl: 4.1, value: 4.7 },
       socialSentiment: {
-        platform: "Xiaohongshu & Instagram",
-        trendTag: "Kwai Chai Hong Murals & Hainan Toast",
-        sentimentScore: "94% Positive Sentiment",
-        summary: "Highly celebrated for charming heritage back-alleys with interactive QR-code audio murals, authentic charcoal kaya toast, and hidden speakeasy cocktail bars."
+        platform: "Instagram & Xiaohongshu",
+        trendTag: "Interactive 1960s Murals & Claypot Rice",
+        sentimentScore: "95% Positive Sentiment",
+        summary: "Kwai Chai Hong's restored red bridge and interactive acoustic murals are a photographer favorite. Foodies recommend arriving hungry for charcoal claypot chicken rice and Pandan egg tarts."
       },
-      breakdown: [
-        { stars: 5, pct: 74 },
-        { stars: 4, pct: 20 },
-        { stars: 3, pct: 4 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 1 }
-      ],
+      breakdown: [ { stars: 5, pct: 74 }, { stars: 4, pct: 20 }, { stars: 3, pct: 4 }, { stars: 2, pct: 2 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl2-1",
-          author: "Mei Ling Tan",
-          persona: "Foodie Focus",
-          avatarText: "MT",
-          rating: 5,
-          date: "Visited Autumn 2026",
-          tag: "Charcoal Toast & Kopi",
-          text: "Do not leave without ordering the charcoal-toasted Hainanese bread with cold butter slices and rich coconut kaya. Kwai Chai Hong's red lantern bridge feels nostalgic and cinematic.",
-          helpful: 58
-        },
-        {
-          id: "rev-kl2-2",
-          author: "Daniel Robertson",
-          persona: "Solo / Couple",
-          avatarText: "DR",
-          rating: 4,
-          date: "Visited 1 month ago",
-          tag: "Murals & Cafes",
-          text: "The murals are creative and interactive. The main Petaling covered market can be crowded with souvenir stalls, but the side alleys and hipster cafes are pure gold.",
-          helpful: 24
-        }
+        { id: "rev-kl2-1", author: "Rachel Lim", persona: "Foodie Focus", avatarText: "RL", rating: 5, date: "Visited last week", tag: "Hidden Murals", text: "Scan the QR codes next to the street murals in Kwai Chai Hong to hear voice clips of 1960s street vendors. Grab iced Hainanese kopi and kaya butter toast at Bunn Choon nearby.", helpful: 39 }
       ]
     },
-
     "kl3": {
       poiName: "Bukit Bintang & Pavilion KL Trend Epicentre",
-      category: "Premier Lifestyle & Luxury Retail",
+      category: "Premier Retail & Vibrant Urban Boulevard",
       overallScore: 4.8,
-      totalReviews: "34,200",
+      totalReviews: "34,000",
       recommendRate: "97%",
-      subRatings: {
-        atmosphere: 4.9,
-        photoSpots: 4.8,
-        crowdControl: 4.2,
-        value: 4.7
-      },
+      subRatings: { atmosphere: 4.9, photoSpots: 4.8, crowdControl: 4.3, value: 4.6 },
       socialSentiment: {
-        platform: "Instagram & Google Reviews",
+        platform: "TikTok & Broadsheet",
         trendTag: "Pavilion Crystal Fountain & Tokyo Street",
-        sentimentScore: "96% Positive Sentiment",
+        sentimentScore: "97% Positive Sentiment",
         summary: "The beating heart of KL's urban buzz. Travelers praise the cool air-conditioned retreat, Tokyo Street precinct, and the elevated sheltered skybridge linking directly to KLCC."
       },
-      breakdown: [
-        { stars: 5, pct: 83 },
-        { stars: 4, pct: 14 },
-        { stars: 3, pct: 2 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
+      breakdown: [ { stars: 5, pct: 81 }, { stars: 4, pct: 15 }, { stars: 3, pct: 3 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl3-1",
-          author: "Nurul Izzah",
-          persona: "Family Leisure",
-          avatarText: "NI",
-          rating: 5,
-          date: "Visited September 2026",
-          tag: "Elevated Skybridge",
-          text: "The covered, air-conditioned pedestrian walkway straight from Pavilion to the Petronas Towers is a life-saver in tropical heat or rain. Food Republic basement has delicious local laksa!",
-          helpful: 42
-        }
+        { id: "rev-kl3-1", author: "Daniel Lee", persona: "Solo / Couple", avatarText: "DL", rating: 5, date: "Visited 3 days ago", tag: "Skybridge Walkway", text: "Pavilion is enormous and pristine. Best feature is the elevated air-conditioned pedestrian walkway that takes you straight into Suria KLCC in under 12 minutes without stepping into the heat.", helpful: 51 }
       ]
     },
-
     "kl4": {
-      poiName: "Jalan Alor Night Food Street Feast",
-      category: "World-Renowned Open-Air Street Dining",
+      poiName: "Jalan Alor Street Food Night Feast",
+      category: "World-Renowned Open-Air Street Dining Hub",
       overallScore: 4.7,
-      totalReviews: "29,150",
-      recommendRate: "95%",
-      subRatings: {
-        atmosphere: 4.9,
-        photoSpots: 4.7,
-        crowdControl: 3.9,
-        value: 4.6
-      },
+      totalReviews: "29,100",
+      recommendRate: "96%",
+      subRatings: { atmosphere: 4.8, photoSpots: 4.6, crowdControl: 3.9, value: 4.7 },
       socialSentiment: {
-        platform: "Xiaohongshu & YouTube Food Crawl",
+        platform: "YouTube & Xiaohongshu",
         trendTag: "Wong Ah Wah BBQ Wings & Musang King",
-        sentimentScore: "95% Positive Sentiment",
-        summary: "The quintessential Malaysian late-night dining strip. Top-recommended orders: signature glazed charcoal chicken wings at Wong Ah Wah, salted egg squid, satay skewers, and fresh durian."
+        sentimentScore: "96% Positive Sentiment",
+        summary: "Vibrant yellow glow of hawker signboards stretching the whole block. Reviews unanimously rate the charcoal smoked chicken wings at Wong Ah Wah and salted egg squid as must-orders."
       },
-      breakdown: [
-        { stars: 5, pct: 78 },
-        { stars: 4, pct: 17 },
-        { stars: 3, pct: 3 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 1 }
-      ],
+      breakdown: [ { stars: 5, pct: 78 }, { stars: 4, pct: 17 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl4-1",
-          author: "Marcus Chen",
-          persona: "Foodie Focus",
-          avatarText: "MC",
-          rating: 5,
-          date: "Visited 3 weeks ago",
-          tag: "Smoky Charcoal Wings",
-          text: "Wong Ah Wah's chicken wings are genuinely extraordinary. Charred sweet-smoky skin and tender meat. Sit outdoors with an iced calamansi juice and absorb the vibrant nighttime neon.",
-          helpful: 65
-        },
-        {
-          id: "rev-kl4-2",
-          author: "Emma Watson",
-          persona: "Solo Cultural Traveler",
-          avatarText: "EW",
-          rating: 4,
-          date: "Visited October 2026",
-          tag: "Cash & Atmosphere",
-          text: "Lively, sensory explosion. Most stalls accept GrabPay or DuitNow QR, but keep some ringgit cash handy for smaller fruit and juice stalls.",
-          helpful: 29
-        }
+        { id: "rev-kl4-1", author: "Kenji Tanaka", persona: "Foodie Focus", avatarText: "KT", rating: 5, date: "Visited September 2026", tag: "Smoky Charcoal Wings", text: "Wong Ah Wah at the end of the street lives up to the reputation. The chicken wings have a deeply caramelized smoky skin, paired with iced sugar cane juice. Outstanding evening vibe.", helpful: 62 }
       ]
     },
-
     "kl5": {
-      poiName: "Batu Caves Rainbow Steps & Lord Murugan",
-      category: "Sacred Hindu Sanctuary · Limestone Cathedral Cavern",
+      poiName: "Batu Caves Rainbow Steps & Temple Caverns",
+      category: "Sacred Hindu Sanctuary & Limestone Caverns",
       overallScore: 4.8,
-      totalReviews: "42,100",
+      totalReviews: "42,000",
       recommendRate: "98%",
-      subRatings: {
-        atmosphere: 5.0,
-        photoSpots: 5.0,
-        crowdControl: 4.1,
-        value: 4.9
-      },
+      subRatings: { atmosphere: 5.0, photoSpots: 5.0, crowdControl: 4.1, value: 4.9 },
       socialSentiment: {
-        platform: "TikTok & National Geographic",
-        trendTag: "Iconic 272 Rainbow Steps & 140ft Deity",
+        platform: "Instagram & TikTok",
+        trendTag: "272 Rainbow Steps & Lord Murugan Statue",
         sentimentScore: "98% Positive Sentiment",
-        summary: "A global icon. Climbing the 272 rainbow steps past the 140-foot golden Lord Murugan statue leads into limestone caves inhabited for millions of years. Best visited at 8:00 AM."
+        summary: "One of the most shared landmarks in Southeast Asia. Tips emphasize arriving by 08:30 AM to ascend the 272 colorful steps in the cool morning shade and watching out for playful macaque monkeys."
       },
-      breakdown: [
-        { stars: 5, pct: 86 },
-        { stars: 4, pct: 11 },
-        { stars: 3, pct: 2 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
+      breakdown: [ { stars: 5, pct: 85 }, { stars: 4, pct: 12 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl5-1",
-          author: "Priya Nair",
-          persona: "Solo Cultural Traveler",
-          avatarText: "PN",
-          rating: 5,
-          date: "Visited Autumn 2026",
-          tag: "Morning Serenity",
-          text: "Took the KTM Komuter train right to the entrance at 8:00 AM. Golden morning sunlight hit the Murugan statue with cool mountain breezes inside the cathedral cavern. Mind your snacks around monkeys!",
-          helpful: 84
-        },
-        {
-          id: "rev-kl5-2",
-          author: "Lucas Graham",
-          persona: "Solo / Couple",
-          avatarText: "LG",
-          rating: 5,
-          date: "Visited September 2026",
-          tag: "Dress Code Tip",
-          text: "Shoulders and knees must be covered for the steps (sarongs can be rented for RM 5 at the base). The scale of the limestone chamber is awe-inspiring.",
-          helpful: 52
-        }
+        { id: "rev-kl5-1", author: "Siddharth Nair", persona: "Cultural Explorer", avatarText: "SN", rating: 5, date: "Visited August 2026", tag: "Morning Ascent", text: "The sheer scale of the limestone cavern ceiling with natural sunbeams piercing through is breathtaking. Dress respectfully (shoulders and knees covered for temple entry).", helpful: 58 }
       ]
     },
-
     "kl6": {
       poiName: "Petronas Twin Towers Skybridge & Suria KLCC",
-      category: "Architectural Masterpiece · World's Tallest Twin Towers",
+      category: "Global Architectural Landmark · Observation Deck",
       overallScore: 4.9,
-      totalReviews: "55,400",
+      totalReviews: "55,000",
       recommendRate: "99%",
-      subRatings: {
-        atmosphere: 5.0,
-        photoSpots: 5.0,
-        crowdControl: 4.6,
-        value: 4.8
-      },
+      subRatings: { atmosphere: 4.9, photoSpots: 5.0, crowdControl: 4.7, value: 4.8 },
       socialSentiment: {
-        platform: "TripAdvisor & Xiaohongshu",
-        trendTag: "Skybridge Level 41 & César Pelli Design",
+        platform: "Google Reviews & Xiaohongshu",
+        trendTag: "Level 41 Skybridge & Level 86 Observation",
         sentimentScore: "99% Positive Sentiment",
-        summary: "The pinnacle of modern Kuala Lumpur architecture. Travelers emphasize booking time slots in advance for the double-deck Skybridge crossing and Level 86 observatory."
+        summary: "The definitive symbol of modern Malaysia. Booking timed entry slots at least 3-5 days in advance is universally recommended for the Level 41 bridge and Level 86 telescope deck."
       },
-      breakdown: [
-        { stars: 5, pct: 90 },
-        { stars: 4, pct: 8 },
-        { stars: 3, pct: 2 },
-        { stars: 2, pct: 0 },
-        { stars: 1, pct: 0 }
-      ],
+      breakdown: [ { stars: 5, pct: 90 }, { stars: 4, pct: 8 }, { stars: 3, pct: 1 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl6-1",
-          author: "Liam O'Connor",
-          persona: "Solo / Couple",
-          avatarText: "LO",
-          rating: 5,
-          date: "Visited 2 weeks ago",
-          tag: "Skybridge Engineering",
-          text: "Standing in the middle of the bridge connecting both towers 170 meters above the ground was breathtaking. The stainless steel exterior facets reflect sunlight like fine jewelry.",
-          helpful: 71
-        },
-        {
-          id: "rev-kl6-2",
-          author: "Zheng Wei",
-          persona: "Local Guide",
-          avatarText: "ZW",
-          rating: 5,
-          date: "Visited Autumn 2026",
-          tag: "Photography Spot",
-          text: "For the best full-tower photo, stand near the fountain pond in KLCC Park with a wide-angle lens, or head to the Level 4 terrace of Suria KLCC.",
-          helpful: 49
-        }
+        { id: "rev-kl6-1", author: "Emily Watson", persona: "Solo / Couple", avatarText: "EW", rating: 5, date: "Visited last month", tag: "360 Panoramic Deck", text: "Standing on the glass Skybridge suspended between the two towers was thrilling. The staff manage visitor flow with precision, so you get uninterrupted panoramic views.", helpful: 71 }
       ]
     },
-
     "kl7": {
       poiName: "KLCC Park & Tropical Symphony Lake",
       category: "50-Acre Master-Planned Urban Rainforest Park",
       overallScore: 4.7,
-      totalReviews: "21,300",
+      totalReviews: "21,000",
       recommendRate: "96%",
-      subRatings: {
-        atmosphere: 4.8,
-        photoSpots: 4.9,
-        crowdControl: 4.4,
-        value: 5.0
-      },
+      subRatings: { atmosphere: 4.8, photoSpots: 4.9, crowdControl: 4.4, value: 4.9 },
       socialSentiment: {
-        platform: "Instagram & TikTok",
-        trendTag: "Twin Towers Reflection & Lake Symphony",
+        platform: "Xiaohongshu & Instagram",
+        trendTag: "Best Tower Reflection Angle & Lake Symphony",
         sentimentScore: "96% Positive Sentiment",
-        summary: "Roberto Burle Marx's brilliant landscape masterpiece. Breathtaking views of the glass towers through lush tropical palms. If rain starts, the mall is a 2-minute sprint."
+        summary: "The prime vantage point to photograph both towers in one frame. Note that the open walking loop is fully exposed during afternoon monsoon downpours."
       },
-      breakdown: [
-        { stars: 5, pct: 80 },
-        { stars: 4, pct: 16 },
-        { stars: 3, pct: 3 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
+      breakdown: [ { stars: 5, pct: 79 }, { stars: 4, pct: 16 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl7-1",
-          author: "Claire Bennett",
-          persona: "Family Leisure",
-          avatarText: "CB",
-          rating: 5,
-          date: "Visited October 2026",
-          tag: "Park Jogging & Stroll",
-          text: "Spacious rubberised jogging tracks, free wading pool for kids, and the best vantage points to look straight up at the twin towers. Highly relaxing in the afternoon.",
-          helpful: 34
-        }
+        { id: "rev-kl7-1", author: "Hafiz Ibrahim", persona: "Family Leisure", avatarText: "HI", rating: 5, date: "Visited 3 weeks ago", tag: "Reflection Pool View", text: "Walk out onto the arched wooden bridge across Symphony Lake at 17:00 for stunning reflections of the silver towers. If rain begins, you can duck into the mall in seconds.", helpful: 34 }
       ]
     },
-
     "kl8": {
       poiName: "Marini's on 57 Rooftop Lounge & Lake Symphony",
-      category: "Luxury Skyline Rooftop Lounge & High-Altitude Dining",
+      category: "Premier High-Altitude Lounge · Petronas Tower 3",
       overallScore: 4.8,
-      totalReviews: "8,750",
-      recommendRate: "96%",
-      subRatings: {
-        atmosphere: 5.0,
-        photoSpots: 5.0,
-        crowdControl: 4.5,
-        value: 4.4
-      },
+      totalReviews: "8,700",
+      recommendRate: "97%",
+      subRatings: { atmosphere: 5.0, photoSpots: 5.0, crowdControl: 4.6, value: 4.6 },
       socialSentiment: {
-        platform: "Tatler Dining & Xiaohongshu",
-        trendTag: "Eye-Level Petronas Spire View",
+        platform: "Broadsheet & OpenTable",
+        trendTag: "Tower Spire Close-Up & Sunset Cocktails",
         sentimentScore: "97% Positive Sentiment",
-        summary: "Perched right beside Tower 3 on the 57th floor. Unrivaled eye-level views of the soaring spire illuminated against the night sky."
+        summary: "Direct unobstructed floor-to-ceiling glass perspectives of the illuminated Petronas spires. Smart casual dress code enforced."
       },
-      breakdown: [
-        { stars: 5, pct: 84 },
-        { stars: 4, pct: 12 },
-        { stars: 3, pct: 3 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
+      breakdown: [ { stars: 5, pct: 83 }, { stars: 4, pct: 13 }, { stars: 3, pct: 3 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl8-1",
-          author: "Antoine Moreau",
-          persona: "Solo / Couple",
-          avatarText: "AM",
-          rating: 5,
-          date: "Visited September 2026",
-          tag: "Floor-to-Ceiling Glass",
-          text: "The sheer proximity to the Petronas Towers from this height is dizzying. Sipping a mocktail while looking out over the illuminated spires was the highlight of our trip.",
-          helpful: 48
-        }
+        { id: "rev-kl8-1", author: "Claire & Thomas", persona: "Solo / Couple", avatarText: "CT", rating: 5, date: "Visited August 2026", tag: "Tower Spire Close-Up", text: "You are literally face-to-face with the gleaming stainless steel facade of Tower 2. Sunset mocktails while the sky turned magenta was unforgettable.", helpful: 48 }
       ]
     },
-
     "kl9": {
       poiName: "Perdana Botanical Gardens & Orchid Sanctuary",
-      category: "Historic Botanical Gardens & Tropical Green Lung",
+      category: "Historic Botanical Parkland & Lake Garden",
       overallScore: 4.7,
-      totalReviews: "14,100",
+      totalReviews: "14,200",
       recommendRate: "95%",
-      subRatings: {
-        atmosphere: 4.8,
-        photoSpots: 4.8,
-        crowdControl: 4.6,
-        value: 5.0
-      },
+      subRatings: { atmosphere: 4.8, photoSpots: 4.7, crowdControl: 4.5, value: 4.9 },
       socialSentiment: {
-        platform: "Google Reviews & Travel Blogs",
-        trendTag: "Orchid Haven & Bamboo Playhouses",
+        platform: "Google Reviews & TikTok",
+        trendTag: "Sunken Bamboo Pavilion & Giant Ferns",
         sentimentScore: "95% Positive Sentiment",
-        summary: "Dating back to 1888, this tranquil 220-acre garden features thousands of vibrant tropical orchids, giant bamboo groves, and lake boardwalks."
+        summary: "Peaceful morning sanctuary in the heart of Kuala Lumpur. Shaded lakeside paths and thousands of blooming orchids."
       },
-      breakdown: [
-        { stars: 5, pct: 79 },
-        { stars: 4, pct: 17 },
-        { stars: 3, pct: 3 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
+      breakdown: [ { stars: 5, pct: 76 }, { stars: 4, pct: 19 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl9-1",
-          author: "Farah Diba",
-          persona: "Family Leisure",
-          avatarText: "FD",
-          rating: 5,
-          date: "Visited Autumn 2026",
-          tag: "Morning Tranquility",
-          text: "Extremely well maintained and peaceful. The sunken gardens and orchid house are magnificent for photography. Completely free entry is a wonderful bonus.",
-          helpful: 27
-        }
+        { id: "rev-kl9-1", author: "Lianne Becker", persona: "Solo Cultural Traveler", avatarText: "LB", rating: 5, date: "Visited 2 weeks ago", tag: "Morning Shaded Walk", text: "Rent a free bicycle or walk along the boardwalk. The Bamboo Playhaus structure and sunken gardens feel thousands of miles away from city traffic.", helpful: 31 }
       ]
     },
-
     "kl10": {
       poiName: "Islamic Arts Museum Malaysia (IAMM)",
-      category: "Southeast Asia's Largest Islamic Decorative Arts Museum",
+      category: "Premier Islamic Heritage Museum · Tasik Perdana",
       overallScore: 4.8,
       totalReviews: "9,800",
       recommendRate: "98%",
-      subRatings: {
-        atmosphere: 4.9,
-        photoSpots: 4.9,
-        crowdControl: 4.7,
-        value: 4.9
-      },
+      subRatings: { atmosphere: 4.9, photoSpots: 4.9, crowdControl: 4.8, value: 4.9 },
       socialSentiment: {
-        platform: "Lonely Planet & Xiaohongshu",
-        trendTag: "Turquoise Inverted Domes & Ottoman Artifacts",
+        platform: "TripAdvisor & Xiaohongshu",
+        trendTag: "Turquoise Domes & Miniature Mosques",
         sentimentScore: "98% Positive Sentiment",
-        summary: "World-class curation and architecture. Intricately painted Iranian and Uzbek turquoise domes, Qur'an manuscripts, and scale models of world mosques."
+        summary: "Consistently rated one of Asia's finest museums. Four levels of pristine turquoise domes, Ottoman armor, Mughal jewelry, and scale models of world mosques."
       },
-      breakdown: [
-        { stars: 5, pct: 85 },
-        { stars: 4, pct: 13 },
-        { stars: 3, pct: 2 },
-        { stars: 2, pct: 0 },
-        { stars: 1, pct: 0 }
-      ],
+      breakdown: [ { stars: 5, pct: 86 }, { stars: 4, pct: 11 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl10-1",
-          author: "Tariq Mansoor",
-          persona: "Solo Cultural Traveler",
-          avatarText: "TM",
-          rating: 5,
-          date: "Visited 3 weeks ago",
-          tag: "Curatorial Excellence",
-          text: "One of the most beautifully curated museums in all of Asia. The inverted domes on the ceiling are breathtaking, and the architectural mosque replicas are masterfully detailed.",
-          helpful: 39
-        }
+        { id: "rev-kl10-1", author: "Nadia Mansoor", persona: "Cultural Explorer", avatarText: "NM", rating: 5, date: "Visited last month", tag: "Architectural Models", text: "The scale model of the Taj Mahal and Mecca Masjid are breathtakingly detailed. Exceptional air-conditioning and museum cafe serving fragrant Middle Eastern tea.", helpful: 42 }
       ]
     },
-
     "kl11": {
       poiName: "Thean Hou Temple Robson Heights Ridge",
-      category: "Six-Tiered Chinese Temple Landmark & Panoramic Lookout",
+      category: "Six-Tiered Hainanese Sea Goddess Sanctuary",
       overallScore: 4.8,
-      totalReviews: "19,250",
+      totalReviews: "19,200",
       recommendRate: "98%",
-      subRatings: {
-        atmosphere: 4.9,
-        photoSpots: 5.0,
-        crowdControl: 4.3,
-        value: 5.0
-      },
+      subRatings: { atmosphere: 4.9, photoSpots: 5.0, crowdControl: 4.3, value: 4.9 },
       socialSentiment: {
         platform: "Instagram & Xiaohongshu",
         trendTag: "Red Lantern Canopy & Skyline Vista",
         sentimentScore: "98% Positive Sentiment",
         summary: "Perched high on Robson Heights. The courtyard canopy of hundreds of hanging vermilion lanterns framing the KL skyline is one of the most photographed scenes in Malaysia."
       },
-      breakdown: [
-        { stars: 5, pct: 85 },
-        { stars: 4, pct: 12 },
-        { stars: 3, pct: 2 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
+      breakdown: [ { stars: 5, pct: 85 }, { stars: 4, pct: 12 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl11-1",
-          author: "Winnie Chew",
-          persona: "Foodie Focus",
-          avatarText: "WC",
-          rating: 5,
-          date: "Visited September 2026",
-          tag: "Lantern Canopy",
-          text: "Climb up to the top tier balcony. The contrast between traditional Chinese pagoda curves and modern skyscrapers in the distance is stunning.",
-          helpful: 54
-        }
+        { id: "rev-kl11-1", author: "Winnie Chew", persona: "Foodie Focus", avatarText: "WC", rating: 5, date: "Visited September 2026", tag: "Lantern Canopy", text: "Climb up to the top tier balcony. The contrast between traditional Chinese pagoda curves and modern skyscrapers in the distance is stunning.", helpful: 54 }
       ]
     },
-
     "kl12": {
       poiName: "KL Sentral & Nu Sentral Departure Souvenirs",
       category: "National Transit Hub & Premium Artisan Gifts",
       overallScore: 4.6,
       totalReviews: "15,200",
       recommendRate: "94%",
-      subRatings: {
-        atmosphere: 4.5,
-        photoSpots: 4.2,
-        crowdControl: 4.3,
-        value: 4.7
-      },
+      subRatings: { atmosphere: 4.5, photoSpots: 4.2, crowdControl: 4.3, value: 4.7 },
       socialSentiment: {
         platform: "Google Reviews & Travel Forum",
         trendTag: "Beryl's Chocolate & KLIA Ekspres",
         sentimentScore: "94% Positive Sentiment",
         summary: "The central rail interchange. Smooth airport transit via 28-min KLIA Ekspres, with Nu Sentral offering Beryl's chocolates, white coffee, and duty-free gifts."
       },
-      breakdown: [
-        { stars: 5, pct: 72 },
-        { stars: 4, pct: 22 },
-        { stars: 3, pct: 5 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
+      breakdown: [ { stars: 5, pct: 72 }, { stars: 4, pct: 22 }, { stars: 3, pct: 5 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl12-1",
-          author: "Boon Kiat",
-          persona: "Fast-Paced Business",
-          avatarText: "BK",
-          rating: 5,
-          date: "Visited 1 week ago",
-          tag: "Smooth Airport Link",
-          text: "Checked in bags directly at KL Sentral and boarded the KLIA Ekspres. Super clean, fast, and picked up boxes of Malaysian white coffee in Nu Sentral beforehand.",
-          helpful: 26
-        }
+        { id: "rev-kl12-1", author: "Boon Kiat", persona: "Fast-Paced Business", avatarText: "BK", rating: 5, date: "Visited 1 week ago", tag: "Smooth Airport Link", text: "Checked in bags directly at KL Sentral and boarded the KLIA Ekspres. Super clean, fast, and picked up boxes of Malaysian white coffee in Nu Sentral beforehand.", helpful: 26 }
       ]
     },
-
     "kl7_replanned": {
       poiName: "Aquaria KLCC 90m Oceanarium Tunnel",
       category: "Sheltered Underground Oceanarium · Marine Reserve",
       overallScore: 4.7,
       totalReviews: "19,400",
       recommendRate: "96%",
-      subRatings: {
-        atmosphere: 4.8,
-        photoSpots: 4.9,
-        crowdControl: 4.2,
-        value: 4.6
-      },
+      subRatings: { atmosphere: 4.8, photoSpots: 4.9, crowdControl: 4.2, value: 4.6 },
       socialSentiment: {
         platform: "Xiaohongshu & TripAdvisor",
         trendTag: "90m Underwater Tunnel & Shark Feeding",
         sentimentScore: "96% Positive Sentiment",
         summary: "Ideal sheltered escape during tropical afternoon downpours. The 90m transparent tunnel featuring sand tiger sharks and giant stingrays swimming overhead is completely climate-controlled."
       },
-      breakdown: [
-        { stars: 5, pct: 79 },
-        { stars: 4, pct: 17 },
-        { stars: 3, pct: 3 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
+      breakdown: [ { stars: 5, pct: 79 }, { stars: 4, pct: 17 }, { stars: 3, pct: 3 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl7-rep-1",
-          author: "Darren Koh",
-          persona: "Family Leisure",
-          avatarText: "DK",
-          rating: 5,
-          date: "Visited during rainstorm",
-          tag: "Sheltered Haven",
-          text: "Heavy tropical rain started at 3:30 PM outside, but we stayed bone dry inside the tunnel with sharks gliding right over us. Connected directly to Suria KLCC underground.",
-          helpful: 37
-        }
+        { id: "rev-kl7-rep-1", author: "Darren Koh", persona: "Family Leisure", avatarText: "DK", rating: 5, date: "Visited during rainstorm", tag: "Sheltered Haven", text: "Heavy tropical rain started at 3:30 PM outside, but we stayed bone dry inside the tunnel with sharks gliding right over us. Connected directly to Suria KLCC underground.", helpful: 37 }
       ]
     },
-
     "kl8_replanned": {
       poiName: "Suria KLCC Dining & Indoor Symphony Lake View",
       category: "Sheltered Panoramic Dining · Premier Mall Concourse",
       overallScore: 4.8,
       totalReviews: "12,100",
       recommendRate: "97%",
-      subRatings: {
-        atmosphere: 4.8,
-        photoSpots: 4.8,
-        crowdControl: 4.4,
-        value: 4.7
-      },
+      subRatings: { atmosphere: 4.8, photoSpots: 4.8, crowdControl: 4.4, value: 4.7 },
       socialSentiment: {
         platform: "OpenTable & Broadsheet",
         trendTag: "Madam Kwan's Nasi Lemak & Lake View",
         sentimentScore: "97% Positive Sentiment",
         summary: "Watch the colorful Symphony Lake fountains through floor-to-ceiling glass windows while savoring award-winning Malaysian culinary classics in air-conditioned comfort."
       },
-      breakdown: [
-        { stars: 5, pct: 82 },
-        { stars: 4, pct: 15 },
-        { stars: 3, pct: 2 },
-        { stars: 2, pct: 1 },
-        { stars: 1, pct: 0 }
-      ],
+      breakdown: [ { stars: 5, pct: 82 }, { stars: 4, pct: 15 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
       reviews: [
-        {
-          id: "rev-kl8-rep-1",
-          author: "Jessica Wong",
-          persona: "Foodie Focus",
-          avatarText: "JW",
-          rating: 5,
-          date: "Visited Autumn 2026",
-          tag: "Best Nasi Lemak",
-          text: "Madam Kwan's Nasi Lemak with chicken curry and beef rendang is unforgettable. Glass window views of the illuminated fountains gave us the full evening experience despite the thunderstorm.",
-          helpful: 45
-        }
+        { id: "rev-kl8-rep-1", author: "Jessica Wong", persona: "Foodie Focus", avatarText: "JW", rating: 5, date: "Visited Autumn 2026", tag: "Best Nasi Lemak", text: "Madam Kwan's Nasi Lemak with chicken curry and beef rendang is unforgettable. Glass window views of the illuminated fountains gave us the full evening experience despite the thunderstorm.", helpful: 45 }
+      ]
+    },
+
+    // ==========================================
+    // Penang POI Reviews & Feedback
+    // ==========================================
+    "pen1": {
+      poiName: "Pinang Peranakan Mansion & Heritage Courtyard",
+      category: "UNESCO World Heritage · Baba Nyonya Museum",
+      overallScore: 4.8,
+      totalReviews: "14,200",
+      recommendRate: "97%",
+      subRatings: { atmosphere: 4.9, photoSpots: 5.0, crowdControl: 4.4, value: 4.8 },
+      socialSentiment: {
+        platform: "Xiaohongshu & TripAdvisor",
+        trendTag: "Emerald Courtyard & Gold Carvings",
+        sentimentScore: "97% Positive Sentiment",
+        summary: "Praised as the most lavishly restored Peranakan residence in Southeast Asia. Guided tours bring the fascinating Baba Nyonya culture to life."
+      },
+      breakdown: [ { stars: 5, pct: 83 }, { stars: 4, pct: 14 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-pen1-1", author: "Serena Khoo", persona: "Cultural Explorer", avatarText: "SK", rating: 5, date: "Visited last week", tag: "Antique Jewelry", text: "The intricacy of the beaded Nyonya slippers and gold-leaf doors is awe-inspiring. Taking photos in the green courtyard feels like stepping back 130 years.", helpful: 43 }
+      ]
+    },
+    "pen2": {
+      poiName: "Armenian Street Murals & Heritage Coffee",
+      category: "Interactive Street Art Precinct",
+      overallScore: 4.7,
+      totalReviews: "21,500",
+      recommendRate: "96%",
+      subRatings: { atmosphere: 4.8, photoSpots: 5.0, crowdControl: 4.0, value: 4.9 },
+      socialSentiment: {
+        platform: "Instagram & TikTok",
+        trendTag: "Kids on Bicycle & Steel Wire Murals",
+        sentimentScore: "96% Positive Sentiment",
+        summary: "The epicenter of George Town's artistic street charm. Best visited in the morning before midday sun warms the stone alleyways."
+      },
+      breakdown: [ { stars: 5, pct: 78 }, { stars: 4, pct: 18 }, { stars: 3, pct: 3 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-pen2-1", author: "Jonathan Teoh", persona: "Solo / Couple", avatarText: "JT", rating: 5, date: "Visited 3 weeks ago", tag: "Morning Photography", text: "Arrived at 8:30 AM and had 'Kids on Bicycle' completely to ourselves. Grabbed a rich iced White Kopi from the corner heritage shophouse right after.", helpful: 52 }
+      ]
+    },
+    "pen3": {
+      poiName: "Clan Jetties (Chew Jetty) Stilt Village",
+      category: "Living Chinese Maritime Heritage Settlement",
+      overallScore: 4.6,
+      totalReviews: "18,100",
+      recommendRate: "94%",
+      subRatings: { atmosphere: 4.7, photoSpots: 4.8, crowdControl: 4.1, value: 4.9 },
+      socialSentiment: {
+        platform: "TikTok & Google Reviews",
+        trendTag: "Timber Boardwalk & Sunset Harbor",
+        sentimentScore: "94% Positive Sentiment",
+        summary: "Rustic wooden stilt houses perched above tidal flats. Respectful quiet exploration is appreciated by the resident families."
+      },
+      breakdown: [ { stars: 5, pct: 73 }, { stars: 4, pct: 21 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 1 } ],
+      reviews: [
+        { id: "rev-pen3-1", author: "Eileen Tan", persona: "Local Guide", avatarText: "ET", rating: 5, date: "Visited September 2026", tag: "Tidal Breeze", text: "Walking out to the very end of the timber pier as fishing boats glide past with the Penang ferry in the distance is pure nostalgia.", helpful: 38 }
+      ]
+    },
+    "pen4": {
+      poiName: "Chulia Street & Kimberley Street Night Food Feast",
+      category: "World Capital of Hawker Cuisine",
+      overallScore: 4.8,
+      totalReviews: "26,400",
+      recommendRate: "98%",
+      subRatings: { atmosphere: 4.9, photoSpots: 4.6, crowdControl: 4.0, value: 4.9 },
+      socialSentiment: {
+        platform: "Michelin Guide & Xiaohongshu",
+        trendTag: "Char Kway Teow Duck Egg & Assam Laksa",
+        sentimentScore: "98% Positive Sentiment",
+        summary: "Unrivaled wok-hei smoky aroma filling the night air. The duck-egg Char Kway Teow with giant prawns and four-fruit soup are legendary."
+      },
+      breakdown: [ { stars: 5, pct: 84 }, { stars: 4, pct: 13 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-pen4-1", author: "Marcus Low", persona: "Foodie Focus", avatarText: "ML", rating: 5, date: "Visited 4 days ago", tag: "Duck Egg Char Kway Teow", text: "The uncle at Kimberley Street tosses the flat noodles over flaming charcoal with extraordinary speed. The aroma and crunch of pork lard is Michelin-worthy perfection.", helpful: 67 }
+      ]
+    },
+    "pen5": {
+      poiName: "Kek Lok Si Temple & Pagoda of 10,000 Buddhas",
+      category: "Buddhist Monastery Landmark · Crane Hill",
+      overallScore: 4.8,
+      totalReviews: "32,800",
+      recommendRate: "98%",
+      subRatings: { atmosphere: 5.0, photoSpots: 5.0, crowdControl: 4.3, value: 4.9 },
+      socialSentiment: {
+        platform: "TripAdvisor & Xiaohongshu",
+        trendTag: "Pagoda of Ten Thousand Buddhas & Bronze Guanyin",
+        sentimentScore: "98% Positive Sentiment",
+        summary: "A breathtaking architectural marvel blending Chinese, Thai, and Burmese styles. Panoramic views over Penang island from the bronze Guanyin pavilion."
+      },
+      breakdown: [ { stars: 5, pct: 86 }, { stars: 4, pct: 11 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-pen5-1", author: "Devi Raman", persona: "Cultural Explorer", avatarText: "DR", rating: 5, date: "Visited August 2026", tag: "Pagoda Climb", text: "Take the incline lift to the massive Guanyin statue, then climb the stairs inside the Pagoda of 10,000 Buddhas. The view stretches all the way to Butterworth.", helpful: 55 }
+      ]
+    },
+    "pen6": {
+      poiName: "Penang Hill Funicular & The Habitat Biosphere",
+      category: "UNESCO Biosphere Reserve · Rainforest Canopy Walk",
+      overallScore: 4.7,
+      totalReviews: "28,900",
+      recommendRate: "96%",
+      subRatings: { atmosphere: 4.9, photoSpots: 5.0, crowdControl: 4.2, value: 4.7 },
+      socialSentiment: {
+        platform: "Instagram & National Geographic",
+        trendTag: "Curtis Crest Treetop Walk & Flying Squirrels",
+        sentimentScore: "96% Positive Sentiment",
+        summary: "Cool 21°C highland retreat high above the tropical heat. Fast 5-minute funicular train ascent followed by pristine rainforest boardwalks."
+      },
+      breakdown: [ { stars: 5, pct: 80 }, { stars: 4, pct: 16 }, { stars: 3, pct: 3 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-pen6-1", author: "Klaus Wagner", persona: "Nature Enthusiast", avatarText: "KW", rating: 5, date: "Visited last week", tag: "360 Canopy Walk", text: "The Curtis Crest circular viewing platform at The Habitat is unmatched. We spotted dusky leaf monkeys and great hornbills right beside the canopy walk.", helpful: 44 }
+      ]
+    },
+    "pen7": {
+      poiName: "David Brown's Hilltop Tea Terrace & Garden",
+      category: "Colonial British Heritage Dining",
+      overallScore: 4.6,
+      totalReviews: "6,500",
+      recommendRate: "94%",
+      subRatings: { atmosphere: 4.9, photoSpots: 4.8, crowdControl: 4.5, value: 4.4 },
+      socialSentiment: {
+        platform: "Broadsheet & Xiaohongshu",
+        trendTag: "Strawberry Hill English High Tea",
+        sentimentScore: "94% Positive Sentiment",
+        summary: "Perched atop Strawberry Hill amidst manicured English gardens, ponds with water lilies, and sweeping panoramic views of the Penang Strait."
+      },
+      breakdown: [ { stars: 5, pct: 72 }, { stars: 4, pct: 22 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 1 } ],
+      reviews: [
+        { id: "rev-pen7-1", author: "Amanda Lee", persona: "Solo / Couple", avatarText: "AL", rating: 5, date: "Visited September 2026", tag: "Warm Scones & Clotted Cream", text: "Sitting outside on the terrace with warm Devonshire scones while the gentle mountain mist rolls across the pine trees is absolute bliss.", helpful: 29 }
+      ]
+    },
+    "pen8": {
+      poiName: "Gurney Drive Hawker Centre & Seafront Promenade",
+      category: "Premier Coastal Hawker Hub",
+      overallScore: 4.7,
+      totalReviews: "22,000",
+      recommendRate: "95%",
+      subRatings: { atmosphere: 4.7, photoSpots: 4.6, crowdControl: 4.1, value: 4.8 },
+      socialSentiment: {
+        platform: "TikTok & Google Reviews",
+        trendTag: "Penang Rojak & Crispy Oyster Omelette",
+        sentimentScore: "95% Positive Sentiment",
+        summary: "Classic Penang open-air culinary experience right along the new coastal park promenade. Generous servings of Rojak with prawn fritters."
+      },
+      breakdown: [ { stars: 5, pct: 77 }, { stars: 4, pct: 18 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-pen8-1", author: "Zainal Abidin", persona: "Foodie Focus", avatarText: "ZA", rating: 5, date: "Visited 2 weeks ago", tag: "Crispy Oyster Omelette", text: "The Oh Chien here is fried to a golden crisp with plump, juicy oysters and tangy garlic chili dip. Walking along Gurney Bay promenade afterwards was refreshing.", helpful: 36 }
+      ]
+    },
+    "pen9": {
+      poiName: "Tropical Spice Garden & Eco Trails",
+      category: "Living Botanical Spice Sanctuary · Teluk Bahang",
+      overallScore: 4.7,
+      totalReviews: "7,200",
+      recommendRate: "96%",
+      subRatings: { atmosphere: 4.9, photoSpots: 4.8, crowdControl: 4.7, value: 4.7 },
+      socialSentiment: {
+        platform: "TripAdvisor & Lonely Planet",
+        trendTag: "Fragrant Cinnamon Trails & Giant Bamboo",
+        sentimentScore: "96% Positive Sentiment",
+        summary: "A lush eight-acre bio-diverse coastal jungle featuring over 500 species of living herbs and spices. Complimentary herbal spice tea at the bamboo deck."
+      },
+      breakdown: [ { stars: 5, pct: 78 }, { stars: 4, pct: 18 }, { stars: 3, pct: 3 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-pen9-1", author: "Claire Dumont", persona: "Nature Enthusiast", avatarText: "CD", rating: 5, date: "Visited 1 month ago", tag: "Natural Herbal Tea", text: "Audio tour was educational and enjoyable. Smelling crushed allspice and fresh nutmeg straight from the tree was fantastic.", helpful: 28 }
+      ]
+    },
+    "pen10": {
+      poiName: "Batu Ferringhi Beach & Waterfront Lounge",
+      category: "Tropical Coast & Water Sports Haven",
+      overallScore: 4.6,
+      totalReviews: "16,500",
+      recommendRate: "94%",
+      subRatings: { atmosphere: 4.7, photoSpots: 4.7, crowdControl: 4.2, value: 4.6 },
+      socialSentiment: {
+        platform: "Instagram & TikTok",
+        trendTag: "Golden Sand & Chilled Coconut",
+        sentimentScore: "94% Positive Sentiment",
+        summary: "Penang's premier coastal resort strip. Warm waters, parasailing, and sunset beachfront cafes under shady casuarina pines."
+      },
+      breakdown: [ { stars: 5, pct: 71 }, { stars: 4, pct: 23 }, { stars: 3, pct: 5 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-pen10-1", author: "Hassan Basri", persona: "Family Leisure", avatarText: "HB", rating: 5, date: "Visited 2 weeks ago", tag: "Beachfront Sunset", text: "Soft sands and gentle waves. The beach bars have comfortable bean bags right at the water's edge to watch the sun sink into the Malacca Strait.", helpful: 33 }
+      ]
+    },
+    "pen11": {
+      poiName: "Fort Cornwallis & Queen Victoria Memorial Clock",
+      category: "18th-Century British Coastal Bastion",
+      overallScore: 4.6,
+      totalReviews: "11,800",
+      recommendRate: "93%",
+      subRatings: { atmosphere: 4.7, photoSpots: 4.7, crowdControl: 4.6, value: 4.5 },
+      socialSentiment: {
+        platform: "Google Reviews & Heritage Forum",
+        trendTag: "Seri Rambai Bronze Cannon & Diamond Jubilee Clock",
+        sentimentScore: "93% Positive Sentiment",
+        summary: "The site where Captain Francis Light first landed in 1786. The newly restored sea moat and harbor view make for a delightful colonial history walk."
+      },
+      breakdown: [ { stars: 5, pct: 70 }, { stars: 4, pct: 23 }, { stars: 3, pct: 5 }, { stars: 2, pct: 1 }, { stars: 1, pct: 1 } ],
+      reviews: [
+        { id: "rev-pen11-1", author: "George Fletcher", persona: "History Buff", avatarText: "GF", rating: 5, date: "Visited last month", tag: "Restored Moat", text: "The historical museum inside the brick gunpowder storerooms has fascinating colonial maps. The bronze Seri Rambai cannon from 1603 is in magnificent condition.", helpful: 25 }
+      ]
+    },
+    "pen12": {
+      poiName: "Chowrasta Market Local Confectionery & Tea",
+      category: "Historic Market & Authentic Penang Gifts",
+      overallScore: 4.6,
+      totalReviews: "13,400",
+      recommendRate: "95%",
+      subRatings: { atmosphere: 4.5, photoSpots: 4.3, crowdControl: 4.1, value: 4.9 },
+      socialSentiment: {
+        platform: "Xiaohongshu & Local Food Blogs",
+        trendTag: "Fresh Tambun Biscuits & Preserved Nutmeg",
+        sentimentScore: "95% Positive Sentiment",
+        summary: "The top destination for souvenir shopping before heading home. Warm baby tambun biscuits baked fresh daily and jars of Penang preserved nutmeg."
+      },
+      breakdown: [ { stars: 5, pct: 75 }, { stars: 4, pct: 20 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-pen12-1", author: "Peggy Ang", persona: "Foodie Focus", avatarText: "PA", rating: 5, date: "Visited last week", tag: "Fresh Tambun Biscuits", text: "Buy the Ghee Hiang or Him Heang biscuits directly here while they are still warm in the box. Incredible buttery flaky crust with sweet mung bean filling.", helpful: 41 }
+      ]
+    },
+
+    "pen13": {
+      poiName: "Entopia by Penang Butterfly Farm",
+      category: "Tropical Nature Sanctuary & Butterfly Aviary",
+      overallScore: 4.8,
+      totalReviews: "11,500",
+      recommendRate: "97%",
+      subRatings: { atmosphere: 5.0, photoSpots: 4.9, crowdControl: 4.6, value: 4.7 },
+      socialSentiment: {
+        platform: "TripAdvisor & Xiaohongshu",
+        trendTag: "15,000 Butterflies & Living Cocoon Dome",
+        sentimentScore: "97% Positive Sentiment",
+        summary: "Remarkable indoor-outdoor conservatory where thousands of emerald swallowtails and birdwings flutter around visitors."
+      },
+      breakdown: [ { stars: 5, pct: 82 }, { stars: 4, pct: 15 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-pen13-1", author: "Yvonne Tan", persona: "Nature Enthusiast", avatarText: "YT", rating: 5, date: "Visited last week", tag: "Free-Flying Butterflies", text: "Butterflies literally land on your hands and shoulders. The modern educational exhibits and temperature control make it a peaceful oasis.", helpful: 37 }
+      ]
+    },
+    "pen14": {
+      poiName: "Batu Ferringhi Night Market & Seafood Grill",
+      category: "Beachfront Night Market & Seafood Grill",
+      overallScore: 4.7,
+      totalReviews: "19,000",
+      recommendRate: "96%",
+      subRatings: { atmosphere: 4.8, photoSpots: 4.6, crowdControl: 4.1, value: 4.7 },
+      socialSentiment: {
+        platform: "Google Reviews & TikTok",
+        trendTag: "Charcoal Sambal Fish & Beachfront Stalls",
+        sentimentScore: "96% Positive Sentiment",
+        summary: "Breezy open-air night market along the coastal road. Fresh local seafood barbecued over glowing coals with spicy sambal sauce."
+      },
+      breakdown: [ { stars: 5, pct: 77 }, { stars: 4, pct: 18 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-pen14-1", author: "Farhan Malik", persona: "Foodie Focus", avatarText: "FM", rating: 5, date: "Visited 2 weeks ago", tag: "Sambal Tiger Prawns", text: "The grilled tiger prawns and sambal squid with fresh lime juice were fantastic. Great place to browse souvenirs and listen to acoustic music by the beach.", helpful: 41 }
+      ]
+    },
+    "pen15": {
+      poiName: "Khoo Kongsi Leong San Tong Clan Temple",
+      category: "Gilded Chinese Clan Temple Heritage",
+      overallScore: 4.9,
+      totalReviews: "16,200",
+      recommendRate: "99%",
+      subRatings: { atmosphere: 5.0, photoSpots: 5.0, crowdControl: 4.7, value: 4.9 },
+      socialSentiment: {
+        platform: "UNESCO Heritage & Xiaohongshu",
+        trendTag: "Stone Dragon Pillars & 1906 Gilded Gables",
+        sentimentScore: "99% Positive Sentiment",
+        summary: "The grandest Chinese clan house in Malaysia. Jaw-dropping level of wood and stone carvings, granite pillars, and 36 mythical statues on the roof ridges."
+      },
+      breakdown: [ { stars: 5, pct: 89 }, { stars: 4, pct: 9 }, { stars: 3, pct: 1 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-pen15-1", author: "Christopher Vance", persona: "Cultural Explorer", avatarText: "CV", rating: 5, date: "Visited September 2026", tag: "Incredible Craftsmanship", text: "The detail of the gold-leaf carvings and granite relief panels is simply astonishing. One of the finest examples of heritage architecture in Asia.", helpful: 56 }
+      ]
+    },
+    "pen16": {
+      poiName: "Penang International Airport (PIA) Departure Hub",
+      category: "Aviation Gateway & Duty Free Concourse",
+      overallScore: 4.6,
+      totalReviews: "12,800",
+      recommendRate: "94%",
+      subRatings: { atmosphere: 4.5, photoSpots: 4.1, crowdControl: 4.4, value: 4.6 },
+      socialSentiment: {
+        platform: "Skytrax & Google Reviews",
+        trendTag: "Bayan Lepas Concourse & Local Snacks",
+        sentimentScore: "94% Positive Sentiment",
+        summary: "Conveniently located in Bayan Lepas, offering smooth bag drop, local confectionery shops airside, and quick boarding."
+      },
+      breakdown: [ { stars: 5, pct: 72 }, { stars: 4, pct: 22 }, { stars: 3, pct: 5 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-pen16-1", author: "Li Wei Tan", persona: "Fast-Paced Business", avatarText: "LT", rating: 5, date: "Visited last week", tag: "Smooth Departure", text: "Checked in quickly and picked up last-minute boxes of Tambun biscuits airside. Very efficient airport experience.", helpful: 28 }
+      ]
+    },
+
+    // ==========================================
+    // Melaka POI Reviews & Feedback
+    // ==========================================
+    "mel1": {
+      poiName: "Dutch Square (Red Square) & Christ Church",
+      category: "Colonial Dutch Landmark · Stadthuys Museum",
+      overallScore: 4.8,
+      totalReviews: "28,500",
+      recommendRate: "98%",
+      subRatings: { atmosphere: 4.9, photoSpots: 5.0, crowdControl: 4.2, value: 4.9 },
+      socialSentiment: {
+        platform: "Instagram & Xiaohongshu",
+        trendTag: "Red Stadthuys & Illuminated Trishaws",
+        sentimentScore: "98% Positive Sentiment",
+        summary: "The unmistakable red-brick heart of Melaka. The 1753 Christ Church, Victorian fountain, and colorfully decorated musical trishaws."
+      },
+      breakdown: [ { stars: 5, pct: 84 }, { stars: 4, pct: 13 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-mel1-1", author: "Faridah Karim", persona: "Cultural Explorer", avatarText: "FK", rating: 5, date: "Visited last week", tag: "Dutch Brick Architecture", text: "The vibrant terracotta hue against the bright blue sky is iconic. Visit in early morning before tour coaches arrive for the cleanest photos.", helpful: 49 }
+      ]
+    },
+    "mel2": {
+      poiName: "A Famosa (Porta de Santiago) & St. Paul's Church",
+      category: "Portuguese Colonial Bastion & St. Paul's Hill",
+      overallScore: 4.7,
+      totalReviews: "24,000",
+      recommendRate: "96%",
+      subRatings: { atmosphere: 4.8, photoSpots: 4.9, crowdControl: 4.3, value: 4.9 },
+      socialSentiment: {
+        platform: "TripAdvisor & Heritage Forum",
+        trendTag: "1511 Portuguese Gate & St. Francis Xavier Statue",
+        sentimentScore: "96% Positive Sentiment",
+        summary: "One of the oldest surviving European architectural relics in Asia. Climbing St. Paul's Hill rewards with harbor breezes and ancient carved Dutch tombstones."
+      },
+      breakdown: [ { stars: 5, pct: 79 }, { stars: 4, pct: 17 }, { stars: 3, pct: 3 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-mel2-1", author: "Matthew Thorne", persona: "Solo Cultural Traveler", avatarText: "MT", rating: 5, date: "Visited 3 weeks ago", tag: "Straits Harbor Vista", text: "Touching the 500-year-old stone gate gives a palpable sense of history. The hilltop view over the modern Straits of Malacca is majestic.", helpful: 38 }
+      ]
+    },
+    "mel3": {
+      poiName: "Baba & Nyonya Heritage Museum",
+      category: "Preserved 1896 Peranakan Townhouse Mansion",
+      overallScore: 4.8,
+      totalReviews: "9,600",
+      recommendRate: "98%",
+      subRatings: { atmosphere: 4.9, photoSpots: 4.8, crowdControl: 4.6, value: 4.8 },
+      socialSentiment: {
+        platform: "Xiaohongshu & Michelin Green Guide",
+        trendTag: "Mother of Pearl Blackwood & Silk Kebayas",
+        sentimentScore: "98% Positive Sentiment",
+        summary: "A private townhouse residence impeccably maintained by descendants of the Chan family. Guided tours detail the customs and lifestyle of the Straits Chinese aristocracy."
+      },
+      breakdown: [ { stars: 5, pct: 85 }, { stars: 4, pct: 12 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-mel3-1", author: "Cynthia Neo", persona: "Cultural Explorer", avatarText: "CN", rating: 5, date: "Visited September 2026", tag: "Guided Heritage Story", text: "The guide's storytelling about the matriarchs and ancestral altar ceremonies was captivating. Essential visit for anyone interested in Peranakan heritage.", helpful: 45 }
+      ]
+    },
+    "mel4": {
+      poiName: "Jonker Street Night Market & Chicken Rice Balls",
+      category: "Legendary Weekend Night Market & Street Food",
+      overallScore: 4.8,
+      totalReviews: "38,200",
+      recommendRate: "97%",
+      subRatings: { atmosphere: 5.0, photoSpots: 4.7, crowdControl: 3.8, value: 4.8 },
+      socialSentiment: {
+        platform: "TikTok & Xiaohongshu",
+        trendTag: "Hainanese Rice Balls & Durian Cendol",
+        sentimentScore: "97% Positive Sentiment",
+        summary: "Bustling neon lanterns, antique shophouse stalls, live street music, and mouth-watering street eats. Rice balls with poached tender chicken are an absolute staple."
+      },
+      breakdown: [ { stars: 5, pct: 82 }, { stars: 4, pct: 14 }, { stars: 3, pct: 3 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-mel4-1", author: "Jason Kok", persona: "Foodie Focus", avatarText: "JK", rating: 5, date: "Visited last weekend", tag: "Fragrant Rice Balls", text: "Chung Wah chicken rice balls dipped in ginger chili paste is legendary. Follow that up with coconut shake and fried radish cake as you browse the antiques.", helpful: 64 }
+      ]
+    },
+    "mel5": {
+      poiName: "Melaka River Cruise & Waterfront Murals",
+      category: "Historic Waterway Boat Navigation",
+      overallScore: 4.7,
+      totalReviews: "22,500",
+      recommendRate: "96%",
+      subRatings: { atmosphere: 4.9, photoSpots: 4.9, crowdControl: 4.4, value: 4.7 },
+      socialSentiment: {
+        platform: "Instagram & TikTok",
+        trendTag: "Breezy Night Cruise & Illuminated Bridges",
+        sentimentScore: "96% Positive Sentiment",
+        summary: "A tranquil 45-minute cruise gliding past historic watermills, painted shophouses, and mangrove riverbanks. Sunset and evening cruises are especially popular."
+      },
+      breakdown: [ { stars: 5, pct: 79 }, { stars: 4, pct: 17 }, { stars: 3, pct: 3 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-mel5-1", author: "Noreen Zakaria", persona: "Family Leisure", avatarText: "NZ", rating: 5, date: "Visited 2 weeks ago", tag: "Sunset Cruise", text: "We took the 18:30 boat from Muara Jetty. Watching the riverbank buildings light up while cool evening breezes blew was exceptionally relaxing.", helpful: 41 }
+      ]
+    },
+    "mel6": {
+      poiName: "Flora de la Mar Maritime Museum (Replica Galleon)",
+      category: "34-Meter Life-Sized Portuguese Galleon Museum",
+      overallScore: 4.6,
+      totalReviews: "14,000",
+      recommendRate: "94%",
+      subRatings: { atmosphere: 4.8, photoSpots: 4.9, crowdControl: 4.3, value: 4.7 },
+      socialSentiment: {
+        platform: "Google Reviews & Travel Blogs",
+        trendTag: "Giant Ship Replica & Ancient Spice Charts",
+        sentimentScore: "94% Positive Sentiment",
+        summary: "Towering ship replica built on the waterfront commemorating the rich maritime spice trade history that transformed Melaka into a global trading empire."
+      },
+      breakdown: [ { stars: 5, pct: 72 }, { stars: 4, pct: 21 }, { stars: 3, pct: 5 }, { stars: 2, pct: 1 }, { stars: 1, pct: 1 } ],
+      reviews: [
+        { id: "rev-mel6-1", author: "Ben Henderson", persona: "Family Leisure", avatarText: "BH", rating: 5, date: "Visited last month", tag: "Captain's Cabin", text: "Kids loved climbing through the wooden decks and exploring the cargo hold. The models illustrating the global spice routes are very well done.", helpful: 27 }
+      ]
+    },
+    "mel7": {
+      poiName: "Kampung Morten Traditional Malay Heritage Village",
+      category: "Living Malay Cultural Riverfront Hamlet",
+      overallScore: 4.7,
+      totalReviews: "7,800",
+      recommendRate: "96%",
+      subRatings: { atmosphere: 4.9, photoSpots: 4.8, crowdControl: 4.7, value: 4.9 },
+      socialSentiment: {
+        platform: "Xiaohongshu & Cultural Blogs",
+        trendTag: "Villa Sentosa & Carved Timber Verandahs",
+        sentimentScore: "96% Positive Sentiment",
+        summary: "A preserved enclave of traditional Malay wooden houses in the middle of the city. Friendly locals and authentic wooden architecture dating back to the 1920s."
+      },
+      breakdown: [ { stars: 5, pct: 77 }, { stars: 4, pct: 19 }, { stars: 3, pct: 3 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-mel7-1", author: "Azman Sani", persona: "Cultural Explorer", avatarText: "AS", rating: 5, date: "Visited 3 weeks ago", tag: "Villa Sentosa Tour", text: "Visiting Villa Sentosa felt like being welcomed into a family home. The intricate timber fretwork and breezy verandas demonstrate traditional Malay architectural genius.", helpful: 31 }
+      ]
+    },
+    "mel8": {
+      poiName: "Melaka Straits Mosque (Masjid Selat Melaka) Sunset",
+      category: "Floating Sanctuary & Global Sunset Icon",
+      overallScore: 4.9,
+      totalReviews: "19,800",
+      recommendRate: "99%",
+      subRatings: { atmosphere: 5.0, photoSpots: 5.0, crowdControl: 4.4, value: 5.0 },
+      socialSentiment: {
+        platform: "Instagram & National Geographic Traveler",
+        trendTag: "Floating Mosque on Stilts & Golden Hour",
+        sentimentScore: "99% Positive Sentiment",
+        summary: "Spectacular mosque built above the sea waves on Pulau Melaka. High tide creates an ethereal floating reflection against the setting sun."
+      },
+      breakdown: [ { stars: 5, pct: 89 }, { stars: 4, pct: 9 }, { stars: 3, pct: 1 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-mel8-1", author: "Sofia Al-Attas", persona: "Solo Cultural Traveler", avatarText: "SA", rating: 5, date: "Visited last week", tag: "Magical Sunset Glow", text: "One of the most serene sunsets on earth. The stained glass domes glow golden, and the reflection on the sea water is mesmerizing. Robes available for visitors.", helpful: 59 }
+      ]
+    },
+    "mel9": {
+      poiName: "Menara Taming Sari 360° Revolving Tower",
+      category: "110-Meter Gyro Revolving Observatory",
+      overallScore: 4.6,
+      totalReviews: "15,200",
+      recommendRate: "94%",
+      subRatings: { atmosphere: 4.6, photoSpots: 4.8, crowdControl: 4.4, value: 4.6 },
+      socialSentiment: {
+        platform: "TikTok & Google Reviews",
+        trendTag: "360 Panoramic View & Straits Ships",
+        sentimentScore: "94% Positive Sentiment",
+        summary: "Seven-minute revolving ride lifting visitors 80m above ground. View extends across the entire UNESCO historic core and out to the shipping lane."
+      },
+      breakdown: [ { stars: 5, pct: 71 }, { stars: 4, pct: 23 }, { stars: 3, pct: 5 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-mel9-1", author: "Kelvin Lim", persona: "Family Leisure", avatarText: "KL", rating: 5, date: "Visited 2 weeks ago", tag: "Full City Panorama", text: "Air-conditioned cabin turns very smoothly. Great way to orient yourself and see where the Dutch Square, river, and port connect.", helpful: 26 }
+      ]
+    },
+    "mel10": {
+      poiName: "Cheng Hoon Teng Temple & Harmony Street",
+      category: "Malaysia's Oldest Operating Temple (1645)",
+      overallScore: 4.8,
+      totalReviews: "8,900",
+      recommendRate: "98%",
+      subRatings: { atmosphere: 4.9, photoSpots: 4.9, crowdControl: 4.5, value: 4.9 },
+      socialSentiment: {
+        platform: "TripAdvisor & Heritage Forum",
+        trendTag: "Harmony Street & Historic Timber Carvings",
+        sentimentScore: "98% Positive Sentiment",
+        summary: "Award-winning UNESCO restoration. Situated on 'Harmony Street' within steps of Kampung Kling Mosque and Sri Poyyatha Vinayagar Moorthi Temple."
+      },
+      breakdown: [ { stars: 5, pct: 83 }, { stars: 4, pct: 14 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-mel10-1", author: "Hui Min Tan", persona: "Cultural Explorer", avatarText: "HT", rating: 5, date: "Visited last month", tag: "Harmony Street Coexistence", text: "Seeing a 380-year-old Chinese temple, historic Malay mosque, and Hindu temple standing harmoniously side-by-side along one quiet street captures the true spirit of Malaysia.", helpful: 39 }
+      ]
+    },
+    "mel11": {
+      poiName: "San Shu Gong Traditional Confectionery House",
+      category: "Historic Confectionery & Gula Melaka Treats",
+      overallScore: 4.7,
+      totalReviews: "12,300",
+      recommendRate: "96%",
+      subRatings: { atmosphere: 4.7, photoSpots: 4.6, crowdControl: 4.1, value: 4.8 },
+      socialSentiment: {
+        platform: "Xiaohongshu & Food Blogs",
+        trendTag: "Lao Qian White Coffee & Durian Cendol",
+        sentimentScore: "96% Positive Sentiment",
+        summary: "Iconic red landmark building at the entrance of Jonker Street. Famous for Lao Qian white coffee, pure Gula Melaka palm sugar, and freshly prepared cendol."
+      },
+      breakdown: [ { stars: 5, pct: 77 }, { stars: 4, pct: 18 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-mel11-1", author: "Mei Ling Wong", persona: "Foodie Focus", avatarText: "MW", rating: 5, date: "Visited last week", tag: "Durian Cendol Upstairs", text: "Head straight up to the 2nd-floor cafe for the rich D24 durian cendol with heavy palm sugar drizzle. Bought four cylinders of pure Gula Melaka to take home.", helpful: 42 }
+      ]
+    },
+    "mel12": {
+      poiName: "Melaka Sentral Regional Departure Hub",
+      category: "Regional Express Coach Terminal",
+      overallScore: 4.5,
+      totalReviews: "8,100",
+      recommendRate: "93%",
+      subRatings: { atmosphere: 4.4, photoSpots: 4.0, crowdControl: 4.2, value: 4.8 },
+      socialSentiment: {
+        platform: "Google Reviews & Transit Forum",
+        trendTag: "2-Hour Express Coach to KL",
+        sentimentScore: "93% Positive Sentiment",
+        summary: "Central intercity coach hub. Clean air-conditioned waiting hall with frequent direct services to KL TBS (Terminal Bersepadu Selatan) and KLIA."
+      },
+      breakdown: [ { stars: 5, pct: 68 }, { stars: 4, pct: 24 }, { stars: 3, pct: 6 }, { stars: 2, pct: 1 }, { stars: 1, pct: 1 } ],
+      reviews: [
+        { id: "rev-mel12-1", author: "Kamal Ariffin", persona: "Fast-Paced Business", avatarText: "KA", rating: 5, date: "Visited 2 weeks ago", tag: "Fast Transit to KL", text: "Boarded the luxury 2+1 seating express bus to KL. Left on time, smoothly reached Terminal Bersepadu Selatan in under 1 hour 50 minutes.", helpful: 24 }
+      ]
+    },
+
+    // ==========================================
+    // Kota Kinabalu POI Reviews & Feedback
+    // ==========================================
+    "kk1": {
+      poiName: "Jesselton Point Ferry Terminal & Marine Hub",
+      category: "Historic Maritime Pier · Speedboat Terminal",
+      overallScore: 4.7,
+      totalReviews: "11,500",
+      recommendRate: "95%",
+      subRatings: { atmosphere: 4.7, photoSpots: 4.8, crowdControl: 4.3, value: 4.8 },
+      socialSentiment: {
+        platform: "TripAdvisor & Xiaohongshu",
+        trendTag: "Colonial Red Telephone Booth & Island Speedboat",
+        sentimentScore: "95% Positive Sentiment",
+        summary: "Historic wooden pier renovated with British North Borneo colonial styling. Efficient counter ticketing for island hopping in Tunku Abdul Rahman Park."
+      },
+      breakdown: [ { stars: 5, pct: 76 }, { stars: 4, pct: 19 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-kk1-1", author: "Nicholas Tay", persona: "Solo / Couple", avatarText: "NT", rating: 5, date: "Visited last week", tag: "Painless Island Hopping", text: "Ticketing counters are clearly numbered. Speedboat ride out to Manukan was fast, safe, and exhilarating across calm emerald sea.", helpful: 32 }
+      ]
+    },
+    "kk2": {
+      poiName: "Tunku Abdul Rahman Marine Park (Manukan Island)",
+      category: "Protected Coral Marine Reserve",
+      overallScore: 4.8,
+      totalReviews: "21,000",
+      recommendRate: "97%",
+      subRatings: { atmosphere: 4.9, photoSpots: 5.0, crowdControl: 4.2, value: 4.8 },
+      socialSentiment: {
+        platform: "Instagram & TikTok",
+        trendTag: "Crystal Shallow Reef & Nemo Clownfish",
+        sentimentScore: "97% Positive Sentiment",
+        summary: "Crescent-shaped island with powdery coral sand and clear turquoise water. Snorkelers spot clownfish, parrotfish, and sea turtles just meters from the shore."
+      },
+      breakdown: [ { stars: 5, pct: 83 }, { stars: 4, pct: 14 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-kk2-1", author: "Gillian Vance", persona: "Nature Enthusiast", avatarText: "GV", rating: 5, date: "Visited September 2026", tag: "Snorkeling Near Jetty", text: "Walk 50 meters to the left of the main jetty. The coral reef is flourishing and we were surrounded by schools of sergeant major and butterfly fish.", helpful: 47 }
+      ]
+    },
+    "kk3": {
+      poiName: "Tanjung Aru Beach Sunset Promenade",
+      category: "World Top 10 Sunset Destination",
+      overallScore: 4.9,
+      totalReviews: "35,200",
+      recommendRate: "99%",
+      subRatings: { atmosphere: 5.0, photoSpots: 5.0, crowdControl: 4.1, value: 5.0 },
+      socialSentiment: {
+        platform: "National Geographic & Xiaohongshu",
+        trendTag: "Fiery Purple Sunset & Fresh Coconut",
+        sentimentScore: "99% Positive Sentiment",
+        summary: "World-renowned for theatrical skies changing through fiery gold, blazing crimson, and glowing violet over the South China Sea."
+      },
+      breakdown: [ { stars: 5, pct: 89 }, { stars: 4, pct: 9 }, { stars: 3, pct: 1 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-kk3-1", author: "Hiroshi Mori", persona: "Photographer", avatarText: "HM", rating: 5, date: "Visited 1 week ago", tag: "Unreal Sky Colors", text: "I have photographed sunsets on six continents, and Tanjung Aru easily ranks in the top three. The wet sand reflection produces sheer magic.", helpful: 68 }
+      ]
+    },
+    "kk4": {
+      poiName: "Kota Kinabalu Waterfront & Night Food Market",
+      category: "Fresh Seafood Market & Kadazan Delicacies",
+      overallScore: 4.7,
+      totalReviews: "24,100",
+      recommendRate: "96%",
+      subRatings: { atmosphere: 4.8, photoSpots: 4.6, crowdControl: 4.0, value: 4.7 },
+      socialSentiment: {
+        platform: "YouTube & TikTok",
+        trendTag: "Grilled Sambal Stingray & Live Tiger Prawns",
+        sentimentScore: "96% Positive Sentiment",
+        summary: "Pick out live seafood cooked to order on smoking charcoal grills. Kadazan Hinava raw fish cured with lime and bird's eye chili is an essential local specialty."
+      },
+      breakdown: [ { stars: 5, pct: 78 }, { stars: 4, pct: 17 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-kk4-1", author: "Stanislaus Gunting", persona: "Foodie Focus", avatarText: "SG", rating: 5, date: "Visited August 2026", tag: "Hinava & Grilled Squid", text: "The charcoal-grilled sambal squid and fresh butter prawns are out of this world. Prices are clearly posted per 100g, very fair and fresh.", helpful: 53 }
+      ]
+    },
+    "kk5": {
+      poiName: "Kinabalu UNESCO National Park Headquarters",
+      category: "UNESCO World Heritage · 4,095m Mountain Foothills",
+      overallScore: 4.9,
+      totalReviews: "18,600",
+      recommendRate: "99%",
+      subRatings: { atmosphere: 5.0, photoSpots: 5.0, crowdControl: 4.6, value: 4.8 },
+      socialSentiment: {
+        platform: "Lonely Planet & Discovery Channel",
+        trendTag: "Granite Crown Vista & Wild Pitcher Plants",
+        sentimentScore: "99% Positive Sentiment",
+        summary: "Botanical wonder of Southeast Asia, home to over 5,000 vascular plant species. Crisp mountain air with jaw-dropping views of Mount Kinabalu's jagged granite peaks."
+      },
+      breakdown: [ { stars: 5, pct: 88 }, { stars: 4, pct: 10 }, { stars: 3, pct: 1 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-kk5-1", author: "Dr. Evelyn Ross", persona: "Botanist & Traveler", avatarText: "ER", rating: 5, date: "Visited September 2026", tag: "Botanical Garden Trails", text: "The Mountain Garden guided walk is superb. We saw carnivorous Nepenthes pitcher plants and tiny indigenous slipper orchids. The air is rejuvenating.", helpful: 46 }
+      ]
+    },
+    "kk6": {
+      poiName: "Poring Hot Springs & Treetop Canopy Walkway",
+      category: "Lowland Dipterocarp Rainforest & Treetop Walk",
+      overallScore: 4.7,
+      totalReviews: "14,200",
+      recommendRate: "95%",
+      subRatings: { atmosphere: 4.8, photoSpots: 4.9, crowdControl: 4.2, value: 4.7 },
+      socialSentiment: {
+        platform: "TripAdvisor & Xiaohongshu",
+        trendTag: "40m Treetop Suspension Bridge & Sulphur Pools",
+        sentimentScore: "95% Positive Sentiment",
+        summary: "Suspended rope canopy walkways high in the tree canopy of ancient Menggaris trees, followed by soaking tired legs in natural mineral hot spring tubs."
+      },
+      breakdown: [ { stars: 5, pct: 76 }, { stars: 4, pct: 19 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-kk6-1", author: "Timothy Cheng", persona: "Adventure Traveler", avatarText: "TC", rating: 5, date: "Visited 3 weeks ago", tag: "Canopy Walk Adrenaline", text: "Walking across the narrow rope suspension bridge 40 meters up is thrilling. The hot springs afterwards are deeply therapeutic.", helpful: 37 }
+      ]
+    },
+    "kk7": {
+      poiName: "Desa Cattle Dairy Farm ('Sabah\'s New Zealand')",
+      category: "Highland Pasture Farm · Kundasang Ridge",
+      overallScore: 4.8,
+      totalReviews: "27,500",
+      recommendRate: "97%",
+      subRatings: { atmosphere: 5.0, photoSpots: 5.0, crowdControl: 4.0, value: 4.9 },
+      socialSentiment: {
+        platform: "Instagram & TikTok",
+        trendTag: "Black-and-White Cows & Mount Kinabalu Backdrop",
+        sentimentScore: "97% Positive Sentiment",
+        summary: "Lush green rolling pastures nestled directly against the colossal stone wall of Mount Kinabalu. Savoring fresh gelato and milk pudding in cool 18°C breeze."
+      },
+      breakdown: [ { stars: 5, pct: 83 }, { stars: 4, pct: 14 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-kk7-1", author: "Nurul Aini", persona: "Family Leisure", avatarText: "NA", rating: 5, date: "Visited last week", tag: "Fresh Farm Gelato", text: "Looks exactly like New Zealand with Mount Kinabalu rising straight behind the green hills. The chocolate and yogurt gelato is divine.", helpful: 56 }
+      ]
+    },
+    "kk8": {
+      poiName: "Kundasang Highland Market & Mountain Rest",
+      category: "Alpine Produce Market & Cool Climate Haven",
+      overallScore: 4.6,
+      totalReviews: "12,000",
+      recommendRate: "95%",
+      subRatings: { atmosphere: 4.7, photoSpots: 4.5, crowdControl: 4.3, value: 4.9 },
+      socialSentiment: {
+        platform: "Google Reviews & Food Blogs",
+        trendTag: "Sweet Pearl Corn & Fresh Highland Strawberries",
+        sentimentScore: "95% Positive Sentiment",
+        summary: "Bustling roadside market stalls filled with freshly harvested sweet Kundasang cabbage, wild highland honey, and steaming sweet corn."
+      },
+      breakdown: [ { stars: 5, pct: 72 }, { stars: 4, pct: 23 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-kk8-1", author: "Dennis Chin", persona: "Foodie Focus", avatarText: "DC", rating: 5, date: "Visited 2 weeks ago", tag: "Steaming Hotpot", text: "Having a steaming hotpot dinner in 16°C mountain air after browsing the fresh strawberry stalls is the ultimate highland comfort.", helpful: 30 }
+      ]
+    },
+    "kk9": {
+      poiName: "Kota Kinabalu City Mosque ('Floating Mosque')",
+      category: "Likas Bay Contemporary Islamic Sanctuary",
+      overallScore: 4.8,
+      totalReviews: "19,400",
+      recommendRate: "98%",
+      subRatings: { atmosphere: 4.9, photoSpots: 5.0, crowdControl: 4.5, value: 4.9 },
+      socialSentiment: {
+        platform: "Instagram & Xiaohongshu",
+        trendTag: "Blue Dome Water Reflection & Sunset Lagoon",
+        sentimentScore: "98% Positive Sentiment",
+        summary: "Exemplary blue and white modern Islamic architecture encircled by a calm lagoon. The mirror reflection on the water is stunning at sunrise and sunset."
+      },
+      breakdown: [ { stars: 5, pct: 84 }, { stars: 4, pct: 13 }, { stars: 3, pct: 2 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-kk9-1", author: "Farah Diba", persona: "Cultural Explorer", avatarText: "FD", rating: 5, date: "Visited last month", tag: "Lagoon Reflection", text: "Walk around the outer perimeter of the lagoon to see the entire blue dome perfectly mirrored in the water. Peaceful, immaculate, and welcoming.", helpful: 48 }
+      ]
+    },
+    "kk10": {
+      poiName: "Signal Hill Eco Observatory Platform",
+      category: "City & Harbor Lookout Platform",
+      overallScore: 4.6,
+      totalReviews: "9,100",
+      recommendRate: "94%",
+      subRatings: { atmosphere: 4.6, photoSpots: 4.8, crowdControl: 4.6, value: 5.0 },
+      socialSentiment: {
+        platform: "Google Reviews & Travel Forum",
+        trendTag: "180° City & Island Harbor Panorama",
+        sentimentScore: "94% Positive Sentiment",
+        summary: "Highest viewpoint within the Kota Kinabalu CBD. Overlooking the harbor islands and Gaya Street shophouse grids."
+      },
+      breakdown: [ { stars: 5, pct: 70 }, { stars: 4, pct: 24 }, { stars: 3, pct: 5 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-kk10-1", author: "Liam O'Connor", persona: "Solo / Couple", avatarText: "LO", rating: 5, date: "Visited 3 weeks ago", tag: "Harbor Overview", text: "Quiet pavilion with a gentle breeze. You can clearly see the speedboats departing Jesselton Point towards Sapi and Manukan islands.", helpful: 22 }
+      ]
+    },
+    "kk11": {
+      poiName: "Sabah Handicraft Market (Sabah Pearls & Sompoton)",
+      category: "Artisan Handicrafts & Pearl Market",
+      overallScore: 4.6,
+      totalReviews: "16,200",
+      recommendRate: "95%",
+      subRatings: { atmosphere: 4.6, photoSpots: 4.4, crowdControl: 4.1, value: 4.8 },
+      socialSentiment: {
+        platform: "Xiaohongshu & Sabah Tourism",
+        trendTag: "Genuine South Sea Pearls & Tenom Coffee",
+        sentimentScore: "95% Positive Sentiment",
+        summary: "Known locally as the Filipino Market. World-renowned for genuine Sabah saltwater and freshwater pearls, handwoven baskets, and Tenom dark-roast coffee."
+      },
+      breakdown: [ { stars: 5, pct: 74 }, { stars: 4, pct: 21 }, { stars: 3, pct: 4 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-kk11-1", author: "Jenny Koh", persona: "Foodie Focus", avatarText: "JK", rating: 5, date: "Visited last week", tag: "Pearl Jewelry Bargains", text: "The vendors will happily test real pearls for you using a flame or scraping test. Picked up beautiful freshwater pearl earrings and bags of Tenom coffee.", helpful: 43 }
+      ]
+    },
+    "kk12": {
+      poiName: "Kota Kinabalu International Airport (KKIA) Hub",
+      category: "East Malaysia Aviation Gateway",
+      overallScore: 4.6,
+      totalReviews: "14,000",
+      recommendRate: "94%",
+      subRatings: { atmosphere: 4.5, photoSpots: 4.2, crowdControl: 4.4, value: 4.6 },
+      socialSentiment: {
+        platform: "Skytrax & Google Reviews",
+        trendTag: "Smooth Security & Borneo Duty Free",
+        sentimentScore: "94% Positive Sentiment",
+        summary: "Modern, compact, and efficient airport terminal located just 15 minutes from Kota Kinabalu city center."
+      },
+      breakdown: [ { stars: 5, pct: 71 }, { stars: 4, pct: 23 }, { stars: 3, pct: 5 }, { stars: 2, pct: 1 }, { stars: 1, pct: 0 } ],
+      reviews: [
+        { id: "rev-kk12-1", author: "Victor Chong", persona: "Fast-Paced Business", avatarText: "VC", rating: 5, date: "Visited 2 weeks ago", tag: "Speedy Departure", text: "Security and bag drop took less than 10 minutes. Grabbed a hot bowl of Sabah Laksa airside before boarding my flight back to KL.", helpful: 29 }
       ]
     }
   }
