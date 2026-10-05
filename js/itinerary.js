@@ -218,26 +218,16 @@ class VoyAgentItinerary {
   triggerRainReplanning() {
     this.app.showToast("Weather alert detected! Adapting afternoon schedule...", "info");
 
-    const isKL = this.currentTrip && this.currentTrip.id === "kl";
-    const replanData = isKL ? window.VOYAGENT_DATA.replannedKlDay2 : window.VOYAGENT_DATA.replannedKyotoDay2;
+    const replanData = window.VOYAGENT_DATA.replannedKlDay2;
     
     if (this.app.chat) {
-      if (isKL) {
-        this.app.chat.appendAgentMessageWithTools({
-          content: `**Monsoon Downpour Advisory for Day 2!** An intense afternoon tropical thunderstorm is forecast for Kuala Lumpur starting around **15:30**.\n\n` +
-                   `To keep you dry and comfortable, I've dynamically adapted your afternoon schedule:\n` +
-                   `- Replaced open **KLCC Park** walking trails with **Aquaria KLCC** (90m transparent underwater oceanarium tunnel).\n` +
-                   `- Swapped exposed rooftop lounge dining with air-conditioned **Suria KLCC** fine dining overlooking the Symphony Lake fountains.\n` +
-                   `- Connected all points via the direct sheltered underground air-conditioned tunnel.`
-        });
-      } else {
-        this.app.chat.appendAgentMessageWithTools({
-          content: `**Weather Advisory for Day 2!** An afternoon rainstorm is forecast for Kyoto starting around **14:00**.\n\n` +
-                   `To keep your journey enjoyable and safe, I've adjusted your afternoon schedule:\n` +
-                   `- Replaced the outdoor hike up **Iwatayama Monkey Park** and open grounds of **Kinkaku-ji** with the dry, climate-controlled **Kyoto National Museum** and the 400m covered **Nishiki Market** arcade.\n` +
-                   `- Updated transit paths to use sheltered tram and subway connections.`
-        });
-      }
+      this.app.chat.appendAgentMessageWithTools({
+        content: `**Monsoon Downpour Advisory for Day 2!** An intense afternoon tropical thunderstorm is forecast starting around **15:30**.\n\n` +
+                 `To keep you dry and comfortable, I've dynamically adapted your afternoon schedule:\n` +
+                 `- Replaced open outdoor walking trails (**KLCC Park**) with sheltered air-conditioned alternatives (**Aquaria KLCC** 90m underwater tunnel).\n` +
+                 `- Swapped exposed rooftop lounge dining with air-conditioned **Suria KLCC** fine dining overlooking the Symphony Lake fountains.\n` +
+                 `- Connected all points via direct covered air-conditioned pedestrian links.`
+      });
     }
 
     // Apply replanned slots
