@@ -411,7 +411,7 @@ window.VOYAGENT_DATA = {
               ratingScore: 4.6,
               reviewCount: "16.5k",
               cost: "RM 35 lunch & refreshments",
-              transitNext: { mode: "footprints", info: "3 min walk to night market street (150m)" }
+              transitNext: { mode: "footprints", info: "7 min walk along beach street stalls to Night Market (650m)" }
             },
             {
               id: "pen14",
@@ -420,7 +420,7 @@ window.VOYAGENT_DATA = {
               category: "Beachfront Night Market & Dining",
               desc: "Browse colorful artisan beach stalls under palm trees and feast on charcoal-grilled fresh tiger prawns, sambal stingray, and tropical fruit smoothies along the coast.",
               location: "Jalan Batu Ferringhi",
-              coords: [5.4741, 100.2460],
+              coords: [5.4725, 100.2452],
               rating: "4.7 (19k)",
               ratingScore: 4.7,
               reviewCount: "19k",

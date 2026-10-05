@@ -148,6 +148,12 @@ class VoyAgentMap {
           coreColor = '#059669';
           coreWeight = 5;
           modeIcon = 'train';
+        } else if (seg.mode === 'boat') {
+          casingColor = 'rgba(6, 182, 212, 0.4)';
+          coreColor = '#0891b2';
+          dashPattern = '6, 6';
+          coreWeight = 4.5;
+          modeIcon = 'ship';
         } else {
           // driving / highway
           casingColor = 'rgba(3, 105, 161, 0.4)';
@@ -390,8 +396,11 @@ class VoyAgentMap {
             <div class="legs-scroll-track">
               ${dayRouteData.segments.map((seg, i) => {
                 const segKey = `${seg.fromId}_${seg.toId}`;
-                const isWalk = seg.mode === 'walking';
-                const modeIconSvg = window.VoyAgentIcons ? window.VoyAgentIcons.get(isWalk ? 'footprints' : 'navigation', { size: 11 }) : '';
+                let iconKey = 'navigation';
+                if (seg.mode === 'walking') iconKey = 'footprints';
+                else if (seg.mode === 'transit') iconKey = 'train';
+                else if (seg.mode === 'boat') iconKey = 'ship';
+                const modeIconSvg = window.VoyAgentIcons ? window.VoyAgentIcons.get(iconKey, { size: 11 }) : '';
                 return `
                   <button class="leg-pill-btn" id="leg-btn-${segKey}" onclick="voyAgentApp.map.highlightSegment('${seg.fromId}', '${seg.toId}', true)">
                     <span class="leg-mode-icon">${modeIconSvg}</span>

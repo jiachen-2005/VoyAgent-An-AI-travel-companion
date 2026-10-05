@@ -189,7 +189,7 @@ class VoyAgentItinerary {
 
     // Sync map route with trip key and replanned status
     if (this.app.map) {
-      const tripKey = this.currentTrip ? this.currentTrip.id : (this.app.currentTripKey || 'kyoto');
+      const tripKey = this.currentTrip ? this.currentTrip.id : (this.app.currentTripKey || 'kl');
       this.app.map.renderDayRoute(currentDayData.slots, this.activeDay, tripKey, this.isReplannedDay2);
     }
   }
