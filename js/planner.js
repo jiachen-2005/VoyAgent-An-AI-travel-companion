@@ -61,13 +61,27 @@
     document.getElementById("end-date");
 
 
-  // Do not allow start date before today
-  const today = new Date()
-    .toISOString()
-    .split("T")[0];
+  // Get today's local date
+  const now = new Date();
 
+  const today =
+    `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+
+
+  // Maximum trip date = 5 years from today
+  const maxDate = new Date();
+  maxDate.setFullYear(maxDate.getFullYear() + 5);
+
+  const maximumDate =
+    `${maxDate.getFullYear()}-${String(maxDate.getMonth() + 1).padStart(2, "0")}-${String(maxDate.getDate()).padStart(2, "0")}`;
+
+
+  // Apply date limits
   startDateInput.min = today;
+  startDateInput.max = maximumDate;
+
   endDateInput.min = today;
+  endDateInput.max = maximumDate;
 
 
   // End date cannot be earlier than start date
@@ -84,6 +98,36 @@
       endDateInput.value = "";
     }
 
+  });
+
+
+  // Check manually entered dates
+  function validateDateInput(input) {
+
+    if (!input.value) {
+      input.setCustomValidity("");
+      return;
+    }
+
+    if (
+      input.value < input.min ||
+      input.value > input.max
+    ) {
+      input.setCustomValidity(
+        "Please select a valid travel date within the next 5 years."
+      );
+    } else {
+      input.setCustomValidity("");
+    }
+  }
+
+
+  startDateInput.addEventListener("change", () => {
+    validateDateInput(startDateInput);
+  });
+
+  endDateInput.addEventListener("change", () => {
+    validateDateInput(endDateInput);
   });
 
 
