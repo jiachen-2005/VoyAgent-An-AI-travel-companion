@@ -71,15 +71,89 @@ Trip sharing for group planning · advanced multi-language support
 
 ---
 
-## Team
+## Team Responsibilities and Delivery Ownership
 
-| Member | Role | Responsibilities |
+Each member owns their assigned work from requirements clarification through design, implementation, testing, integration, documentation and handover. Ownership includes resolving defects in the assigned module and reporting dependencies or delivery risks.
+
+### Chen Jia — Backend Developer and Project Coordinator
+
+- **Requirements and planning:** Maintain the consolidated requirements, Requirements Traceability Matrix (RTM), integration milestones and dependency tracking. Coordinate scope changes and confirm technical decisions with the team and supervisor.
+- **Design:** Define the shared backend architecture, database schema, application API contracts and common data models with input from the module owners.
+- **Implementation:** Develop authentication, access controls, user and trip management, persistence, candidate filtering and ranking, itinerary constraint validation, booking management, budget calculations and expense splitting.
+- **Integration:** Coordinate the application workflow across frontend, external-data and LLM modules. Implement backend orchestration of data retrieval, candidate selection, itinerary generation, validation, repair and storage.
+- **Testing:** Own backend unit tests and database integration tests. Coordinate system integration testing and maintain requirement-to-test traceability.
+- **Deployment and handover:** Coordinate backend and database deployment, environment configuration, database migrations and release integration. Document setup, application endpoints, backup and recovery procedures, and known limitations.
+
+### Chan Eunice — LLM Engineer
+
+- **Requirements and design:** Define supported conversational planning and revision scenarios, LLM input/output schemas, context handling and failure behaviour with the backend and frontend developers.
+- **Technology evaluation:** Compare candidate models using consistent planning requests and document output validity, constraint compliance, response time and cost.
+- **Implementation:** Develop model invocation, prompt templates, conversational context handling, preference extraction, structured itinerary generation and targeted itinerary revision.
+- **Integration:** Consume the agreed backend inputs, including candidate places and travel constraints. Return structured proposals and handle backend validation feedback through bounded repair attempts.
+- **Testing:** Maintain evaluation cases covering incomplete or conflicting requests, malformed outputs, unsupported places and failed revisions. Test the LLM module with fixed external-data fixtures before live integration.
+- **Deployment and handover:** Document model configuration, prompt versions, evaluation results, usage limits and failure handling. Support deployment configuration and investigate defects caused by model behaviour.
+
+### Tom Wong Ren Syuen — External API Integration Developer
+
+- **Requirements and design:** Identify the external data required for places, routes, weather, exchange rates and place verification. Agree required fields and internal response formats with the backend and LLM developers.
+- **Provider evaluation:** Compare providers for destination coverage, data quality, freshness, reliability, cost, quotas and permitted data use. Record provider limitations and selection decisions.
+- **Implementation:** Develop backend integration modules for third-party authentication, requests, response normalisation and permitted caching. Handle timeouts, rate limits, unavailable services, missing fields and duplicate place records.
+- **Integration:** Supply consistent travel data to the backend, including source identifiers and relevant timestamps. Provide fixtures so that other modules can be developed without live service access.
+- **Testing:** Test response mapping, error handling and provider integration. Check that the supplied data supports recommendation, itinerary validation and travel assistance.
+- **Deployment and handover:** Document credential configuration, quotas, attribution and storage restrictions, provider dependencies and troubleshooting. Monitor integration failures during testing and delivery.
+
+### Ting Jing Hao — Web Frontend Developer
+
+- **Requirements and design:** Define web user journeys and screen designs with the team, covering account access, trip preferences, conversational planning, itinerary editing, bookings, budgets, shared expenses and travel assistance.
+- **Implementation:** Develop the responsive web interface and reusable web components. Connect the interface to the shared backend and implement loading, empty, validation and error states.
+- **Integration:** Coordinate request/response handling with backend developers and present recommendations, maps, itinerary revisions and financial information consistently.
+- **Testing:** Own web component and interaction tests, browser compatibility checks, responsive layout checks and accessibility checks. Resolve web defects identified during user testing.
+- **Deployment and handover:** Prepare the web build and hosting configuration with Chen Jia. Document web setup, supported browsers, interface behaviour and known limitations.
+
+### Hu Longxi — Mobile Frontend Developer
+
+- **Requirements and design:** Define mobile user journeys and screen designs consistent with the web application, with particular attention to on-trip use and smaller screens.
+- **Implementation:** Develop the React Native mobile application, including the shared core features and mobile location input, nearby suggestions and notification interfaces.
+- **Integration:** Connect the mobile application to the shared backend. Implement permission handling, navigation, loading states, network failure messages and consistent presentation of backend data.
+- **Testing:** Own mobile component and interaction tests, device layout checks, accessibility checks and testing of location and notification behaviour on the agreed target platforms.
+- **Deployment and handover:** Prepare installable test builds and document mobile setup, permissions, supported platforms, build instructions and known limitations.
+
+### Shared Responsibilities
+
+All members will:
+
+- Clarify assigned requirements and agree measurable acceptance criteria before implementation.
+- Keep implementation, tests and documentation aligned with the agreed API contracts.
+- Review another member’s changes and resolve feedback before integration.
+- Participate in end-to-end testing, supervisor demonstrations and user acceptance testing.
+- Record defects, limitations, dependencies and changes affecting other modules.
+- Contribute evidence and documentation for the report, demonstration and handover.
+
+Chen Jia coordinates delivery and integration; each module owner remains responsible for the quality and completion of their assigned work.
+
+## Lifecycle Checkpoints
+
+| Stage | Coordinator / Accountable Owner | Required Contributions and Outputs |
 |---|---|---|
-| **Chen Jia** | Backend Developer | Backend architecture, database design, server development, project coordination |
-| **Chan Eunice** | LLM Engineer | LLM integration, prompt engineering, AI agent logic, itinerary generation |
-| **Tom Wong Ren Syuen** | API Developer | External API integration, data fetching, third-party service connections |
-| **Ting Jing Hao** | Frontend Developer | Web and mobile UI, itinerary display, user interaction |
-| **Hu Longxi** | Frontend Developer | Web and mobile UI, responsive design, component development |
+| Requirements and scope | Chen Jia | All members clarify assigned features, acceptance criteria, dependencies and RTM entries. |
+| Architecture and interface design | Chen Jia | All module owners agree data schemas, API contracts, failure behaviour and integration boundaries. Jing Hao and Longxi agree shared interface conventions. |
+| Technology and provider evaluation | Relevant module owner | Eunice evaluates LLMs; Tom evaluates external providers; frontend owners evaluate platform tools; Chen Jia evaluates backend and database choices. Decisions are documented. |
+| Implementation | Each module owner | Working code, module documentation and relevant automated tests for assigned features. |
+| Code review | A reviewer other than the author | Review correctness, maintainability, data handling and compatibility with agreed interfaces. Specialist changes receive review from the relevant integration partner. |
+| Integration and system testing | Chen Jia | All owners connect their modules, run cross-module scenarios and fix defects in their components. |
+| User acceptance testing | Jing Hao and Longxi coordinate sessions | The team prepares scenarios linked to requirements, records feedback and confirms fixes. Chen Jia maintains the consolidated results. |
+| Deployment and release | Chen Jia coordinates | Module owners provide configuration and verification steps. Jing Hao prepares the web release; Longxi prepares mobile builds; Eunice and Tom verify live service configuration. |
+| Monitoring and defect resolution | Relevant module owner | Chen Jia triages cross-module issues; each owner investigates failures and maintains their component through the agreed project delivery period. |
+| Report, demonstration and handover | Chen Jia coordinates | Each owner supplies implementation evidence, test results, setup instructions, limitations and documentation for their component. |
+
+## Integration Boundaries
+
+- **Tom owns external data retrieval and normalisation.** He supplies travel data rather than implementing the application's FastAPI endpoints or generating itineraries.
+- **Eunice owns LLM behaviour.** Her module interprets requests and proposes structured itineraries using supplied data. It does not replace deterministic backend validation.
+- **Chen Jia owns application business rules and orchestration.** The backend filters and ranks candidates, validates itinerary and financial constraints, controls access and persists accepted changes.
+- **Jing Hao owns the web client; Longxi owns the mobile client.** Both use the same application API contracts and coordinate user-facing behaviour.
+
+For each integration, the contributing owners will agree on example inputs, successful outputs, failure responses and acceptance criteria before connecting live services.
 
 ## Development Workflow
 
