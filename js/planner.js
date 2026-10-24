@@ -193,7 +193,7 @@
       );
 
 
-      location.href = "index.html?newTrip=1";
+      location.href = "../index.html?newTrip=1";
 
     });
 
@@ -209,7 +209,7 @@
       {
         name: "Kuala Lumpur",
         type: "City & Culture",
-        image: "assets/klcc.png",
+        image: "../assets/klcc.png",
 
         description:
           "Discover Malaysia's vibrant capital, where modern landmarks, cultural neighbourhoods and local food come together.",
@@ -227,7 +227,7 @@
       {
         name: "Penang",
         type: "Food & Heritage",
-        image: "assets/penang.png",
+        image: "../assets/penang.png",
 
         description:
           "Explore colourful heritage streets, famous local food and the unique cultural character of Penang.",
@@ -245,7 +245,7 @@
       {
         name: "Langkawi",
         type: "Island Escape",
-        image: "assets/Langkawi.png",
+        image: "../assets/Langkawi.png",
 
         description:
           "Enjoy tropical beaches, scenic viewpoints and beautiful island landscapes in one of Malaysia's most popular island destinations.",
@@ -265,7 +265,7 @@
       {
         name: "Malacca",
         type: "History & Heritage",
-        image: "assets/Malacca.png",
+        image: "../assets/Malacca.png",
 
         description:
           "Discover historic streets, colourful architecture and the multicultural heritage of one of Malaysia's most historic cities.",
@@ -283,7 +283,7 @@
       {
         name: "Kota Kinabalu",
         type: "Nature & Adventure",
-        image: "assets/KotaKinabalu.png",
+        image: "../assets/KotaKinabalu.png",
 
         description:
           "Experience Sabah's coastal scenery, local culture and outdoor adventures surrounded by beautiful natural landscapes.",
@@ -301,7 +301,7 @@
       {
         name: "Kuching",
         type: "Culture & Nature",
-        image: "assets/Kuching.png",
+        image: "../assets/Kuching.png",
 
         description:
           "Explore Sarawak's riverside capital and discover local culture, food, heritage and nearby natural attractions.",
