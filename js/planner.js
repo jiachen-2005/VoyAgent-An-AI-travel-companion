@@ -60,13 +60,11 @@
   const endDateInput =
     document.getElementById("end-date");
 
-
   // Get today's local date
   const now = new Date();
 
   const today =
     `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
-
 
   // Maximum trip date = 5 years from today
   const maxDate = new Date();
@@ -75,14 +73,12 @@
   const maximumDate =
     `${maxDate.getFullYear()}-${String(maxDate.getMonth() + 1).padStart(2, "0")}-${String(maxDate.getDate()).padStart(2, "0")}`;
 
-
   // Apply date limits
   startDateInput.min = today;
   startDateInput.max = maximumDate;
 
   endDateInput.min = today;
   endDateInput.max = maximumDate;
-
 
   // End date cannot be earlier than start date
   startDateInput.addEventListener("change", () => {
@@ -99,7 +95,6 @@
     }
 
   });
-
 
   // Check manually entered dates
   function validateDateInput(input) {
